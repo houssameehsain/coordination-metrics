@@ -159,7 +159,7 @@ def analyse_meeting_decisions(meetings_path: str) -> dict:
 
 @mcp.tool()
 def generate_coordination_health_report(data_dir: str) -> dict:
-    """Run all 5 metrics and generate a unified coordination health assessment.
+    """Run all metrics and generate a unified coordination health assessment.
 
     Auto-discovers data files in the given directory:
     - XML files -> clash trajectory + recurring clashes

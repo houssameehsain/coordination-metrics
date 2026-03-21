@@ -1,6 +1,6 @@
 # coordination-metrics
 
-**5 Metrics That Predict Design Coordination Failure Before It Hits Site**
+**Metrics That Predict Design Coordination Failure Before It Hits Site**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -15,12 +15,12 @@ Design coordination on complex buildings is where projects are won or lost:
 - **70% of construction defects originate in design** (GIRI, 2019) — most are coordination failures between disciplines, not individual design errors.
 - **Rework costs 5-15% of total project value** (CII) — and the majority traces back to information that was available but never surfaced at the right time.
 
-The standard practice of counting open clashes tells you where you are, not where you're heading. These 5 metrics are the *derivatives* — they tell you whether coordination is improving or deteriorating, while there's still time to act.
+The standard practice of counting open clashes tells you where you are, not where you're heading. These metrics are the *derivatives* — they tell you whether coordination is improving or deteriorating, while there's still time to act.
 
 ## Quick Start
 
 ```bash
-pip install git+https://github.com/houssameehsain/coordination-metrics.git
+pip install coordination-metrics
 ```
 
 ```python
@@ -31,7 +31,7 @@ result = compute_trajectory_slope(summaries)
 print(f"Slope: {result['slope']:+.1f} clashes/day — {result['interpretation']}")
 ```
 
-## The 5 Metrics
+## Core Metrics
 
 | # | Metric | What It Measures | Healthy | Critical |
 |---|--------|-----------------|---------|----------|
@@ -74,7 +74,7 @@ dashboard.generate_html_report(health, output_path="report.html")
 | **BIM 360 / ACC** | CSV export | Clashes, issues (as RFIs) |
 | **Procore** | CSV export | Submittals, RFIs |
 | **Aconex** | CSV export | Submittals, RFIs, correspondence |
-| **Manual registers** | CSV / Excel | All 5 metrics |
+| **Manual registers** | CSV / Excel | All metrics |
 
 ## AI Integration (MCP Server)
 
@@ -137,7 +137,7 @@ Supported benchmarks: `clash_reduction_rate_per_round`, `recurring_clash_rate`, 
 
 ## Cross-Metric Correlations
 
-The correlation engine discovers relationships between the 5 metrics that reveal systemic coordination failures:
+The correlation engine discovers relationships between metrics that reveal systemic coordination failures:
 
 ```python
 from coordination_metrics.cross_correlation import discover_cross_correlations
@@ -182,13 +182,13 @@ coordination_metrics/
 
 ```bash
 # Core (pandas, numpy, matplotlib)
-pip install git+https://github.com/houssameehsain/coordination-metrics.git
+pip install coordination-metrics
 
 # With MCP server support
-pip install "coordination-metrics[mcp] @ git+https://github.com/houssameehsain/coordination-metrics.git"
+pip install "coordination-metrics[mcp]"
 
-# Everything
-pip install "coordination-metrics[all] @ git+https://github.com/houssameehsain/coordination-metrics.git"
+# Everything (MCP + scipy + openpyxl)
+pip install "coordination-metrics[all]"
 ```
 
 ## Command-Line Interface

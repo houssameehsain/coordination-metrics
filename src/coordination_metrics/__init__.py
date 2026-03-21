@@ -1,14 +1,15 @@
-"""coordination-metrics: 5 metrics that predict design coordination failure before it hits site.
+"""coordination-metrics: Metrics that predict design coordination failure before it hits site.
 
 Designed for BIM managers, design coordinators, and digital engineering leads
 working on complex AEC projects.
 
-Metrics:
-    1. Hard Clash Trajectory Slope — are clashes trending up or down?
-    2. Recurring Clash Rate — do resolved clashes keep coming back?
-    3. First-Submission Approval Rate — how clean are submittals by discipline?
-    4. RFI Response Time Distribution — where are the bottleneck disciplines?
-    5. Meeting Decision Resolution Rate — are coordination meetings productive?
+Core metrics:
+    - Hard Clash Trajectory Slope — are clashes trending up or down?
+    - Recurring Clash Rate — do resolved clashes keep coming back?
+    - First-Submission Approval Rate — how clean are submittals by discipline?
+    - RFI Response Time Distribution — where are the bottleneck disciplines?
+    - Meeting Decision Resolution Rate — are coordination meetings productive?
+    - Earned Coordination Value (ECV) — is coordination on schedule?
 """
 
 __version__ = "0.1.0"

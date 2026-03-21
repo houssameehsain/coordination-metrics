@@ -2,7 +2,7 @@
 
 > **Note**: Move this file to `.claude/CLAUDE.md` for Claude Code to auto-detect it.
 
-This package provides 5 design coordination metrics for AEC projects. When the user asks about coordination quality, clash detection, RFI analysis, or submittal tracking, use the coordination-metrics MCP tools.
+This package provides design coordination metrics for AEC projects. When the user asks about coordination quality, clash detection, RFI analysis, or submittal tracking, use the coordination-metrics MCP tools.
 
 ## Quick Setup
 ```bash
@@ -15,7 +15,7 @@ claude mcp add --scope project coordination-metrics -- python -m coordination_me
 - `analyse_submittal_rates`: Compute first-submission approval rates by discipline from a submittal register.
 - `analyse_rfi_distribution`: Analyse RFI response time distribution and identify bottleneck disciplines by P90.
 - `analyse_meeting_decisions`: Analyse coordination meeting decision rates and attendance-decision correlation.
-- `generate_coordination_health_report`: Run all 5 metrics from a project data directory and produce a unified health score.
+- `generate_coordination_health_report`: Run all metrics from a project data directory and produce a unified health score.
 
 ## Data Formats
 The tools accept file paths to standard exports from:

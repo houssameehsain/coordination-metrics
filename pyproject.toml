@@ -1,7 +1,7 @@
 [project]
 name = "coordination-metrics"
 version = "0.1.0"
-description = "5 metrics that predict design coordination failure before it hits site. For BIM managers, design coordinators, and digital engineering leads."
+description = "Metrics that predict design coordination failure before it hits site. For BIM managers, design coordinators, and digital engineering leads."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
@@ -28,7 +28,7 @@ all = ["fastmcp>=3.0", "openpyxl>=3.1", "scipy>=1.10"]
 coord-metrics = "coordination_metrics.cli:main"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.21,<1.22"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]

@@ -17,7 +17,7 @@ def main() -> None:
     """Entry point for the coord-metrics CLI."""
     parser = argparse.ArgumentParser(
         prog="coord-metrics",
-        description="5 metrics that predict design coordination failure before it hits site.",
+        description="Metrics that predict design coordination failure before it hits site.",
     )
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
 

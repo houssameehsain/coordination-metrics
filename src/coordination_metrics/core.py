@@ -170,7 +170,7 @@ class MeetingSummary:
 
 @dataclass
 class CoordinationHealth:
-    """Unified health assessment across all 5 metrics.
+    """Unified health assessment across all metrics.
 
     Each metric score is 0-100 (higher = healthier). The overall_health
     property returns a weighted composite.

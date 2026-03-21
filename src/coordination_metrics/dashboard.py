@@ -1,6 +1,6 @@
 """Unified coordination health dashboard.
 
-Combines all 5 metrics into a single health assessment, with traffic-light
+Combines all metrics into a single health assessment, with traffic-light
 classification and an optional HTML report.
 
 Usage:
@@ -86,7 +86,7 @@ class CoordinationHealthDashboard:
         return found
 
     def run(self) -> CoordinationHealth:
-        """Execute all 5 metrics and return a unified health assessment.
+        """Execute all metrics and return a unified health assessment.
 
         Metrics that cannot run (missing data) are scored at 50 (neutral)
         with a note in the details.
@@ -622,7 +622,7 @@ def _render_html(health: CoordinationHealth) -> str:
         <div class="metrics-grid">{metric_cards}
         </div>{extra_section}{benchmark_section}{insights_section}
         <div class="footer">
-            <p>coordination-metrics v0.1.0 | 5 metrics that predict design coordination failure</p>
+            <p>coordination-metrics v0.1.0 | Metrics that predict design coordination failure</p>
         </div>
     </div>
 </body>
