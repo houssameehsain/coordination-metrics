@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exchange date="2026-02-12">
+  <batchtest>
+    <clashtests>
+      <clashtest name="MEP-Structure" status="ok">
+        <clashresults>
+          <clashresult name="Clash003" status="resolved">
+            <description>Cable tray slab edge — rerouted via soffit</description>
+            <clashpoint><pos3f x="5600" y="7800" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash007" status="resolved">
+            <description>Conduit web clash — rerouted through sleeve</description>
+            <clashpoint><pos3f x="4500" y="3300" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash022" status="resolved">
+            <description>Riser pipe PT band — relocated 300mm south</description>
+            <clashpoint><pos3f x="3300" y="5500" z="4400"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash023" status="active">
+            <description>Duct branch vs upstand — awaiting struct response</description>
+            <clashpoint><pos3f x="7700" y="2200" z="6600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash024" status="resolved">
+            <description>Sprinkler branch line relocated above recess</description>
+            <clashpoint><pos3f x="5500" y="8800" z="3300"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash029" status="new">
+            <description>VAV box conflicts with beam flange</description>
+            <clashpoint><pos3f x="2200" y="4400" z="5500"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash030" status="new">
+            <description>Fire hydrant riser through slab step</description>
+            <clashpoint><pos3f x="9900" y="3300" z="2200"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="Arch-Structure" status="ok">
+        <clashresults>
+          <clashresult name="Clash012" status="resolved">
+            <description>Door swing redesigned as sliding</description>
+            <clashpoint><pos3f x="5500" y="2200" z="1200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash025" status="resolved">
+            <description>Facade panel slab edge resolved</description>
+            <clashpoint><pos3f x="2200" y="4400" z="7700"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash026" status="active">
+            <description>Louvre vs spandrel beam — pending struct review</description>
+            <clashpoint><pos3f x="6600" y="1100" z="2200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash031" status="new">
+            <description>Roof access hatch clashes with steel truss</description>
+            <clashpoint><pos3f x="4400" y="6600" z="11000"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="MEP-MEP" status="ok">
+        <clashresults>
+          <clashresult name="Clash017" status="resolved">
+            <description>Electrical/plumbing riser separated</description>
+            <clashpoint><pos3f x="2200" y="8800" z="2200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash019" status="resolved">
+            <description>BMS/lighting routed to separate zones</description>
+            <clashpoint><pos3f x="4400" y="1100" z="9900"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash027" status="active">
+            <description>Stormwater/gas crossing still open</description>
+            <clashpoint><pos3f x="8800" y="7700" z="4400"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash028" status="resolved">
+            <description>Comms riser relocated</description>
+            <clashpoint><pos3f x="1100" y="5500" z="8800"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+    </clashtests>
+  </batchtest>
+</exchange>

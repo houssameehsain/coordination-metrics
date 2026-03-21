@@ -1,0 +1,326 @@
+{
+  "overall_health": 79.7,
+  "health_level": "healthy",
+  "metrics": {
+    "clash_trajectory": 67.9,
+    "recurring_clashes": 100.0,
+    "approval_rate": 73.2,
+    "rfi_response": 83.3,
+    "meeting_decisions": 76.0
+  },
+  "details": {
+    "clash_trajectory": {
+      "slope": -0.1785714285714287,
+      "intercept": 21.16666666666666,
+      "r_squared": 0.6048,
+      "decay_rate": 0.0103,
+      "decay_n0": 21.3,
+      "decay_r_squared": 0.6259,
+      "decay_health": "stalled",
+      "changepoints": [],
+      "health_level": "at_risk",
+      "rounds": 3,
+      "interpretation": "Clashes roughly stable (-0.2/day) -- monitor closely for drift.",
+      "zero_clash_projection": {
+        "projected_date": "2026-06-05",
+        "days_from_last_round": 113,
+        "model_used": "exponential_decay",
+        "decay_rate": 0.0103,
+        "n0": 21.3,
+        "r_squared": 0.6259,
+        "warning": null
+      }
+    },
+    "recurring_clashes": {
+      "recurrence_rate_pct": 0.0,
+      "recurring_count": 0,
+      "resolved_count": 8,
+      "recurring_pairs": [],
+      "matching_method": "hungarian",
+      "shift_detected": true,
+      "shift_magnitude_mm": 1972.9,
+      "shift_warning": "Median coordinate shift of 1973mm detected -- models may have been repositioned. Applying correction.",
+      "health_level": "healthy",
+      "interpretation": "0% recurrence rate -- resolutions are holding."
+    },
+    "approval_rates": [
+      {
+        "discipline": "Architecture",
+        "total_submittals": 10,
+        "first_submissions": 8,
+        "first_submission_approved": 6,
+        "first_submission_approval_pct": 75.0,
+        "health_level": "healthy"
+      },
+      {
+        "discipline": "Electrical",
+        "total_submittals": 10,
+        "first_submissions": 8,
+        "first_submission_approved": 6,
+        "first_submission_approval_pct": 75.0,
+        "health_level": "healthy"
+      },
+      {
+        "discipline": "Hydraulic",
+        "total_submittals": 10,
+        "first_submissions": 8,
+        "first_submission_approved": 5,
+        "first_submission_approval_pct": 62.5,
+        "health_level": "at_risk"
+      },
+      {
+        "discipline": "Mechanical",
+        "total_submittals": 12,
+        "first_submissions": 8,
+        "first_submission_approved": 4,
+        "first_submission_approval_pct": 50.0,
+        "health_level": "at_risk"
+      },
+      {
+        "discipline": "Structural",
+        "total_submittals": 9,
+        "first_submissions": 9,
+        "first_submission_approved": 9,
+        "first_submission_approval_pct": 100.0,
+        "health_level": "healthy"
+      }
+    ],
+    "rfi_distribution": {
+      "overall": {
+        "discipline": "Overall",
+        "total_rfis": 100,
+        "open_rfis": 7,
+        "closed_rfis": 93,
+        "median_days": 3.0,
+        "mean_days": 3.1,
+        "p90_days": 5.0,
+        "km_p50": 3.0,
+        "km_p90": 10.0,
+        "is_bottleneck": false,
+        "health_level": "healthy",
+        "interpretation": "Overall: median 3d, P90 5d, 7% still open. Censored P90 (10d) higher than closed-only P90 -- open RFIs may be skewing the distribution."
+      },
+      "by_discipline": [
+        {
+          "discipline": "Hydraulic",
+          "total_rfis": 20,
+          "open_rfis": 5,
+          "closed_rfis": 15,
+          "median_days": 3.0,
+          "mean_days": 4.1,
+          "p90_days": 8.0,
+          "km_p50": 5.0,
+          "km_p90": null,
+          "is_bottleneck": false,
+          "health_level": "at_risk",
+          "interpretation": "Hydraulic: median 3d, P90 8d, 25% still open."
+        },
+        {
+          "discipline": "Mechanical",
+          "total_rfis": 20,
+          "open_rfis": 2,
+          "closed_rfis": 18,
+          "median_days": 3.0,
+          "mean_days": 3.3,
+          "p90_days": 5.8,
+          "km_p50": 3.0,
+          "km_p90": null,
+          "is_bottleneck": false,
+          "health_level": "healthy",
+          "interpretation": "Mechanical: median 3d, P90 6d, 10% still open."
+        },
+        {
+          "discipline": "Electrical",
+          "total_rfis": 20,
+          "open_rfis": 0,
+          "closed_rfis": 20,
+          "median_days": 3.0,
+          "mean_days": 3.2,
+          "p90_days": 5.0,
+          "km_p50": 3.0,
+          "km_p90": 5.0,
+          "is_bottleneck": false,
+          "health_level": "healthy",
+          "interpretation": "Electrical: median 3d, P90 5d, 0% still open."
+        },
+        {
+          "discipline": "Architecture",
+          "total_rfis": 19,
+          "open_rfis": 0,
+          "closed_rfis": 19,
+          "median_days": 2.0,
+          "mean_days": 2.2,
+          "p90_days": 3.0,
+          "km_p50": 2.0,
+          "km_p90": 3.0,
+          "is_bottleneck": false,
+          "health_level": "healthy",
+          "interpretation": "Architecture: median 2d, P90 3d, 0% still open."
+        },
+        {
+          "discipline": "Structural",
+          "total_rfis": 21,
+          "open_rfis": 0,
+          "closed_rfis": 21,
+          "median_days": 3.0,
+          "mean_days": 2.9,
+          "p90_days": 3.0,
+          "km_p50": 3.0,
+          "km_p90": 3.0,
+          "is_bottleneck": false,
+          "health_level": "healthy",
+          "interpretation": "Structural: median 3d, P90 3d, 0% still open."
+        }
+      ],
+      "by_category": [
+        {
+          "category": "Coordination",
+          "total_rfis": 30,
+          "open_rfis": 2,
+          "closed_rfis": 28,
+          "median_days": 3.0,
+          "mean_days": 4.4,
+          "p90_days": 10.0,
+          "km_p50": 3.0,
+          "km_p90": 10.0,
+          "is_bottleneck": false,
+          "health_level": "at_risk",
+          "interpretation": "Coordination: median 3d, P90 10d, 7% still open."
+        },
+        {
+          "category": "Specification",
+          "total_rfis": 22,
+          "open_rfis": 3,
+          "closed_rfis": 19,
+          "median_days": 3.0,
+          "mean_days": 3.1,
+          "p90_days": 5.0,
+          "km_p50": 3.0,
+          "km_p90": null,
+          "is_bottleneck": false,
+          "health_level": "healthy",
+          "interpretation": "Specification: median 3d, P90 5d, 14% still open."
+        },
+        {
+          "category": "Design Clarification",
+          "total_rfis": 48,
+          "open_rfis": 2,
+          "closed_rfis": 46,
+          "median_days": 2.0,
+          "mean_days": 2.3,
+          "p90_days": 3.0,
+          "km_p50": 2.0,
+          "km_p90": 4.0,
+          "is_bottleneck": false,
+          "health_level": "healthy",
+          "interpretation": "Design Clarification: median 2d, P90 3d, 4% still open. Censored P90 (4d) higher than closed-only P90 -- open RFIs may be skewing the distribution."
+        }
+      ]
+    },
+    "meeting_decisions": {
+      "avg_decision_rate_pct": 76.0,
+      "avg_attendance_rate_pct": 96.7,
+      "meetings_with_full_attendance": 5,
+      "decision_rate_full_attendance": 75.2,
+      "decision_rate_partial_attendance": 80.0,
+      "pearson_r": -0.2736,
+      "p_value": 0.5999,
+      "confidence_interval": [
+        -0.888,
+        0.6915
+      ],
+      "significant": false,
+      "correlation_strength": "insufficient_data",
+      "per_meeting": [
+        {
+          "meeting_date": "2026-01-15",
+          "total_items": 6,
+          "decided_items": 4,
+          "deferred_items": 2,
+          "decision_rate_pct": 66.7,
+          "attendance_rate_pct": 100.0
+        },
+        {
+          "meeting_date": "2026-01-22",
+          "total_items": 7,
+          "decided_items": 5,
+          "deferred_items": 2,
+          "decision_rate_pct": 71.4,
+          "attendance_rate_pct": 100.0
+        },
+        {
+          "meeting_date": "2026-01-29",
+          "total_items": 5,
+          "decided_items": 4,
+          "deferred_items": 1,
+          "decision_rate_pct": 80.0,
+          "attendance_rate_pct": 80.0
+        },
+        {
+          "meeting_date": "2026-02-05",
+          "total_items": 6,
+          "decided_items": 5,
+          "deferred_items": 1,
+          "decision_rate_pct": 83.3,
+          "attendance_rate_pct": 100.0
+        },
+        {
+          "meeting_date": "2026-02-12",
+          "total_items": 6,
+          "decided_items": 5,
+          "deferred_items": 1,
+          "decision_rate_pct": 83.3,
+          "attendance_rate_pct": 100.0
+        },
+        {
+          "meeting_date": "2026-02-19",
+          "total_items": 7,
+          "decided_items": 5,
+          "deferred_items": 2,
+          "decision_rate_pct": 71.4,
+          "attendance_rate_pct": 100.0
+        }
+      ],
+      "health_level": "healthy",
+      "interpretation": "Avg decision rate 76% -- meetings are productive. Attendance-decision correlation not statistically significant (r=-0.27, p=0.600) -- insufficient evidence."
+    },
+    "ecv": {
+      "note": "ECV available \u2014 use compute_ecv() with project config."
+    },
+    "benchmarks": [
+      {
+        "metric": "recurring_clash_rate",
+        "value": 0.0,
+        "percentile_rank": 100,
+        "comparison": "above_average",
+        "insight": "Your Recurring clash rate (%) of 0.0 is better than 100% of projects.",
+        "benchmark_median": 8.0,
+        "benchmark_source": "Estimated from practitioner interviews",
+        "benchmark_sample_size": 20
+      },
+      {
+        "metric": "rfi_response_p90_days",
+        "value": 5.0,
+        "percentile_rank": 84.4,
+        "comparison": "above_average",
+        "insight": "Your RFI 90th percentile response time (business days) of 5.0 is better than 84% of projects.",
+        "benchmark_median": 14.0,
+        "benchmark_source": "Navigant (2013), updated estimates",
+        "benchmark_sample_size": 1300
+      },
+      {
+        "metric": "meeting_decision_rate",
+        "value": 76.0,
+        "percentile_rank": 86.0,
+        "comparison": "above_average",
+        "insight": "Your Meeting decision resolution rate (%) of 76.0 is better than 86% of projects.",
+        "benchmark_median": 50.0,
+        "benchmark_source": "Cavka et al. (2015), practitioner estimates",
+        "benchmark_sample_size": 27
+      }
+    ],
+    "cross_correlations": []
+  },
+  "generated_date": "2026-03-21",
+  "version": "0.1.0"
+}

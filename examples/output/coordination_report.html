@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordination Health Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 2rem;
+        }
+        .dashboard {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .overall-score {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #22c55e;
+            margin: 1rem 0;
+        }
+        .health-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 2rem;
+            background: #22c55e22;
+            color: #22c55e;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .metric-card {
+            background: #1e293b;
+            border-radius: 0.75rem;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .metric-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .metric-score {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .metric-bar {
+            height: 4px;
+            background: #334155;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .metric-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.6s ease;
+        }
+        .section-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+        .benchmark-card {
+            background: #1e293b;
+            border-radius: 0.75rem;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .benchmark-insight {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+        .insights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .insight-card {
+            background: #1e293b;
+            border-radius: 0.75rem;
+            padding: 1rem 1.2rem;
+            border-left: 3px solid #3b82f6;
+        }
+        .insight-metrics {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+        .insight-text {
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        .actionable-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            background: #22c55e22;
+            color: #22c55e;
+            padding: 0.1rem 0.5rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Coordination Health Dashboard</h1>
+            <p>Generated 2026-03-21</p>
+            <div class="overall-score">79.7</div>
+            <span class="health-badge">healthy</span>
+        </div>
+        <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-label">Clash Trajectory</div>
+            <div class="metric-score" style="color: #f59e0b">67.9</div>
+            <div class="metric-bar">
+                <div class="metric-fill" style="width: 67.9%; background: #f59e0b"></div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Recurring Clashes</div>
+            <div class="metric-score" style="color: #22c55e">100.0</div>
+            <div class="metric-bar">
+                <div class="metric-fill" style="width: 100.0%; background: #22c55e"></div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Approval Rate</div>
+            <div class="metric-score" style="color: #22c55e">73.2</div>
+            <div class="metric-bar">
+                <div class="metric-fill" style="width: 73.2%; background: #22c55e"></div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">RFI Response</div>
+            <div class="metric-score" style="color: #22c55e">83.3</div>
+            <div class="metric-bar">
+                <div class="metric-fill" style="width: 83.3%; background: #22c55e"></div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Meeting Decisions</div>
+            <div class="metric-score" style="color: #22c55e">76.0</div>
+            <div class="metric-bar">
+                <div class="metric-fill" style="width: 76.0%; background: #22c55e"></div>
+            </div>
+        </div>
+        </div>
+        <div class="section-header">Statistical Models</div>
+        <div class="insights-list">
+            <div class="insight-card">
+                <div class="insight-metrics">Exponential Decay Model</div>
+                <div class="insight-text">
+                    Decay rate: <strong style="color: #ef4444">0.0103</strong>
+                    (stalled)<br>Near-zero projected: <strong>2026-06-05</strong> (113d from last round)
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-metrics">RFI Survival Analysis (Kaplan-Meier)</div>
+                <div class="insight-text">
+                    Censored P50: <strong>3.0</strong> biz days,
+                    Censored P90: <strong>10.0</strong> biz days
+                    (7 open RFIs as right-censored)
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-metrics">Attendance-Decision Correlation</div>
+                <div class="insight-text">
+                    r=-0.2736, p=0.5999
+                    <strong style="color: #f59e0b">(Not significant)</strong>
+                </div>
+            </div>
+        </div>
+        <div class="section-header">Industry Benchmarks</div>
+        <div class="metrics-grid">
+            <div class="benchmark-card">
+                <div class="metric-label">recurring_clash_rate</div>
+                <div class="metric-score" style="color: #22c55e">100th</div>
+                <div class="benchmark-insight">Your Recurring clash rate (%) of 0.0 is better than 100% of projects.</div>
+            </div>
+            <div class="benchmark-card">
+                <div class="metric-label">rfi_response_p90_days</div>
+                <div class="metric-score" style="color: #22c55e">84th</div>
+                <div class="benchmark-insight">Your RFI 90th percentile response time (business days) of 5.0 is better than 84% of projects.</div>
+            </div>
+            <div class="benchmark-card">
+                <div class="metric-label">meeting_decision_rate</div>
+                <div class="metric-score" style="color: #22c55e">86th</div>
+                <div class="benchmark-insight">Your Meeting decision resolution rate (%) of 76.0 is better than 86% of projects.</div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>coordination-metrics v0.1.0 | 5 metrics that predict design coordination failure</p>
+        </div>
+    </div>
+</body>
+</html>

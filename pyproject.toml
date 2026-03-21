@@ -1,0 +1,42 @@
+[project]
+name = "coordination-metrics"
+version = "0.1.0"
+description = "5 metrics that predict design coordination failure before it hits site. For BIM managers, design coordinators, and digital engineering leads."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Houssame E. Hsain", email = "houssameeddinehsain@gmail.com"}]
+keywords = ["AEC", "BIM", "coordination", "clash-detection", "design-management", "construction"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+scipy = ["scipy>=1.10"]
+mcp = ["fastmcp>=3.0"]
+all = ["fastmcp>=3.0", "openpyxl>=3.1", "scipy>=1.10"]
+
+[project.scripts]
+coord-metrics = "coordination_metrics.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/coordination_metrics"]
+
+[tool.hatch.build.targets.editable]
+packages = ["src/coordination_metrics"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

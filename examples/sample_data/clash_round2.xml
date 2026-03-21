@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exchange date="2026-01-29">
+  <batchtest>
+    <clashtests>
+      <clashtest name="MEP-Structure" status="ok">
+        <clashresults>
+          <clashresult name="Clash001" status="resolved">
+            <description>Duct penetrates beam at Level 3 — rerouted</description>
+            <clashpoint><pos3f x="1200" y="3400" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash002" status="resolved">
+            <description>Pipe clashes with column at Grid B-4 — resized</description>
+            <clashpoint><pos3f x="2300" y="1200" z="3200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash003" status="active">
+            <description>Cable tray intersects slab edge — pending arch input</description>
+            <clashpoint><pos3f x="5600" y="7800" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash005" status="resolved">
+            <description>Chilled water pipe rerouted around wall</description>
+            <clashpoint><pos3f x="8900" y="4500" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash006" status="resolved">
+            <description>Exhaust duct and fire damper coordinated</description>
+            <clashpoint><pos3f x="1100" y="6700" z="2800"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash007" status="active">
+            <description>Conduit routing still unresolved</description>
+            <clashpoint><pos3f x="4500" y="3300" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash021" status="new">
+            <description>New AHU clashes with transfer beam</description>
+            <clashpoint><pos3f x="1250" y="3450" z="5650"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash022" status="new">
+            <description>Riser pipe penetrates post-tension band</description>
+            <clashpoint><pos3f x="3300" y="5500" z="4400"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash023" status="new">
+            <description>Duct branch clashes with concrete upstand</description>
+            <clashpoint><pos3f x="7700" y="2200" z="6600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash024" status="new">
+            <description>Sprinkler branch line hits slab recess</description>
+            <clashpoint><pos3f x="5500" y="8800" z="3300"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="Arch-Structure" status="ok">
+        <clashresults>
+          <clashresult name="Clash011" status="resolved">
+            <description>Window opening adjusted to clear bracing</description>
+            <clashpoint><pos3f x="3300" y="9000" z="4500"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash012" status="active">
+            <description>Door swing still under review</description>
+            <clashpoint><pos3f x="5500" y="2200" z="1200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash013" status="resolved">
+            <description>Curtain wall bracket relocated</description>
+            <clashpoint><pos3f x="9000" y="6700" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash025" status="new">
+            <description>Facade panel clashes with slab edge setback</description>
+            <clashpoint><pos3f x="2200" y="4400" z="7700"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash026" status="new">
+            <description>Louvre conflicts with spandrel beam</description>
+            <clashpoint><pos3f x="6600" y="1100" z="2200"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="MEP-MEP" status="ok">
+        <clashresults>
+          <clashresult name="Clash016" status="resolved">
+            <description>Hot/chilled water separation achieved</description>
+            <clashpoint><pos3f x="6600" y="3300" z="5500"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash017" status="active">
+            <description>Electrical/plumbing riser conflict under review</description>
+            <clashpoint><pos3f x="2200" y="8800" z="2200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash018" status="resolved">
+            <description>Sprinkler main rerouted below HVAC</description>
+            <clashpoint><pos3f x="7700" y="5500" z="7700"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash019" status="active">
+            <description>BMS/lighting conflict still open</description>
+            <clashpoint><pos3f x="4400" y="1100" z="9900"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash027" status="new">
+            <description>Stormwater pipe crosses gas main</description>
+            <clashpoint><pos3f x="8800" y="7700" z="4400"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash028" status="new">
+            <description>Comms riser clashes with hydraulic main</description>
+            <clashpoint><pos3f x="1100" y="5500" z="8800"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+    </clashtests>
+  </batchtest>
+</exchange>

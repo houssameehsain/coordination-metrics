@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exchange date="2026-01-15">
+  <batchtest>
+    <clashtests>
+      <clashtest name="MEP-Structure" status="ok">
+        <clashresults>
+          <clashresult name="Clash001" status="new">
+            <description>Duct penetrates beam at Level 3</description>
+            <clashpoint><pos3f x="1200" y="3400" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash002" status="new">
+            <description>Pipe clashes with column at Grid B-4</description>
+            <clashpoint><pos3f x="2300" y="1200" z="3200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash003" status="new">
+            <description>Cable tray intersects slab edge</description>
+            <clashpoint><pos3f x="5600" y="7800" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash004" status="new">
+            <description>Sprinkler head below ceiling grid</description>
+            <clashpoint><pos3f x="3400" y="2200" z="8900"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash005" status="new">
+            <description>Chilled water pipe through structural wall</description>
+            <clashpoint><pos3f x="8900" y="4500" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash006" status="active">
+            <description>Exhaust duct clashes with fire damper</description>
+            <clashpoint><pos3f x="1100" y="6700" z="2800"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash007" status="active">
+            <description>Conduit runs through beam web</description>
+            <clashpoint><pos3f x="4500" y="3300" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash008" status="active">
+            <description>FCU conflicts with structural brace</description>
+            <clashpoint><pos3f x="6700" y="8900" z="3200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash009" status="reviewed">
+            <description>Supply air duct crosses return air path</description>
+            <clashpoint><pos3f x="2200" y="5600" z="8900"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash010" status="reviewed">
+            <description>Sanitary pipe route through lift shaft</description>
+            <clashpoint><pos3f x="7800" y="1100" z="5600"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="Arch-Structure" status="ok">
+        <clashresults>
+          <clashresult name="Clash011" status="new">
+            <description>Window opening conflicts with bracing</description>
+            <clashpoint><pos3f x="3300" y="9000" z="4500"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash012" status="new">
+            <description>Door swing into structural member</description>
+            <clashpoint><pos3f x="5500" y="2200" z="1200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash013" status="active">
+            <description>Curtain wall bracket conflicts with slab edge</description>
+            <clashpoint><pos3f x="9000" y="6700" z="5600"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash014" status="new">
+            <description>Ceiling height insufficient for beam depth</description>
+            <clashpoint><pos3f x="4400" y="4400" z="8800"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash015" status="reviewed">
+            <description>Stair landing clashes with duct riser</description>
+            <clashpoint><pos3f x="1500" y="7700" z="3300"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="MEP-MEP" status="ok">
+        <clashresults>
+          <clashresult name="Clash016" status="new">
+            <description>Hot water pipe crosses chilled water pipe</description>
+            <clashpoint><pos3f x="6600" y="3300" z="5500"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash017" status="new">
+            <description>Electrical tray conflicts with plumbing riser</description>
+            <clashpoint><pos3f x="2200" y="8800" z="2200"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash018" status="active">
+            <description>Fire sprinkler main crosses HVAC supply</description>
+            <clashpoint><pos3f x="7700" y="5500" z="7700"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash019" status="new">
+            <description>BMS cable tray overlaps lighting conduit</description>
+            <clashpoint><pos3f x="4400" y="1100" z="9900"/></clashpoint>
+          </clashresult>
+          <clashresult name="Clash020" status="new">
+            <description>Gas pipe too close to electrical switchboard</description>
+            <clashpoint><pos3f x="8800" y="6600" z="1100"/></clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+    </clashtests>
+  </batchtest>
+</exchange>

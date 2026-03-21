@@ -1,0 +1,52 @@
+submittal_id,discipline,revision,status,date_submitted
+SUB-001,Structural,0,Approved,2026-01-15
+SUB-002,Mechanical,0,Revise & Resubmit,2026-01-16
+SUB-003,Electrical,0,Approved,2026-01-16
+SUB-004,Hydraulic,0,Approved,2026-01-17
+SUB-005,Architecture,0,Approved as Noted,2026-01-17
+SUB-006,Structural,0,Approved,2026-01-20
+SUB-007,Mechanical,0,Approved,2026-01-20
+SUB-008,Electrical,0,Revise & Resubmit,2026-01-21
+SUB-009,Hydraulic,0,Rejected,2026-01-22
+SUB-010,Architecture,0,Approved,2026-01-22
+SUB-002,Mechanical,1,Approved,2026-01-27
+SUB-011,Structural,0,Approved,2026-01-27
+SUB-012,Mechanical,0,Revise & Resubmit,2026-01-28
+SUB-013,Electrical,0,Approved,2026-01-28
+SUB-014,Hydraulic,0,Approved,2026-01-29
+SUB-015,Architecture,0,Revise & Resubmit,2026-01-29
+SUB-008,Electrical,1,Approved,2026-01-30
+SUB-016,Structural,0,Approved as Noted,2026-01-30
+SUB-017,Mechanical,0,Approved,2026-02-03
+SUB-018,Electrical,0,Approved,2026-02-03
+SUB-009,Hydraulic,1,Approved,2026-02-04
+SUB-019,Hydraulic,0,Revise & Resubmit,2026-02-04
+SUB-020,Architecture,0,Approved,2026-02-05
+SUB-012,Mechanical,1,Approved as Noted,2026-02-05
+SUB-021,Structural,0,Approved,2026-02-06
+SUB-022,Mechanical,0,Revise & Resubmit,2026-02-07
+SUB-023,Electrical,0,Rejected,2026-02-07
+SUB-024,Hydraulic,0,Approved,2026-02-10
+SUB-025,Architecture,0,Approved,2026-02-10
+SUB-015,Architecture,1,Approved,2026-02-11
+SUB-026,Structural,0,Approved,2026-02-11
+SUB-027,Mechanical,0,Approved,2026-02-12
+SUB-028,Electrical,0,Approved as Noted,2026-02-12
+SUB-022,Mechanical,1,Approved,2026-02-13
+SUB-029,Hydraulic,0,Approved,2026-02-14
+SUB-030,Architecture,0,Revise & Resubmit,2026-02-14
+SUB-023,Electrical,1,Approved,2026-02-17
+SUB-031,Structural,0,Approved,2026-02-17
+SUB-032,Mechanical,0,Approved,2026-02-18
+SUB-033,Electrical,0,Approved,2026-02-18
+SUB-034,Hydraulic,0,Revise & Resubmit,2026-02-19
+SUB-035,Architecture,0,Approved,2026-02-19
+SUB-030,Architecture,1,Approved as Noted,2026-02-20
+SUB-036,Structural,0,Approved as Noted,2026-02-21
+SUB-037,Mechanical,0,Revise & Resubmit,2026-02-24
+SUB-038,Electrical,0,Approved,2026-02-24
+SUB-039,Hydraulic,0,Approved,2026-02-25
+SUB-040,Architecture,0,Approved,2026-02-25
+SUB-034,Hydraulic,1,Approved,2026-02-26
+SUB-037,Mechanical,1,Approved,2026-02-27
+SUB-041,Structural,0,Approved,2026-02-27

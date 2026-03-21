@@ -1,0 +1,101 @@
+rfi_id,date_submitted,date_responded,discipline,category
+RFI-001,2026-01-10,2026-01-14,Structural,Design Clarification
+RFI-002,2026-01-11,2026-01-15,Mechanical,Coordination
+RFI-003,2026-01-12,2026-01-13,Electrical,Design Clarification
+RFI-004,2026-01-13,2026-01-20,Hydraulic,Specification
+RFI-005,2026-01-14,2026-01-16,Architecture,Design Clarification
+RFI-006,2026-01-15,2026-01-28,Structural,Coordination
+RFI-007,2026-01-16,2026-01-18,Mechanical,Design Clarification
+RFI-008,2026-01-17,2026-01-21,Electrical,Coordination
+RFI-009,2026-01-20,2026-01-22,Hydraulic,Design Clarification
+RFI-010,2026-01-20,2026-01-21,Architecture,Specification
+RFI-011,2026-01-21,2026-01-24,Structural,Design Clarification
+RFI-012,2026-01-22,2026-02-05,Mechanical,Coordination
+RFI-013,2026-01-22,2026-01-24,Electrical,Design Clarification
+RFI-014,2026-01-23,,Hydraulic,Coordination
+RFI-015,2026-01-24,2026-01-27,Architecture,Design Clarification
+RFI-016,2026-01-27,2026-01-30,Structural,Specification
+RFI-017,2026-01-27,2026-01-29,Mechanical,Design Clarification
+RFI-018,2026-01-28,2026-02-11,Electrical,Coordination
+RFI-019,2026-01-29,2026-01-31,Hydraulic,Design Clarification
+RFI-020,2026-01-30,2026-02-03,Architecture,Coordination
+RFI-021,2026-02-03,2026-02-05,Structural,Design Clarification
+RFI-022,2026-02-03,2026-02-06,Mechanical,Specification
+RFI-023,2026-02-04,2026-02-07,Electrical,Design Clarification
+RFI-024,2026-02-04,2026-02-18,Hydraulic,Coordination
+RFI-025,2026-02-05,2026-02-07,Architecture,Design Clarification
+RFI-026,2026-02-06,2026-02-10,Structural,Coordination
+RFI-027,2026-02-07,2026-02-10,Mechanical,Design Clarification
+RFI-028,2026-02-07,2026-02-12,Electrical,Specification
+RFI-029,2026-02-10,2026-02-13,Hydraulic,Design Clarification
+RFI-030,2026-02-10,2026-02-12,Architecture,Coordination
+RFI-031,2026-02-11,2026-02-14,Structural,Design Clarification
+RFI-032,2026-02-12,,Mechanical,Coordination
+RFI-033,2026-02-12,2026-02-14,Electrical,Design Clarification
+RFI-034,2026-02-13,2026-02-20,Hydraulic,Specification
+RFI-035,2026-02-14,2026-02-17,Architecture,Design Clarification
+RFI-036,2026-02-17,2026-02-19,Structural,Specification
+RFI-037,2026-02-17,2026-02-20,Mechanical,Design Clarification
+RFI-038,2026-02-18,2026-02-25,Electrical,Coordination
+RFI-039,2026-02-19,2026-02-21,Hydraulic,Design Clarification
+RFI-040,2026-02-19,2026-02-24,Architecture,Specification
+RFI-041,2026-02-20,2026-02-24,Structural,Design Clarification
+RFI-042,2026-02-21,2026-02-24,Mechanical,Coordination
+RFI-043,2026-02-21,2026-02-25,Electrical,Design Clarification
+RFI-044,2026-02-24,2026-02-27,Hydraulic,Coordination
+RFI-045,2026-02-24,2026-02-26,Architecture,Design Clarification
+RFI-046,2026-02-25,2026-02-28,Structural,Specification
+RFI-047,2026-02-25,,Mechanical,Design Clarification
+RFI-048,2026-02-26,2026-03-04,Electrical,Coordination
+RFI-049,2026-02-27,2026-03-03,Hydraulic,Design Clarification
+RFI-050,2026-02-27,2026-03-02,Architecture,Specification
+RFI-051,2026-02-28,2026-03-04,Structural,Design Clarification
+RFI-052,2026-03-03,2026-03-06,Mechanical,Coordination
+RFI-053,2026-03-03,2026-03-05,Electrical,Design Clarification
+RFI-054,2026-03-04,,Hydraulic,Specification
+RFI-055,2026-03-04,2026-03-07,Architecture,Design Clarification
+RFI-056,2026-03-05,2026-03-10,Structural,Coordination
+RFI-057,2026-03-06,2026-03-09,Mechanical,Design Clarification
+RFI-058,2026-03-06,2026-03-12,Electrical,Specification
+RFI-059,2026-03-07,2026-03-10,Hydraulic,Design Clarification
+RFI-060,2026-03-07,2026-03-11,Architecture,Coordination
+RFI-061,2026-01-14,2026-01-17,Structural,Design Clarification
+RFI-062,2026-01-16,2026-01-30,Mechanical,Coordination
+RFI-063,2026-01-20,2026-01-23,Electrical,Design Clarification
+RFI-064,2026-01-23,2026-02-06,Hydraulic,Coordination
+RFI-065,2026-01-27,2026-01-30,Architecture,Specification
+RFI-066,2026-01-30,2026-02-03,Structural,Design Clarification
+RFI-067,2026-02-03,2026-02-06,Mechanical,Specification
+RFI-068,2026-02-06,2026-02-10,Electrical,Design Clarification
+RFI-069,2026-02-10,2026-02-17,Hydraulic,Coordination
+RFI-070,2026-02-13,2026-02-17,Architecture,Design Clarification
+RFI-071,2026-02-17,2026-02-20,Structural,Coordination
+RFI-072,2026-02-19,2026-02-25,Mechanical,Design Clarification
+RFI-073,2026-02-21,2026-02-26,Electrical,Specification
+RFI-074,2026-02-24,,Hydraulic,Design Clarification
+RFI-075,2026-02-26,2026-03-02,Architecture,Coordination
+RFI-076,2026-02-28,2026-03-04,Structural,Specification
+RFI-077,2026-03-03,2026-03-06,Mechanical,Design Clarification
+RFI-078,2026-03-05,2026-03-10,Electrical,Coordination
+RFI-079,2026-03-07,,Hydraulic,Specification
+RFI-080,2026-01-13,2026-01-16,Architecture,Design Clarification
+RFI-081,2026-01-17,2026-01-22,Structural,Coordination
+RFI-082,2026-01-22,2026-01-27,Mechanical,Design Clarification
+RFI-083,2026-01-28,2026-02-04,Electrical,Specification
+RFI-084,2026-02-03,2026-02-07,Hydraulic,Design Clarification
+RFI-085,2026-02-07,2026-02-12,Architecture,Coordination
+RFI-086,2026-02-11,2026-02-14,Structural,Design Clarification
+RFI-087,2026-02-14,2026-02-19,Mechanical,Specification
+RFI-088,2026-02-18,2026-02-21,Electrical,Design Clarification
+RFI-089,2026-02-21,2026-02-27,Hydraulic,Coordination
+RFI-090,2026-02-25,2026-02-28,Architecture,Design Clarification
+RFI-091,2026-02-28,2026-03-05,Structural,Specification
+RFI-092,2026-03-04,2026-03-07,Mechanical,Coordination
+RFI-093,2026-03-06,2026-03-10,Electrical,Design Clarification
+RFI-094,2026-03-07,,Hydraulic,Specification
+RFI-095,2026-01-15,2026-01-20,Structural,Design Clarification
+RFI-096,2026-01-21,2026-01-24,Mechanical,Coordination
+RFI-097,2026-01-28,2026-02-03,Electrical,Design Clarification
+RFI-098,2026-02-05,2026-02-10,Hydraulic,Specification
+RFI-099,2026-02-12,2026-02-17,Architecture,Design Clarification
+RFI-100,2026-02-19,2026-02-24,Structural,Coordination
