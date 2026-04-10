@@ -1,14 +1,13 @@
 # Case Studies: coordination-metrics
 
-Three end-to-end demonstrations of coordination-metrics on real open-license datasets.
+Two end-to-end controlled validations of coordination-metrics on real open-license BIM datasets.
 
 ## Datasets
 
 | Case Study | Source | License | Scale |
 |---|---|---|---|
-| WBDG Duplex Apartment | US General Services Administration / WBDG | Public Domain | 3 discipline models (ARC/ELE/PLB), residential |
-| WBDG Medical Clinic | US General Services Administration / WBDG | Public Domain | 4 discipline models (ARC/MEP/ELE/PLB), healthcare |
-| Schependomlaan | buildingSMART International | CC BY 4.0 | ~6 subcontractor models, residential complex |
+| WBDG Duplex Apartment | US General Services Administration / WBDG | Public Domain | 4 discipline models (ARC/ELE/MEP/PLB), residential |
+| WBDG Medical Clinic | US General Services Administration / WBDG | Public Domain | 5 discipline models (ARC/STR/ELE/MEP/PLB), healthcare |
 
 ---
 
@@ -18,50 +17,30 @@ Three end-to-end demonstrations of coordination-metrics on real open-license dat
 
 ```bash
 cd /path/to/coordination-metrics
-pip install -e ".[dev]"
+pip install -e .
 pip install ifcopenshell  # optional but recommended for real clash detection
 ```
 
-### 2. Download datasets
-
-**WBDG Duplex:**
-```bash
-# See case_studies/wbdg_duplex/data/README.md for download instructions
-```
-
-**WBDG Clinic:**
-```bash
-# See case_studies/wbdg_clinic/data/README.md for download instructions
-```
-
-**Schependomlaan:**
-```bash
-# See case_studies/schependomlaan/data/README.md for download instructions
-```
-
-### 3. Run the full pipeline
+### 2. Run the full pipeline
 
 ```bash
 cd case_studies/scripts
 
-# Generate supplementary coordination data (RFIs, submittals, meetings)
-python prepare_data.py --project wbdg_duplex
-python prepare_data.py --project schependomlaan
-
-# Run clash detection and simulate coordination rounds
-python generate_clashes.py --project wbdg_duplex --rounds 5
+# Step 1: Generate clashes from IFC models (or synthetic fallback)
+python generate_clashes.py --project wbdg_duplex --rounds 6
 python generate_clashes.py --project wbdg_clinic --rounds 6
-python generate_clashes.py --project schependomlaan --rounds 8
 
-# Run coordination-metrics analysis
+# Step 2: Generate supplementary coordination data (RFIs, submittals, meetings)
+python prepare_data.py --project wbdg_duplex
+python prepare_data.py --project wbdg_clinic
+
+# Step 3: Run coordination-metrics analysis
 python run_analysis.py --project wbdg_duplex
 python run_analysis.py --project wbdg_clinic
-python run_analysis.py --project schependomlaan
 
-# Generate publication figures
+# Step 4: Generate publication figures
 python generate_visuals.py --project wbdg_duplex --format png --dpi 300
 python generate_visuals.py --project wbdg_clinic --format png --dpi 300
-python generate_visuals.py --project schependomlaan --format svg
 ```
 
 Results land in each project's `output/` directory.
@@ -98,6 +77,14 @@ python generate_clashes.py --project wbdg_duplex --rounds 6
 # Works without IFC files — generates synthetic clash data
 ```
 
+## Large IFC Files
+
+For IFC files over 30MB, the pipeline automatically uses placement-based bounding box extraction instead of full geometry processing. Use `--fast` to force placement mode for all files, or `--max-geom-mb N` to set the threshold.
+
+```bash
+python generate_clashes.py --project wbdg_clinic --rounds 6 --max-geom-mb 50
+```
+
 ---
 
 ## Directory Layout
@@ -107,31 +94,19 @@ case_studies/
 ├── README.md                    (this file)
 ├── wbdg_duplex/
 │   ├── data/
-│   │   ├── ifc/                 drop IFC files here
-│   │   ├── clashes/             generated clash XMLs (git-ignored)
+│   │   ├── ifc/                 IFC model files
+│   │   ├── clashes/             generated clash XMLs
 │   │   └── README.md
-│   └── output/                  analysis results (git-ignored)
+│   └── output/                  analysis results
 ├── wbdg_clinic/
 │   ├── data/
-│   │   ├── ifc/                 4 disciplines (ARC/MEP/ELE/PLB)
+│   │   ├── ifc/                 5 disciplines (ARC/STR/MEP/ELE/PLB)
 │   │   ├── clashes/
 │   │   └── README.md
 │   └── output/
-├── schependomlaan/
-│   ├── data/
-│   │   ├── ifc/
-│   │   ├── bcf/
-│   │   ├── clashes/
-│   │   ├── schedules/
-│   │   └── README.md
-│   └── output/
-├── scripts/
-│   ├── generate_clashes.py      IFC clash detection + round simulation
-│   ├── prepare_data.py          RFI / submittal / meeting data generation
-│   ├── run_analysis.py          full coordination-metrics pipeline
-│   └── generate_visuals.py      publication-quality figures
-└── paper/
-    ├── main.tex
-    ├── references.bib
-    └── figures/
+└── scripts/
+    ├── generate_clashes.py      IFC clash detection + round simulation
+    ├── prepare_data.py          causal RFI / submittal / meeting generation
+    ├── run_analysis.py          full coordination-metrics pipeline
+    └── generate_visuals.py      publication-quality figures
 ```

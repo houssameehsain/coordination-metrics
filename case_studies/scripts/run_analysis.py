@@ -6,7 +6,7 @@ project data and generates HTML dashboard, JSON export, and chart images.
 
 Usage:
     python run_analysis.py --project wbdg_duplex
-    python run_analysis.py --project schependomlaan --output-format all
+    python run_analysis.py --project wbdg_clinic --output-format all
 """
 from __future__ import annotations
 
@@ -43,7 +43,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = {
     "wbdg_duplex": PROJECT_ROOT / "wbdg_duplex",
     "wbdg_clinic": PROJECT_ROOT / "wbdg_clinic",
-    "schependomlaan": PROJECT_ROOT / "schependomlaan",
 }
 
 

@@ -1,0 +1,22 @@
+{
+  "project": "wbdg_clinic",
+  "ifc_files": [
+    "Clinic_A_20110906_optimized.ifc",
+    "Clinic_Electrical_20121207.ifc",
+    "Clinic_M_20120330_RevitMEP2013_optimized.ifc",
+    "Clinic_Plumbing_20121206.ifc",
+    "Clinic_S_20110715_optimized.ifc"
+  ],
+  "disciplines": [
+    "ARC",
+    "ELE",
+    "MEP",
+    "PLB",
+    "STR"
+  ],
+  "tolerance_mm": 10.0,
+  "initial_clashes": 6001,
+  "rounds": 6,
+  "resolution_rate": 0.35,
+  "seed": 42
+}

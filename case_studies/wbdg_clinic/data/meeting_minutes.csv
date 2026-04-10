@@ -1,0 +1,13 @@
+meeting_date,total_items,decided_items,deferred_items,disciplines_required,disciplines_present,round,active_clashes
+2025-06-01,140,48,92,Architectural;Electrical;Mechanical;Structural,Architectural;Mechanical;Structural,1,1950
+2025-06-08,141,68,73,Architectural;Electrical;Mechanical;Plumbing;Structural,Electrical;Mechanical;Plumbing;Structural,1,4051
+2025-06-15,139,67,72,Architectural;Electrical;Mechanical;Plumbing;Structural,Architectural;Electrical;Mechanical;Plumbing;Structural,2,1822
+2025-06-22,140,70,70,Architectural;Electrical;Mechanical,Architectural;Electrical;Mechanical,2,662
+2025-06-29,144,98,46,Architectural;Electrical;Mechanical;Plumbing;Structural,Architectural;Mechanical;Plumbing;Structural,3,1289
+2025-07-06,144,96,48,Architectural;Electrical;Mechanical,Electrical;Mechanical,3,462
+2025-07-13,142,87,55,Architectural;Electrical;Mechanical;Plumbing;Structural,Architectural;Electrical;Mechanical;Plumbing;Structural,4,1028
+2025-07-20,143,95,48,Architectural;Electrical;Mechanical,Architectural;Electrical;Mechanical,4,393
+2025-07-27,135,81,54,Architectural;Electrical;Mechanical;Plumbing;Structural,Architectural;Electrical;Mechanical;Plumbing;Structural,5,728
+2025-08-03,136,99,37,Architectural;Electrical;Mechanical,Architectural;Electrical;Mechanical,5,303
+2025-08-10,118,82,36,Architectural;Electrical;Mechanical;Plumbing;Structural,Architectural;Electrical;Mechanical;Plumbing;Structural,6,443
+2025-08-17,119,69,50,Architectural;Electrical;Mechanical,Architectural;Electrical,6,241

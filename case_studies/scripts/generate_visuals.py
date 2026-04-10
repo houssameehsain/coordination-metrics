@@ -41,7 +41,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = {
     "wbdg_duplex": PROJECT_ROOT / "wbdg_duplex",
     "wbdg_clinic": PROJECT_ROOT / "wbdg_clinic",
-    "schependomlaan": PROJECT_ROOT / "schependomlaan",
 }
 
 

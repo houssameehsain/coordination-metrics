@@ -1,0 +1,2653 @@
+<?xml version='1.0' encoding='utf-8'?>
+<exchange date="2025-08-10">
+  <batchtest>
+    <clashtests>
+      <clashtest name="MEP-Architecture">
+        <clashresults>
+          <clashresult name="Clash-c67b0d820325-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="4298.013491180467" y="-9537.81375817609" z="3518.096018371103" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-ad8c8381a0f1" status="active">
+            <clashpoint>
+              <pos3f x="2312.5" y="-13079.0" z="5700.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-b6f655c24923-R2-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="6931.334845154881" y="-11015.171036375643" z="1015.6298614331346" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-a49227ea0ea1-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="1744.632105146187" y="-1098.908302280109" z="394.14167129274335" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-7e9e6b216a9f" status="resolved">
+            <clashpoint>
+              <pos3f x="8162.2" y="-17415.0" z="2748.7" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-a4215999ae5b" status="active">
+            <clashpoint>
+              <pos3f x="8388.3" y="-15083.2" z="2748.7" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-60ee6b1f4cab-R3" status="resolved">
+            <clashpoint>
+              <pos3f x="7898.8713976781855" y="-16178.438925602404" z="2587.807982282375" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-1353d6793c70-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="6544.898610051479" y="-9323.149394685777" z="-282.6039047228354" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-64be92553ab7-R3" status="resolved">
+            <clashpoint>
+              <pos3f x="4934.9552409519165" y="-8035.799230175439" z="1992.9702875925661" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-8ca8c2bfd477-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="129.4027561619738" y="-4398.397570880987" z="1266.931047604684" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-9c46f341fd72-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="8479.254646000629" y="-6774.17928296884" z="738.9017444905448" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-c73b26efce03-R3" status="active">
+            <clashpoint>
+              <pos3f x="7399.66313132511" y="-4295.231941678369" z="168.27279788700815" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-062" status="resolved">
+            <clashpoint>
+              <pos3f x="7904.017245935954" y="-6826.580646043811" z="3102.423035829085" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-086" status="resolved">
+            <clashpoint>
+              <pos3f x="4984.276882006996" y="-16523.260669775867" z="2892.1398260368424" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-140" status="active">
+            <clashpoint>
+              <pos3f x="4215.400955895763" y="-9442.438766633033" z="2869.580539685877" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-189" status="resolved">
+            <clashpoint>
+              <pos3f x="4270.946021512436" y="-9601.03470420652" z="2519.76055046337" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-015" status="resolved">
+            <clashpoint>
+              <pos3f x="11141.903225820017" y="-13567.15974681589" z="1415.0192332133988" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-019" status="active">
+            <clashpoint>
+              <pos3f x="309.35334841423264" y="-13036.728897254601" z="-373.0802116830357" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-029" status="reviewed">
+            <clashpoint>
+              <pos3f x="6352.923876571528" y="-12279.602705349522" z="2745.7761213307085" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-058" status="resolved">
+            <clashpoint>
+              <pos3f x="7798.338389215947" y="-17301.321418912776" z="3477.530099112285" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-067" status="active">
+            <clashpoint>
+              <pos3f x="5740.115217735192" y="-8822.568917854212" z="2866.9888925796736" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-068" status="resolved">
+            <clashpoint>
+              <pos3f x="8758.284427943283" y="-14311.105058731095" z="2948.5626141496223" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-071" status="resolved">
+            <clashpoint>
+              <pos3f x="1907.0924434765489" y="-8700.605141293418" z="2972.269754171968" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-102-R4-R5" status="new">
+            <clashpoint>
+              <pos3f x="569.2938665109522" y="-11960.249596643374" z="2266.535206082838" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-168" status="resolved">
+            <clashpoint>
+              <pos3f x="8981.93673101606" y="-8492.318415612306" z="3202.159565987564" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-198" status="active">
+            <clashpoint>
+              <pos3f x="10990.956563353962" y="-2463.520702922615" z="339.42091578802626" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-202-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="7474.60664158079" y="-11445.876892353812" z="2510.0354303365316" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-212-R5" status="new">
+            <clashpoint>
+              <pos3f x="1377.3874876874017" y="-10636.128724912933" z="822.4890431218346" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-234-R5" status="new">
+            <clashpoint>
+              <pos3f x="3628.0564763850043" y="-9048.234081752631" z="2400.6448290460053" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-238" status="resolved">
+            <clashpoint>
+              <pos3f x="460.3012957982096" y="-12668.776647397106" z="-343.0056495144473" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-239" status="active">
+            <clashpoint>
+              <pos3f x="1746.3199768855025" y="-11175.595568060478" z="307.0873989590564" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-280" status="active">
+            <clashpoint>
+              <pos3f x="2031.707828408071" y="-7866.704732975517" z="2776.529795508108" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-327" status="resolved">
+            <clashpoint>
+              <pos3f x="2501.5416449869917" y="302.5936203482368" z="572.4860109756079" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-335" status="active">
+            <clashpoint>
+              <pos3f x="6998.137824641667" y="-7879.381038457888" z="3022.587757551273" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-339" status="resolved">
+            <clashpoint>
+              <pos3f x="8021.119709384723" y="-10773.614536461457" z="2442.711780974757" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-004" status="resolved">
+            <clashpoint>
+              <pos3f x="10448.47404343251" y="-198.05755818201828" z="211.79311574132856" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-005-R5" status="new">
+            <clashpoint>
+              <pos3f x="366.4818034088537" y="-10031.780488034885" z="1198.7011796306779" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-009" status="resolved">
+            <clashpoint>
+              <pos3f x="4451.179048649166" y="-11975.07994506294" z="3572.5859119231227" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-011-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3704.015816043559" y="-10644.200259266996" z="2842.951283249759" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-028" status="resolved">
+            <clashpoint>
+              <pos3f x="11070.750463430166" y="-1097.518738708146" z="546.3262930750058" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-034" status="resolved">
+            <clashpoint>
+              <pos3f x="5042.613876189122" y="-6540.8743328904875" z="3381.9310093266636" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-052-R5" status="new">
+            <clashpoint>
+              <pos3f x="-496.5586704450326" y="312.98299854225525" z="2790.125917550619" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-054" status="resolved">
+            <clashpoint>
+              <pos3f x="5747.450132106018" y="-11364.868039634346" z="3276.1742720517113" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-060" status="resolved">
+            <clashpoint>
+              <pos3f x="6020.444975779299" y="-11894.231328465852" z="2900.048476696375" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-068" status="active">
+            <clashpoint>
+              <pos3f x="5440.341195691113" y="-16819.543558281293" z="3578.17064878307" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-079" status="resolved">
+            <clashpoint>
+              <pos3f x="3148.952730796344" y="-9115.928074107112" z="3200.148436024115" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-089" status="resolved">
+            <clashpoint>
+              <pos3f x="7057.47918752934" y="-9335.482844204627" z="2797.7232358718043" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-090" status="resolved">
+            <clashpoint>
+              <pos3f x="5220.740858677205" y="-16347.825586757288" z="1494.6831965556767" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-094" status="resolved">
+            <clashpoint>
+              <pos3f x="3108.1706496666566" y="-5639.522541455152" z="3490.576861181406" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-096-R5" status="new">
+            <clashpoint>
+              <pos3f x="3369.041605944217" y="-12593.520778670667" z="2789.0301391665826" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-107" status="active">
+            <clashpoint>
+              <pos3f x="5710.194471584835" y="-7569.869534976035" z="3120.183215164922" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-113" status="resolved">
+            <clashpoint>
+              <pos3f x="3598.0622613417786" y="-4989.997273854873" z="2861.7492527681034" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-114" status="resolved">
+            <clashpoint>
+              <pos3f x="3668.8275823381455" y="-4855.534647483378" z="3043.6688117108715" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-129" status="resolved">
+            <clashpoint>
+              <pos3f x="6946.32126429586" y="-9637.85054138867" z="806.482285347392" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-139" status="active">
+            <clashpoint>
+              <pos3f x="862.0329882931965" y="-8144.788915420832" z="-258.3640888622708" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-148" status="resolved">
+            <clashpoint>
+              <pos3f x="5413.918033246851" y="-7467.551235779005" z="983.8821698431407" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-150" status="reviewed">
+            <clashpoint>
+              <pos3f x="1575.4640354767444" y="-3737.927368295718" z="5775.648295021933" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-151" status="active">
+            <clashpoint>
+              <pos3f x="4952.406219677487" y="-5632.217888503305" z="3446.0302617070593" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-152" status="resolved">
+            <clashpoint>
+              <pos3f x="3789.4169629582143" y="-12174.588403993544" z="1064.3054273655655" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-161-R5" status="new">
+            <clashpoint>
+              <pos3f x="3584.2126551990955" y="-6572.374452503257" z="2146.957442640719" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-167" status="resolved">
+            <clashpoint>
+              <pos3f x="3886.547944454919" y="-7244.829841637861" z="2854.0571533758434" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-171" status="active">
+            <clashpoint>
+              <pos3f x="2558.197342622152" y="-10513.784000083928" z="1248.4283804022948" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-186" status="active">
+            <clashpoint>
+              <pos3f x="713.4339500245524" y="-7239.271491246537" z="3611.8584984414397" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-192" status="resolved">
+            <clashpoint>
+              <pos3f x="1088.5955323039311" y="-8424.88600114152" z="-363.37116655624556" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-193" status="resolved">
+            <clashpoint>
+              <pos3f x="5511.428729447888" y="-8532.827855634758" z="3135.035879914722" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-201-R5" status="new">
+            <clashpoint>
+              <pos3f x="1180.0545627258912" y="-8120.21591778838" z="2453.0879166503737" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-202-R5" status="new">
+            <clashpoint>
+              <pos3f x="444.0794728362696" y="-6540.478107738722" z="2960.6274987387546" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-212" status="active">
+            <clashpoint>
+              <pos3f x="6055.446862007807" y="-9958.045035501857" z="2788.5645144975165" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-213" status="resolved">
+            <clashpoint>
+              <pos3f x="4557.217295350086" y="-10277.560567760342" z="-261.19913220984324" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-219-R5" status="new">
+            <clashpoint>
+              <pos3f x="3357.7668653550572" y="-14804.254536071327" z="2851.2910938990094" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-229" status="active">
+            <clashpoint>
+              <pos3f x="5884.013476979992" y="1624.5229881515058" z="3007.0394881223224" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-231" status="resolved">
+            <clashpoint>
+              <pos3f x="2877.269603829105" y="-8202.473107494621" z="234.26420705321652" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-247" status="resolved">
+            <clashpoint>
+              <pos3f x="1146.734805266391" y="-16403.81287603124" z="3606.9719133694853" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-253-R5" status="new">
+            <clashpoint>
+              <pos3f x="-1429.784243925731" y="-9865.390800294943" z="-1149.4850835950194" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-254" status="resolved">
+            <clashpoint>
+              <pos3f x="-1678.0675119554467" y="-14015.516482737625" z="2815.860338582765" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-257-R5" status="new">
+            <clashpoint>
+              <pos3f x="6530.849026103218" y="-11576.581600485973" z="4477.517945569673" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-269-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="2883.210085335184" y="-9532.133438128918" z="160.88112369800592" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-270" status="resolved">
+            <clashpoint>
+              <pos3f x="-755.8673820655683" y="-18512.96834944868" z="2911.2680688521405" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-274" status="resolved">
+            <clashpoint>
+              <pos3f x="7653.09870340298" y="-10291.743092464367" z="-365.3843950474005" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-278" status="resolved">
+            <clashpoint>
+              <pos3f x="3214.1163891950478" y="-5813.581034794648" z="3693.3602085066605" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-284" status="resolved">
+            <clashpoint>
+              <pos3f x="6338.6522010284125" y="-10086.688937443378" z="176.73717287202805" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-289-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="4495.19646207305" y="-12183.555218052037" z="2965.0808274482897" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-001" status="resolved">
+            <clashpoint>
+              <pos3f x="1179.4953393197343" y="-9702.129467357849" z="2786.6982129873604" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-002" status="active">
+            <clashpoint>
+              <pos3f x="7100.6074828917435" y="-13103.240227746352" z="5363.626949168125" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-003" status="resolved">
+            <clashpoint>
+              <pos3f x="8167.992302372517" y="-13614.594771808748" z="4789.896557924669" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-005" status="active">
+            <clashpoint>
+              <pos3f x="5691.989602970695" y="-10834.84790729669" z="3063.4574528191915" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-007" status="reviewed">
+            <clashpoint>
+              <pos3f x="7696.095867085947" y="-20399.971274657197" z="1587.490103508789" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-008" status="reviewed">
+            <clashpoint>
+              <pos3f x="2930.6380017882866" y="-8781.020958144894" z="2893.659357072078" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-009" status="active">
+            <clashpoint>
+              <pos3f x="3956.6567671193857" y="-4914.599530135533" z="306.29155172981393" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-010" status="active">
+            <clashpoint>
+              <pos3f x="4291.410534954839" y="-9928.335339855263" z="1101.37075051498" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-012" status="resolved">
+            <clashpoint>
+              <pos3f x="3729.900176588099" y="-12037.062483500302" z="397.55650358917785" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-013" status="reviewed">
+            <clashpoint>
+              <pos3f x="2237.669021697701" y="-10013.912802756837" z="3485.262655018791" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-015" status="resolved">
+            <clashpoint>
+              <pos3f x="3190.107347023033" y="-12985.054416391378" z="3017.8330688942115" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-016" status="resolved">
+            <clashpoint>
+              <pos3f x="1065.3321458146318" y="-10150.554928010919" z="2678.5925852766923" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-017" status="resolved">
+            <clashpoint>
+              <pos3f x="8236.773831455474" y="-11105.995210784467" z="2900.9776140308386" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-019" status="resolved">
+            <clashpoint>
+              <pos3f x="2694.8339629925176" y="-6669.084909763902" z="3271.5444288569283" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-021" status="resolved">
+            <clashpoint>
+              <pos3f x="2127.091428822224" y="-6769.173620234916" z="332.43373288481234" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-022" status="active">
+            <clashpoint>
+              <pos3f x="4788.439610729248" y="-2339.198486030694" z="5674.84387318262" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-023" status="resolved">
+            <clashpoint>
+              <pos3f x="1002.6111748578166" y="-7189.525294030062" z="2645.8819887305685" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-024" status="active">
+            <clashpoint>
+              <pos3f x="4535.364041458174" y="-8385.09137433495" z="2801.7315558401933" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-028" status="resolved">
+            <clashpoint>
+              <pos3f x="3530.151244646016" y="-13064.176928192875" z="2732.5344179392914" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-029" status="resolved">
+            <clashpoint>
+              <pos3f x="5874.406022765459" y="-6612.604749226898" z="2096.4756065896413" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-031" status="resolved">
+            <clashpoint>
+              <pos3f x="6648.0981701048195" y="-7731.202930119956" z="2382.256877005824" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-033" status="resolved">
+            <clashpoint>
+              <pos3f x="4036.170252940857" y="-6445.3257161604615" z="1637.9209758791371" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-037" status="resolved">
+            <clashpoint>
+              <pos3f x="4949.78341312868" y="-8899.910068204344" z="2984.2895529466027" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-038" status="active">
+            <clashpoint>
+              <pos3f x="4826.6436664880475" y="-12489.823362088715" z="3178.315266786278" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-040" status="reviewed">
+            <clashpoint>
+              <pos3f x="1750.8429948374096" y="-8012.312041441441" z="3126.10126679752" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-041" status="resolved">
+            <clashpoint>
+              <pos3f x="4333.6521855551" y="-9081.448053661366" z="1274.4911600622713" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-042" status="resolved">
+            <clashpoint>
+              <pos3f x="-1490.6329261838398" y="-11953.124177582717" z="2774.8243524203926" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-049" status="active">
+            <clashpoint>
+              <pos3f x="7800.464723097464" y="-7988.941181627373" z="4208.933545357339" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-053" status="resolved">
+            <clashpoint>
+              <pos3f x="3083.7243767254968" y="-7677.400721825359" z="1138.729563404413" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-055" status="resolved">
+            <clashpoint>
+              <pos3f x="-1277.486296283084" y="-2528.9279389372177" z="3579.225128449626" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-057" status="resolved">
+            <clashpoint>
+              <pos3f x="10124.307737261712" y="-5006.102344808388" z="3752.8381447233724" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-060" status="reviewed">
+            <clashpoint>
+              <pos3f x="292.56664089298465" y="-2774.1784464155053" z="83.78638352667548" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-061" status="resolved">
+            <clashpoint>
+              <pos3f x="5878.284556603593" y="-11338.14306201853" z="2379.3331582579813" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-062" status="resolved">
+            <clashpoint>
+              <pos3f x="1758.204009403331" y="-6046.948224934865" z="677.0569896420178" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-067" status="active">
+            <clashpoint>
+              <pos3f x="10671.486731171044" y="-6419.976294323029" z="93.86891965725358" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-068" status="active">
+            <clashpoint>
+              <pos3f x="10022.244456721473" y="-9889.091429857135" z="4325.564345570378" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-071" status="resolved">
+            <clashpoint>
+              <pos3f x="1095.4944296542694" y="-7097.229526610969" z="3055.332837887407" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-075" status="active">
+            <clashpoint>
+              <pos3f x="6999.863384269771" y="-4931.610921518895" z="3068.3597787676463" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-076" status="resolved">
+            <clashpoint>
+              <pos3f x="5558.0119727798865" y="-11036.735314921665" z="2862.7358029452553" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-078" status="resolved">
+            <clashpoint>
+              <pos3f x="2110.109007231777" y="-2455.2441018686973" z="99.34642509131481" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-080" status="active">
+            <clashpoint>
+              <pos3f x="6608.960404099833" y="-8653.428387172384" z="772.8538001915371" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-081" status="reviewed">
+            <clashpoint>
+              <pos3f x="5125.6921916755455" y="-9433.393936236562" z="504.4079278202156" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-082" status="resolved">
+            <clashpoint>
+              <pos3f x="3977.2266360065105" y="-6873.039430266555" z="2810.21303095894" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-084" status="resolved">
+            <clashpoint>
+              <pos3f x="6394.003643019519" y="-10916.858896517548" z="2572.8959727327274" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-086" status="resolved">
+            <clashpoint>
+              <pos3f x="4247.7358497475325" y="-10198.414098288604" z="2620.258320959887" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-087" status="reviewed">
+            <clashpoint>
+              <pos3f x="10033.466897833681" y="-8455.336574701167" z="4348.077307364543" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-088" status="resolved">
+            <clashpoint>
+              <pos3f x="6513.617679461908" y="-10400.881045922613" z="816.1944168351998" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-090" status="resolved">
+            <clashpoint>
+              <pos3f x="820.0135813230077" y="-9354.084093303918" z="477.24695118660213" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-091" status="resolved">
+            <clashpoint>
+              <pos3f x="1715.1010384485771" y="-6321.527605706552" z="3466.1667933079216" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-094" status="resolved">
+            <clashpoint>
+              <pos3f x="1579.4286515377376" y="-8608.317060766934" z="2871.5355607863494" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-096" status="active">
+            <clashpoint>
+              <pos3f x="5911.486624922435" y="-7726.825142115837" z="3163.626519168284" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-101" status="resolved">
+            <clashpoint>
+              <pos3f x="7546.858569205052" y="-9256.968690876014" z="3449.754419456214" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-109" status="reviewed">
+            <clashpoint>
+              <pos3f x="729.3178006187031" y="-12917.517693687623" z="3560.492942287512" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-110" status="reviewed">
+            <clashpoint>
+              <pos3f x="4045.471995417213" y="-10877.998902965632" z="375.0112595849977" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-113" status="resolved">
+            <clashpoint>
+              <pos3f x="6327.326874261856" y="-11720.412261188563" z="3949.8408792435775" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-116" status="active">
+            <clashpoint>
+              <pos3f x="2424.9741969003326" y="-12092.576524690472" z="-396.9363725712126" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-118" status="resolved">
+            <clashpoint>
+              <pos3f x="4852.764162654072" y="-8004.4891650431855" z="3600.7469385790746" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-120" status="resolved">
+            <clashpoint>
+              <pos3f x="5089.749584063321" y="-10332.47425837566" z="3432.025258295477" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-121" status="resolved">
+            <clashpoint>
+              <pos3f x="4247.517300783121" y="-11069.560291048072" z="2664.352859420903" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-123" status="resolved">
+            <clashpoint>
+              <pos3f x="7817.772680597792" y="-19247.791137466662" z="3135.7939521382177" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-124" status="active">
+            <clashpoint>
+              <pos3f x="6422.5335391059525" y="-6874.7946848103265" z="3534.262299270169" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-127" status="active">
+            <clashpoint>
+              <pos3f x="6108.769231155475" y="-6766.147000345293" z="3054.169588243288" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-133" status="resolved">
+            <clashpoint>
+              <pos3f x="1915.2233574934594" y="-8136.013983863427" z="427.8064819433587" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-136" status="resolved">
+            <clashpoint>
+              <pos3f x="2494.2908398631303" y="-4982.775392698694" z="2962.4041788849086" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-137" status="resolved">
+            <clashpoint>
+              <pos3f x="-1781.3681346873118" y="-1104.5174924317173" z="2570.4813008171504" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-139" status="resolved">
+            <clashpoint>
+              <pos3f x="4005.2885999316545" y="-8678.965605132384" z="486.730490784414" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-144" status="reviewed">
+            <clashpoint>
+              <pos3f x="2166.576954880126" y="-7876.058260841836" z="3731.9073374961945" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-145" status="resolved">
+            <clashpoint>
+              <pos3f x="5193.068473021561" y="-8282.17202557732" z="2420.4573448644715" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-146" status="resolved">
+            <clashpoint>
+              <pos3f x="2647.823697807077" y="-7578.416617779985" z="1204.1183544054898" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-148" status="active">
+            <clashpoint>
+              <pos3f x="5265.783392150208" y="-5362.181566980715" z="4011.8815813509414" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-149" status="active">
+            <clashpoint>
+              <pos3f x="6482.813550380354" y="-9350.324553427767" z="2664.2285087530777" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-150" status="resolved">
+            <clashpoint>
+              <pos3f x="2191.7789349150894" y="-6626.473071489958" z="2744.6785148793524" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-151" status="resolved">
+            <clashpoint>
+              <pos3f x="1397.022025410722" y="-6580.57502203705" z="1009.0681998549105" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-153" status="resolved">
+            <clashpoint>
+              <pos3f x="7616.663480164615" y="-11259.220569990837" z="3389.9146305882446" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-156" status="resolved">
+            <clashpoint>
+              <pos3f x="5550.78978209679" y="-7239.281928645157" z="2802.7032499130673" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-157" status="active">
+            <clashpoint>
+              <pos3f x="2454.759501656974" y="-8959.36133372869" z="3077.9364211083307" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-160" status="resolved">
+            <clashpoint>
+              <pos3f x="2459.7930858340383" y="-7218.380264542188" z="1088.66014085312" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-161" status="resolved">
+            <clashpoint>
+              <pos3f x="2684.295203403784" y="-7518.077055571041" z="-432.9677905117645" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-164" status="active">
+            <clashpoint>
+              <pos3f x="3939.161173107364" y="-7506.4221612980145" z="2446.7879163388457" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-166" status="resolved">
+            <clashpoint>
+              <pos3f x="7152.18665125165" y="-9567.615311891483" z="3202.3975584184673" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-167" status="resolved">
+            <clashpoint>
+              <pos3f x="5986.2034088897735" y="-9267.956729247446" z="3508.1870442639047" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-169" status="active">
+            <clashpoint>
+              <pos3f x="3504.7392970534515" y="-11747.118846413912" z="643.4800072243404" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-002" status="new">
+            <clashpoint>
+              <pos3f x="3952.51806432881" y="-11152.49016491251" z="1031.2872871751229" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-005" status="new">
+            <clashpoint>
+              <pos3f x="1851.4900008664167" y="-1119.7699337252316" z="282.5672919997118" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-008" status="new">
+            <clashpoint>
+              <pos3f x="8376.296252612567" y="-7395.819647911395" z="3060.7740253371394" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-009" status="new">
+            <clashpoint>
+              <pos3f x="3417.32879656486" y="-12532.318812297495" z="348.9106964990739" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-010" status="new">
+            <clashpoint>
+              <pos3f x="909.5805475737279" y="-2842.946754235886" z="2234.374016477101" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-013" status="new">
+            <clashpoint>
+              <pos3f x="3020.7638576296968" y="-6463.9418433253895" z="480.7385159360016" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-019" status="new">
+            <clashpoint>
+              <pos3f x="2064.839098510795" y="-9599.198656921657" z="2475.796108812923" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-020" status="new">
+            <clashpoint>
+              <pos3f x="2727.450548769866" y="-11090.173131145171" z="402.53658637413463" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-021" status="new">
+            <clashpoint>
+              <pos3f x="5768.44137636537" y="-8667.629494743542" z="886.7094324242573" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-023" status="new">
+            <clashpoint>
+              <pos3f x="4206.10200889718" y="-7775.403936624051" z="3604.611549212043" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-024" status="new">
+            <clashpoint>
+              <pos3f x="4779.552137187042" y="-11557.81278146666" z="2911.1774172766673" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-026" status="new">
+            <clashpoint>
+              <pos3f x="3301.455549638831" y="-12371.608786593517" z="3228.7109444312678" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-027" status="new">
+            <clashpoint>
+              <pos3f x="1835.997476007355" y="-9184.0354250359" z="1842.987753534408" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-028" status="new">
+            <clashpoint>
+              <pos3f x="2753.850823230541" y="-6437.318319614836" z="2925.6845464000257" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-029" status="new">
+            <clashpoint>
+              <pos3f x="4234.144066059449" y="-6108.493139731551" z="2374.0388351678607" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-031" status="new">
+            <clashpoint>
+              <pos3f x="1397.8405549400923" y="-6771.704062967817" z="728.1579960678396" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-034" status="new">
+            <clashpoint>
+              <pos3f x="2957.832041617907" y="-12102.504737156112" z="2481.678543940489" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-036" status="new">
+            <clashpoint>
+              <pos3f x="8196.132163636861" y="-3832.7751050750467" z="368.47400525838736" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-038" status="new">
+            <clashpoint>
+              <pos3f x="4559.521424305502" y="-9056.307836427399" z="3139.158285806632" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-039" status="new">
+            <clashpoint>
+              <pos3f x="4528.52311987943" y="-6744.216505233711" z="3016.7711480318185" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-042" status="new">
+            <clashpoint>
+              <pos3f x="-816.4108990219743" y="-9423.358328012542" z="3105.0421942995004" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-043" status="new">
+            <clashpoint>
+              <pos3f x="5961.184670719576" y="-6296.618566231879" z="764.9742339920072" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-045" status="new">
+            <clashpoint>
+              <pos3f x="6476.145058223531" y="-8116.973851610918" z="1036.6438306511177" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-050" status="new">
+            <clashpoint>
+              <pos3f x="6990.5788994902405" y="-6883.484989427887" z="605.8345232648171" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-051" status="new">
+            <clashpoint>
+              <pos3f x="1052.5612826374281" y="-10116.406584789696" z="3330.4087829674513" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-058" status="new">
+            <clashpoint>
+              <pos3f x="6093.039186706699" y="-8524.184590223293" z="2849.293852884232" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-066" status="new">
+            <clashpoint>
+              <pos3f x="2477.381566305311" y="-5318.7568844267535" z="5965.509974138989" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-068" status="new">
+            <clashpoint>
+              <pos3f x="3850.793942120359" y="-5826.542055473125" z="3179.7088614747972" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-069" status="new">
+            <clashpoint>
+              <pos3f x="5396.776592052789" y="-6812.243782580932" z="1278.4938128919398" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-072" status="new">
+            <clashpoint>
+              <pos3f x="3046.1188468403566" y="-8740.415597976975" z="3638.924967847472" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-076" status="new">
+            <clashpoint>
+              <pos3f x="4422.613452174738" y="-11198.94653524418" z="940.3855242312101" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-080" status="new">
+            <clashpoint>
+              <pos3f x="3900.464203583885" y="-9657.736764653404" z="-285.1369757866589" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-081" status="new">
+            <clashpoint>
+              <pos3f x="6288.767317978498" y="-6938.991060956082" z="3185.2478420658904" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-083" status="new">
+            <clashpoint>
+              <pos3f x="2728.4402323894033" y="-6663.374902194889" z="1086.3512684993452" />
+            </clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="Electrical-Mechanical">
+        <clashresults>
+          <clashresult name="Clash-cec6f4432f8a" status="active">
+            <clashpoint>
+              <pos3f x="5348.2" y="-7193.5" z="3322.2" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-756b5a8cba04" status="active">
+            <clashpoint>
+              <pos3f x="2160.8" y="-4815.2" z="5649.2" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-e0e9bb6d86d9" status="active">
+            <clashpoint>
+              <pos3f x="6529.3" y="-4853.1" z="5649.2" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-36fb4b54a2fa-R3" status="active">
+            <clashpoint>
+              <pos3f x="3735.4728567297084" y="-5649.646778200597" z="2771.3802503935194" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-80df9bbe9b92-R2" status="active">
+            <clashpoint>
+              <pos3f x="7285.955987677208" y="-7338.701550955085" z="3549.980843155969" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-57a23f35ef82-R2-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="2259.475887573324" y="-10856.306703610706" z="376.6927148214778" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f5d6fa29d078-R3" status="resolved">
+            <clashpoint>
+              <pos3f x="10122.02543570031" y="-6402.083884777411" z="1100.7003466537365" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-e9fdd6adca46-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="6141.446835997179" y="-13318.541615113762" z="5377.212160620533" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-0ee437690a15-R2" status="active">
+            <clashpoint>
+              <pos3f x="8172.348532011709" y="-2518.245945807169" z="5654.396384016688" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-edfb6099698a" status="resolved">
+            <clashpoint>
+              <pos3f x="7807.9" y="-6150.6" z="4320.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-a3019a78bad0" status="active">
+            <clashpoint>
+              <pos3f x="6397.9" y="-392.4" z="3558.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-9aa42c927751" status="resolved">
+            <clashpoint>
+              <pos3f x="1315.5" y="-6150.6" z="3558.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-02c609034929" status="active">
+            <clashpoint>
+              <pos3f x="8407.6" y="-14353.3" z="3558.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-fe507836c2bc" status="resolved">
+            <clashpoint>
+              <pos3f x="8407.6" y="-3812.5" z="458.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-e5a4f840e5cb" status="active">
+            <clashpoint>
+              <pos3f x="392.4" y="-3844.4" z="458.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-8936002e6364" status="resolved">
+            <clashpoint>
+              <pos3f x="8407.6" y="-13585.4" z="458.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f1ab6143f223" status="active">
+            <clashpoint>
+              <pos3f x="4010.1" y="-7454.6" z="458.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-322701f4e6d0-R2" status="active">
+            <clashpoint>
+              <pos3f x="3560.0624127007804" y="-10959.146209731025" z="670.2975144072414" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-2906079daf19-R2" status="active">
+            <clashpoint>
+              <pos3f x="2014.8845500493558" y="-5762.866821777456" z="1734.868637619038" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-061" status="active">
+            <clashpoint>
+              <pos3f x="8895.405631167974" y="-13989.41835877508" z="5221.544258784654" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-135" status="active">
+            <clashpoint>
+              <pos3f x="10077.385119206787" y="-9103.186598977289" z="3337.780744762782" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-190" status="active">
+            <clashpoint>
+              <pos3f x="1087.00573992937" y="-6116.734908723472" z="1619.5015034151543" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-231" status="resolved">
+            <clashpoint>
+              <pos3f x="8002.88902967311" y="-11886.66114042062" z="994.0355962642855" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-004" status="active">
+            <clashpoint>
+              <pos3f x="6819.111789822179" y="-4504.487034056376" z="2026.5722112981366" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-031" status="resolved">
+            <clashpoint>
+              <pos3f x="5256.678764577171" y="-6346.02302877614" z="367.924168274159" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-033" status="resolved">
+            <clashpoint>
+              <pos3f x="-385.3671200738837" y="-18771.381139794605" z="61.79259798166606" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-132-R4" status="active">
+            <clashpoint>
+              <pos3f x="6061.33251762464" y="-14106.12588060195" z="1102.5168778887119" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-139" status="resolved">
+            <clashpoint>
+              <pos3f x="5083.690657560751" y="-4637.723257761877" z="923.254074768253" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-038" status="resolved">
+            <clashpoint>
+              <pos3f x="5724.866550756695" y="-7925.976121144184" z="3979.6156024893226" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-083" status="active">
+            <clashpoint>
+              <pos3f x="3710.220051958926" y="-6318.341639063541" z="3619.648758538715" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-106" status="active">
+            <clashpoint>
+              <pos3f x="218.24078966849265" y="-3696.092954915283" z="1419.8371728470422" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-118" status="resolved">
+            <clashpoint>
+              <pos3f x="2411.3627856579683" y="-10654.607311968939" z="1439.4742555208609" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-127" status="reviewed">
+            <clashpoint>
+              <pos3f x="3949.668111862289" y="-16005.77108034804" z="5839.229374489653" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-131" status="resolved">
+            <clashpoint>
+              <pos3f x="4145.165974144529" y="-8438.256312492702" z="3653.611756197969" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-210" status="resolved">
+            <clashpoint>
+              <pos3f x="2025.2811266901958" y="1334.3175325572665" z="2118.222572913287" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-250" status="resolved">
+            <clashpoint>
+              <pos3f x="6563.9458100077945" y="-12246.640569884934" z="1852.805180598581" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-256" status="resolved">
+            <clashpoint>
+              <pos3f x="6346.110486891058" y="-4636.011355415934" z="927.4610138084106" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-014" status="reviewed">
+            <clashpoint>
+              <pos3f x="3046.439925574281" y="-7666.68874764297" z="4582.261732236648" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-030" status="active">
+            <clashpoint>
+              <pos3f x="6249.4142132934285" y="-7817.813003023315" z="1196.686317209008" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-045" status="reviewed">
+            <clashpoint>
+              <pos3f x="3513.127935528869" y="-5585.305806683596" z="3035.4872780884725" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-054" status="reviewed">
+            <clashpoint>
+              <pos3f x="5324.708584123475" y="-11563.828855316358" z="3255.211820175817" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-066" status="resolved">
+            <clashpoint>
+              <pos3f x="2672.703691484714" y="-17049.665606954382" z="5188.351634272009" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-077" status="active">
+            <clashpoint>
+              <pos3f x="5013.990092872606" y="-5516.025350479372" z="3943.0752601043264" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-085" status="resolved">
+            <clashpoint>
+              <pos3f x="3732.0292016868066" y="-11339.394253226616" z="3281.2187495329895" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-089" status="active">
+            <clashpoint>
+              <pos3f x="6694.690178887244" y="-10914.330717416728" z="4241.610781212685" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-125" status="active">
+            <clashpoint>
+              <pos3f x="5660.015130157076" y="-2140.328551521168" z="3761.168825673541" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-132" status="active">
+            <clashpoint>
+              <pos3f x="2522.354256758726" y="-8398.261124239096" z="2138.1601006143633" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-147" status="resolved">
+            <clashpoint>
+              <pos3f x="6314.90026745713" y="-11819.120348574375" z="2851.574432190454" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-004" status="new">
+            <clashpoint>
+              <pos3f x="2464.1317834314727" y="-8020.348945282949" z="3294.458392981292" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-012" status="new">
+            <clashpoint>
+              <pos3f x="1787.12939593875" y="-2738.097075252201" z="364.35203533681664" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-022" status="new">
+            <clashpoint>
+              <pos3f x="2444.4296541565786" y="-5093.747060583678" z="3622.2879839428997" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-046" status="new">
+            <clashpoint>
+              <pos3f x="4239.989134565101" y="-10614.953971703246" z="4383.5213758357" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-070" status="new">
+            <clashpoint>
+              <pos3f x="10351.132374772402" y="-12115.77339847148" z="3772.4673581581774" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-077" status="new">
+            <clashpoint>
+              <pos3f x="1910.0750212845874" y="-12996.93117964448" z="1149.030885148793" />
+            </clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="Plumbing-Mechanical">
+        <clashresults>
+          <clashresult name="Clash-5718ad0aadd4-R2-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="6597.070275712015" y="-11762.944650221889" z="4052.2912172012816" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-76be3ccdccb9" status="resolved">
+            <clashpoint>
+              <pos3f x="5833.9" y="-7257.1" z="992.5" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-1f3db9addc9d-R5" status="new">
+            <clashpoint>
+              <pos3f x="5351.964098028577" y="-10806.479796535645" z="-723.1896731523061" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-9a2e39a42dda-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="4683.414249725856" y="-8383.085831235296" z="-530.6890033922913" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-9fda0dfd0ef4-R2-R3" status="resolved">
+            <clashpoint>
+              <pos3f x="6048.487056900731" y="-7507.637899741226" z="2697.0800270274867" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-3b990d1f327b" status="resolved">
+            <clashpoint>
+              <pos3f x="4647.5" y="-9823.3" z="-460.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-0978e4be9e39" status="reviewed">
+            <clashpoint>
+              <pos3f x="4145.5" y="-9695.9" z="3000.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-551fe0d5247d" status="resolved">
+            <clashpoint>
+              <pos3f x="4090.3" y="-9567.3" z="3100.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-82f3022b2efd-R2-R4" status="active">
+            <clashpoint>
+              <pos3f x="4243.5434287568705" y="-6279.27397159534" z="2827.0148512258093" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-03288baf8a00" status="active">
+            <clashpoint>
+              <pos3f x="4647.5" y="-8146.6" z="3000.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-fd5a6fd5e948-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3378.9972970416948" y="-12213.332285720744" z="2714.4578334682124" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-088be3775d7d-R2-R5" status="new">
+            <clashpoint>
+              <pos3f x="3611.0825321911752" y="-7010.852814019441" z="2652.4695245886005" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-1f0c36626a3c" status="reviewed">
+            <clashpoint>
+              <pos3f x="4759.7" y="-8170.4" z="2730.8" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f8884cb2c899-R2-R4-R5" status="new">
+            <clashpoint>
+              <pos3f x="414.2023544892543" y="-12007.47764359302" z="-824.1375562775098" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-b168c8c97aa0-R2-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="4401.784428073639" y="-12726.718422370013" z="-966.5726707933752" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f5931ab5f1ef-R4-R5" status="new">
+            <clashpoint>
+              <pos3f x="-137.03256470768952" y="-8412.528114949459" z="-631.8192196184327" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-4f593ce97574-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="3640.8783470934745" y="-13112.515302030988" z="2925.3920329704774" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-fde282aaaecc-R3" status="active">
+            <clashpoint>
+              <pos3f x="6740.38650064666" y="-9063.556761186363" z="3219.1507967934454" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-549c3a57517d" status="resolved">
+            <clashpoint>
+              <pos3f x="4647.5" y="-8432.4" z="819.8" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-57a496913f45-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="2776.828821362775" y="-9199.162997542679" z="481.98427873638076" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-07e285ee03f4-R2-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="3761.4891641382183" y="-10261.511845185216" z="821.2976439179986" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-153928daed62" status="resolved">
+            <clashpoint>
+              <pos3f x="4030.0" y="-9340.3" z="821.6" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-ff5d37bd628f" status="resolved">
+            <clashpoint>
+              <pos3f x="3641.5" y="-8004.0" z="-0.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-e8054ecc7ed3" status="resolved">
+            <clashpoint>
+              <pos3f x="3957.0" y="-8995.1" z="2733.5" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f59af977f1ee" status="resolved">
+            <clashpoint>
+              <pos3f x="4707.3" y="-8515.8" z="-572.1" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-2a1c39281399-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="2987.1682695578147" y="-11403.35121257695" z="-707.1314262484701" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-5f43e4f65574-R2-R3-R5" status="new">
+            <clashpoint>
+              <pos3f x="6071.13893610511" y="-9472.893377948169" z="2940.7370867435793" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-eecb3b1367bd" status="resolved">
+            <clashpoint>
+              <pos3f x="5111.0" y="-9666.0" z="2723.2" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-41daa5d9ce6c-R3" status="active">
+            <clashpoint>
+              <pos3f x="5053.940976113245" y="-10003.669392968717" z="2802.975409301272" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-242b05c52585-R2-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="5246.07205653515" y="-13958.626948092802" z="2788.5784965029275" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f6647bd26d5d" status="resolved">
+            <clashpoint>
+              <pos3f x="4797.8" y="-8871.2" z="3110.3" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-128126d91421-R2" status="resolved">
+            <clashpoint>
+              <pos3f x="2651.8552347347377" y="-9998.592276338299" z="3097.1837901971635" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-d8dbafe50d17-R3-R4-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3218.3011701726773" y="-7374.385404057613" z="406.0825228896552" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-dedab8dfbc6b" status="active">
+            <clashpoint>
+              <pos3f x="5901.5" y="-7506.3" z="600.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f486817b3b11" status="active">
+            <clashpoint>
+              <pos3f x="4090.3" y="-10594.9" z="4661.1" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-f8403ce19aa9-R2" status="resolved">
+            <clashpoint>
+              <pos3f x="6454.015424270614" y="-5491.718310260807" z="2772.450592429901" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-b0fffd0c56c7-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="4382.663517462402" y="-6416.9728445797555" z="-670.9897270244333" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-a0c3b7dbb4f1-R2-R4" status="active">
+            <clashpoint>
+              <pos3f x="5290.97167516752" y="-11336.92864513591" z="1489.4557581493036" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-7322805b5e5b-R3" status="active">
+            <clashpoint>
+              <pos3f x="4570.624928895635" y="-12488.812177971138" z="581.3135983695937" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-031" status="reviewed">
+            <clashpoint>
+              <pos3f x="5675.072126875872" y="-12002.870477721492" z="-40.774052325186176" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-067-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="3776.9529902662334" y="-5923.257302014913" z="223.68915496439223" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-095" status="resolved">
+            <clashpoint>
+              <pos3f x="4564.105763734387" y="-9348.064346631727" z="-342.20470680534135" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-096-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="4354.008885210806" y="-7637.900686447041" z="3792.0236995902046" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-155" status="active">
+            <clashpoint>
+              <pos3f x="2352.0064119948784" y="-10535.56384664949" z="-401.27755724299254" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-201" status="resolved">
+            <clashpoint>
+              <pos3f x="2888.0967290040335" y="-5608.809175805076" z="1328.7429317070173" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-224" status="reviewed">
+            <clashpoint>
+              <pos3f x="2014.7625782632167" y="-10883.278457493852" z="4107.414827544295" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R1-229-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="3620.740124763277" y="-7671.553879854978" z="2580.102315013854" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-005-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="6925.993894212135" y="-11048.225942232973" z="-639.1281068889252" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-011-R5" status="new">
+            <clashpoint>
+              <pos3f x="3908.903531478385" y="-12347.752648431664" z="733.9854367672449" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-027" status="resolved">
+            <clashpoint>
+              <pos3f x="2632.2851043531873" y="-10069.566406440976" z="2291.0493803950817" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-052" status="active">
+            <clashpoint>
+              <pos3f x="-805.0989094304132" y="-9431.275353786954" z="2443.120274417669" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-053-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="3595.59646258406" y="-10573.779307854647" z="571.6941533523313" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-084" status="active">
+            <clashpoint>
+              <pos3f x="958.4344295160413" y="-8751.414260630458" z="3581.9650636486213" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-085" status="resolved">
+            <clashpoint>
+              <pos3f x="6668.263131915518" y="-8471.786815246607" z="-678.6261927288037" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-088" status="active">
+            <clashpoint>
+              <pos3f x="221.80213595879422" y="-11668.748249523273" z="2525.5938992615493" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-110" status="active">
+            <clashpoint>
+              <pos3f x="4933.869857719676" y="-11136.250634366721" z="-834.3502012933152" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-118" status="resolved">
+            <clashpoint>
+              <pos3f x="4030.7603552562714" y="-9318.116945686379" z="3003.38745731022" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-119" status="active">
+            <clashpoint>
+              <pos3f x="7836.48456389469" y="-10028.689693529384" z="2818.0291264724206" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-122-R4" status="active">
+            <clashpoint>
+              <pos3f x="6570.231988748447" y="-10453.557544467294" z="-744.3583476388301" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-123-R5" status="new">
+            <clashpoint>
+              <pos3f x="3038.8826182397142" y="-8933.187364857728" z="-1034.5377644802284" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-125" status="active">
+            <clashpoint>
+              <pos3f x="959.70098923361" y="-7246.849359783317" z="2898.47207161011" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-129-R5" status="new">
+            <clashpoint>
+              <pos3f x="964.6809555187701" y="-11265.06980517728" z="-194.17845708262575" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-137" status="active">
+            <clashpoint>
+              <pos3f x="8120.185219389208" y="-8098.094759822145" z="1266.8307054990755" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-145" status="resolved">
+            <clashpoint>
+              <pos3f x="8097.768981223522" y="-8206.439940819488" z="-751.5445411472991" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-149-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3197.4923787682155" y="-12896.653606429145" z="2589.842638298335" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-150" status="resolved">
+            <clashpoint>
+              <pos3f x="4047.9187269811882" y="-10564.57882124405" z="1600.957567142454" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-153-R4-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3506.222759021934" y="-8324.228017140633" z="2631.7103489562933" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-181-R4" status="resolved">
+            <clashpoint>
+              <pos3f x="3788.5213269957385" y="-4913.506331590786" z="2895.397845427213" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-196" status="reviewed">
+            <clashpoint>
+              <pos3f x="6191.654173336558" y="-11778.18932894137" z="-343.62968633129015" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-218-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="3867.379013681518" y="-8183.824874645154" z="517.8330769008737" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-243" status="active">
+            <clashpoint>
+              <pos3f x="4868.146649233586" y="-6592.7658601266385" z="946.0196009069916" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-252" status="resolved">
+            <clashpoint>
+              <pos3f x="5814.882629420164" y="-5876.0468395948865" z="-268.54464589866075" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-256" status="reviewed">
+            <clashpoint>
+              <pos3f x="5629.5138996868245" y="-13090.610731631325" z="2956.761061984811" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-273-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="4529.369690874293" y="-11047.821419984859" z="-30.354252232187264" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-285" status="resolved">
+            <clashpoint>
+              <pos3f x="1410.0534358383147" y="-9197.774522645832" z="494.62883791078053" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-304-R4" status="active">
+            <clashpoint>
+              <pos3f x="8143.088154720669" y="-12536.483699193628" z="3283.6532975975097" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-314" status="resolved">
+            <clashpoint>
+              <pos3f x="3758.56339520593" y="-6395.17748009067" z="905.1836069372165" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-316" status="active">
+            <clashpoint>
+              <pos3f x="4914.1763546629245" y="-9229.042428490291" z="-851.9208237799395" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-317" status="resolved">
+            <clashpoint>
+              <pos3f x="3967.308149984865" y="-11913.631358146933" z="301.7047280052051" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-318-R5" status="new">
+            <clashpoint>
+              <pos3f x="6656.665820864307" y="-4841.495908348373" z="-965.1789272980318" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-321-R5" status="new">
+            <clashpoint>
+              <pos3f x="6995.035365823584" y="-8075.070427408142" z="445.51238234563596" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-322" status="resolved">
+            <clashpoint>
+              <pos3f x="5426.631745402834" y="-9378.27138555336" z="340.68027161425596" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-324-R4" status="reviewed">
+            <clashpoint>
+              <pos3f x="2545.5423984186" y="-10084.116044688031" z="-557.9753369933027" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R2-340" status="resolved">
+            <clashpoint>
+              <pos3f x="2796.750607906236" y="-8712.997290110046" z="3398.4526040471756" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-001" status="resolved">
+            <clashpoint>
+              <pos3f x="7080.931949624084" y="-7422.337262638251" z="3276.4112141356136" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-010" status="resolved">
+            <clashpoint>
+              <pos3f x="4274.3858741211425" y="-10067.984936966737" z="2908.597171139349" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-013" status="active">
+            <clashpoint>
+              <pos3f x="6696.638212768336" y="-9948.000520820662" z="-838.8734149576568" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-027" status="resolved">
+            <clashpoint>
+              <pos3f x="4315.395768116985" y="-12228.45014121868" z="-142.63026464298105" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-029" status="resolved">
+            <clashpoint>
+              <pos3f x="6647.146854251602" y="-11278.655342992612" z="1002.939384348926" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-037" status="resolved">
+            <clashpoint>
+              <pos3f x="5702.852721904844" y="-8570.520959116946" z="3607.8347622685287" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-039" status="resolved">
+            <clashpoint>
+              <pos3f x="4848.78047399177" y="-11740.066324060517" z="3106.933246993373" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-042" status="resolved">
+            <clashpoint>
+              <pos3f x="5760.1710369485045" y="-8207.829576576236" z="3124.6652280617345" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-050" status="resolved">
+            <clashpoint>
+              <pos3f x="3858.762640410259" y="-11616.298739221162" z="-887.1603391769149" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-056-R5" status="new">
+            <clashpoint>
+              <pos3f x="4381.661428294253" y="-10307.63318111132" z="2837.8196940968296" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-058-R5" status="new">
+            <clashpoint>
+              <pos3f x="-106.54659500074786" y="-11642.177280166736" z="3227.462990201802" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-061" status="active">
+            <clashpoint>
+              <pos3f x="5068.2338582191605" y="-13212.271416949014" z="744.1176603101364" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-062" status="active">
+            <clashpoint>
+              <pos3f x="1848.8142703154444" y="-6625.368965561188" z="-941.4640612726769" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-071" status="resolved">
+            <clashpoint>
+              <pos3f x="7304.87589202071" y="-7051.352183644667" z="2600.541624079995" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-072" status="active">
+            <clashpoint>
+              <pos3f x="2203.466509114986" y="-6503.1928999677775" z="4344.371144336897" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-073" status="resolved">
+            <clashpoint>
+              <pos3f x="5339.989702415083" y="-7969.251778587616" z="2691.4668225956607" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-075" status="resolved">
+            <clashpoint>
+              <pos3f x="5383.05147928278" y="-12664.856186855366" z="-143.71838586824197" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-080" status="active">
+            <clashpoint>
+              <pos3f x="1080.1350208433046" y="-6304.013377517451" z="3565.9256854806167" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-081" status="resolved">
+            <clashpoint>
+              <pos3f x="6748.3626149285255" y="-9765.725160040392" z="3731.256561101824" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-082" status="active">
+            <clashpoint>
+              <pos3f x="6358.745520960913" y="-9523.653729871965" z="1097.2288046712192" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-086" status="active">
+            <clashpoint>
+              <pos3f x="5752.946644942481" y="-5680.782381507797" z="6555.702457071027" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-088" status="resolved">
+            <clashpoint>
+              <pos3f x="4047.107517575032" y="-8279.572236358965" z="-356.58019391713697" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-100" status="active">
+            <clashpoint>
+              <pos3f x="6576.083125839069" y="-11482.808302663616" z="1015.004500284044" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-104" status="resolved">
+            <clashpoint>
+              <pos3f x="2631.2345770890997" y="-8719.273719794799" z="-230.813466424853" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-109" status="resolved">
+            <clashpoint>
+              <pos3f x="6738.722720487426" y="-10088.171663667545" z="76.68021543233147" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-116" status="resolved">
+            <clashpoint>
+              <pos3f x="3791.566372748744" y="-5674.426433811141" z="-947.1243243492495" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-128" status="resolved">
+            <clashpoint>
+              <pos3f x="2389.2049295814722" y="-9454.995097067515" z="2626.056506765542" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-130" status="resolved">
+            <clashpoint>
+              <pos3f x="5799.823640360702" y="-11953.231837611967" z="259.5086510685165" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-134" status="reviewed">
+            <clashpoint>
+              <pos3f x="5829.848109752634" y="-10753.394336659852" z="-1031.3953941125724" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-136" status="reviewed">
+            <clashpoint>
+              <pos3f x="7441.221303224967" y="-12028.410671002031" z="-930.4784155176322" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-137" status="resolved">
+            <clashpoint>
+              <pos3f x="4218.339000176098" y="-6649.65697214455" z="-135.7521961070745" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-155" status="resolved">
+            <clashpoint>
+              <pos3f x="3816.330851635815" y="-7251.430155655097" z="3116.2663022243855" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-158" status="resolved">
+            <clashpoint>
+              <pos3f x="4509.68566520561" y="-6677.14080704479" z="3102.4037528311314" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-166" status="active">
+            <clashpoint>
+              <pos3f x="1188.6152026712534" y="-11121.829238177133" z="-259.5759624433874" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-170" status="resolved">
+            <clashpoint>
+              <pos3f x="3990.852445826384" y="-11641.519979685476" z="401.9160076737594" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-175-R5" status="new">
+            <clashpoint>
+              <pos3f x="552.5212863541219" y="-4396.013117452389" z="573.038241715677" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-187" status="resolved">
+            <clashpoint>
+              <pos3f x="5296.360816365786" y="-10591.901490555669" z="2510.2078815782534" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-189" status="active">
+            <clashpoint>
+              <pos3f x="2909.5458753351354" y="-12659.553979221066" z="1037.1046179115333" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-199-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="5200.441696176537" y="-7326.446645203677" z="3467.7293319444993" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-206" status="reviewed">
+            <clashpoint>
+              <pos3f x="6460.688584258008" y="-5098.765979282324" z="-265.31595276717394" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-208" status="resolved">
+            <clashpoint>
+              <pos3f x="2555.1072887015134" y="-8639.89266425394" z="108.67166320765506" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-214" status="resolved">
+            <clashpoint>
+              <pos3f x="3925.7728900108405" y="-10635.607965855028" z="2629.4757712372343" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-217" status="resolved">
+            <clashpoint>
+              <pos3f x="5052.587575905565" y="-7076.4890818142" z="3338.8439800107676" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-218" status="active">
+            <clashpoint>
+              <pos3f x="2156.331569645986" y="-10644.431534104568" z="-423.69386561434294" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-221" status="reviewed">
+            <clashpoint>
+              <pos3f x="6438.495507858072" y="-5876.0682303261165" z="738.5051561680725" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-226" status="resolved">
+            <clashpoint>
+              <pos3f x="7551.94989414793" y="-9163.84604478344" z="2621.2332989537003" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-235" status="resolved">
+            <clashpoint>
+              <pos3f x="7606.536645479575" y="-8391.044344825103" z="3062.129165218667" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-236" status="resolved">
+            <clashpoint>
+              <pos3f x="5096.406017073458" y="-5538.930768863276" z="-799.7454867048007" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-242-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3184.5591132688187" y="-10276.53186286395" z="-93.33797166536908" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-243-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="3848.736950609593" y="-12844.15665416391" z="-375.96385818952695" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-249" status="active">
+            <clashpoint>
+              <pos3f x="6606.768099311468" y="-9388.215438403866" z="2916.7348868111585" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-251" status="active">
+            <clashpoint>
+              <pos3f x="2998.1643058621357" y="-6497.680660496753" z="2726.005473019554" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-259-R5" status="resolved">
+            <clashpoint>
+              <pos3f x="6109.352067869463" y="-8111.597084137954" z="3459.1058813417408" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-263" status="resolved">
+            <clashpoint>
+              <pos3f x="4261.548158373162" y="-7677.7885669866" z="2906.7376344524346" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-279" status="active">
+            <clashpoint>
+              <pos3f x="6771.581957908778" y="-7049.458598991905" z="1012.9855142981459" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-285" status="resolved">
+            <clashpoint>
+              <pos3f x="2229.9456600699978" y="-10246.2515784386" z="2607.7584222968103" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-000" status="active">
+            <clashpoint>
+              <pos3f x="6982.230807196529" y="-8857.099855196311" z="3047.6837542083886" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-004" status="active">
+            <clashpoint>
+              <pos3f x="7081.338271314455" y="-5679.5209109132775" z="742.8180919465447" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-006" status="reviewed">
+            <clashpoint>
+              <pos3f x="5636.560392205332" y="-9314.08812439302" z="3481.3078527092666" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-011" status="reviewed">
+            <clashpoint>
+              <pos3f x="2083.7946223261547" y="-11155.089230664747" z="2658.770368329967" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-018" status="resolved">
+            <clashpoint>
+              <pos3f x="6365.0703334645805" y="-11663.596652313856" z="3587.454288143323" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-020" status="active">
+            <clashpoint>
+              <pos3f x="4387.630867354219" y="-7377.868217625021" z="3094.697644373706" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-025" status="reviewed">
+            <clashpoint>
+              <pos3f x="2007.8230824652737" y="-6725.909909634489" z="3484.6261026735674" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-026" status="resolved">
+            <clashpoint>
+              <pos3f x="6456.536549680509" y="-9978.271512888688" z="3481.294821804067" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-027" status="reviewed">
+            <clashpoint>
+              <pos3f x="5010.157451013729" y="-8613.86591703135" z="1444.0558548944018" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-032" status="active">
+            <clashpoint>
+              <pos3f x="3152.3908386007906" y="-12079.920864833872" z="-292.9517541928293" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-034" status="reviewed">
+            <clashpoint>
+              <pos3f x="5346.864233815511" y="-7399.956871676364" z="3187.489623314008" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-035" status="resolved">
+            <clashpoint>
+              <pos3f x="6304.216754804764" y="-7580.846766184379" z="3067.948258757227" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-036" status="active">
+            <clashpoint>
+              <pos3f x="2342.0017329969396" y="-11029.257755446815" z="3290.2594157456288" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-039" status="resolved">
+            <clashpoint>
+              <pos3f x="4892.759582143015" y="-9666.116309899946" z="3081.121774691418" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-043" status="active">
+            <clashpoint>
+              <pos3f x="3319.3184220244643" y="-9581.91207073083" z="-92.86841682880674" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-044" status="active">
+            <clashpoint>
+              <pos3f x="1042.8669437794597" y="-10624.201374739476" z="-800.5068370556111" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-046" status="resolved">
+            <clashpoint>
+              <pos3f x="7431.552588919831" y="-11795.684414571022" z="-135.75949339910107" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-047" status="reviewed">
+            <clashpoint>
+              <pos3f x="4662.381150659237" y="-6413.8479044088335" z="2915.051773781067" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-048" status="active">
+            <clashpoint>
+              <pos3f x="5268.0101416599755" y="-7135.183802920063" z="3005.715933906234" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-050" status="resolved">
+            <clashpoint>
+              <pos3f x="5800.741561578471" y="-11067.656144349581" z="2808.030661050556" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-051" status="active">
+            <clashpoint>
+              <pos3f x="1702.2650083798685" y="-8475.914876551726" z="4326.642745131185" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-052" status="reviewed">
+            <clashpoint>
+              <pos3f x="5272.188747896305" y="-5167.581731980807" z="3118.52190708844" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-056" status="active">
+            <clashpoint>
+              <pos3f x="5618.890447016526" y="-8672.334102297365" z="3542.869857976889" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-058" status="resolved">
+            <clashpoint>
+              <pos3f x="4381.761539630705" y="-10108.51165577081" z="436.95354974685904" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-059" status="resolved">
+            <clashpoint>
+              <pos3f x="7079.476731683385" y="-8800.06469529457" z="3002.4906478254875" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-063" status="resolved">
+            <clashpoint>
+              <pos3f x="5672.204015282217" y="-6519.358271995954" z="3164.361755056193" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-064" status="resolved">
+            <clashpoint>
+              <pos3f x="2532.3098840242565" y="-7365.009184739533" z="534.0680302909641" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-065" status="resolved">
+            <clashpoint>
+              <pos3f x="6306.315754663264" y="-5914.513056512098" z="2488.7948441436333" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-069" status="resolved">
+            <clashpoint>
+              <pos3f x="5754.627985213084" y="-6811.163625087311" z="2722.279482484291" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-070" status="active">
+            <clashpoint>
+              <pos3f x="2637.6914278183663" y="-6139.5397901586475" z="6274.759999836373" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-072" status="resolved">
+            <clashpoint>
+              <pos3f x="2968.994790660441" y="-12003.416679400812" z="3635.210219921733" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-073" status="active">
+            <clashpoint>
+              <pos3f x="6304.161145167971" y="-9170.99676370518" z="-975.4376244383591" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-074" status="reviewed">
+            <clashpoint>
+              <pos3f x="2595.4839946313714" y="-10059.216719236289" z="-145.81172855279" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-079" status="resolved">
+            <clashpoint>
+              <pos3f x="1478.2471320603613" y="-10194.726276559391" z="-570.6074363203779" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-083" status="active">
+            <clashpoint>
+              <pos3f x="1772.7010244471855" y="-7594.7992027280825" z="630.0762803550492" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-092" status="resolved">
+            <clashpoint>
+              <pos3f x="2231.063396198115" y="-9914.75615874622" z="4106.129134628846" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-093" status="active">
+            <clashpoint>
+              <pos3f x="4502.827967594666" y="-8744.528675975062" z="2831.1345349829053" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-095" status="active">
+            <clashpoint>
+              <pos3f x="3610.2887806349195" y="-11216.678170732222" z="-395.978072764854" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-097" status="resolved">
+            <clashpoint>
+              <pos3f x="4669.230673335051" y="-10643.364315159697" z="2557.5343794667847" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-098" status="active">
+            <clashpoint>
+              <pos3f x="7095.832584779693" y="-5239.275344867243" z="3476.708240673143" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-099" status="resolved">
+            <clashpoint>
+              <pos3f x="5062.8406272321645" y="-9864.575007604377" z="3816.5902449059777" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-100" status="resolved">
+            <clashpoint>
+              <pos3f x="6296.017127191584" y="-10132.30779030257" z="3177.7105049648885" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-102" status="active">
+            <clashpoint>
+              <pos3f x="6861.868402637796" y="-7451.030029354935" z="636.1706021059457" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-103" status="active">
+            <clashpoint>
+              <pos3f x="5745.525735795497" y="-9189.585818349098" z="3406.5318431271094" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-104" status="resolved">
+            <clashpoint>
+              <pos3f x="4644.149755509738" y="-10488.584711913463" z="2715.711453451812" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-105" status="resolved">
+            <clashpoint>
+              <pos3f x="2778.0714536320143" y="-12653.788681432567" z="4663.538373566974" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-106" status="active">
+            <clashpoint>
+              <pos3f x="5282.982226383165" y="-12428.572507969733" z="3431.173567334237" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-107" status="resolved">
+            <clashpoint>
+              <pos3f x="3294.13183379006" y="-6440.730701893822" z="-593.6431259955623" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-108" status="resolved">
+            <clashpoint>
+              <pos3f x="6151.375050566792" y="-10988.172491909192" z="3228.6427185404455" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-111" status="resolved">
+            <clashpoint>
+              <pos3f x="6080.69376091026" y="-5693.807039591347" z="2648.8957526708127" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-112" status="resolved">
+            <clashpoint>
+              <pos3f x="2371.652086766601" y="-9715.18120155597" z="2953.534384378654" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-114" status="reviewed">
+            <clashpoint>
+              <pos3f x="2608.120265645539" y="-10548.270800241096" z="-518.2128173519052" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-115" status="reviewed">
+            <clashpoint>
+              <pos3f x="4998.853763587279" y="-11575.308361798663" z="2675.721421390749" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-117" status="reviewed">
+            <clashpoint>
+              <pos3f x="6195.067354682308" y="-10869.372853637615" z="2629.587975878185" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-119" status="resolved">
+            <clashpoint>
+              <pos3f x="1085.6850115621992" y="-5711.996428270713" z="-59.21655904843607" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-122" status="active">
+            <clashpoint>
+              <pos3f x="6458.228443699739" y="-4987.260726756151" z="3080.391149390024" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-126" status="resolved">
+            <clashpoint>
+              <pos3f x="3806.238858124845" y="-4971.477948346899" z="-333.2648821355993" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-128" status="resolved">
+            <clashpoint>
+              <pos3f x="2678.022344475377" y="-9384.29243203858" z="3478.8879174118188" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-129" status="resolved">
+            <clashpoint>
+              <pos3f x="1183.87624712875" y="-9159.3455965026" z="-147.1783581934027" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-130" status="reviewed">
+            <clashpoint>
+              <pos3f x="6184.892493916812" y="-10129.12164152371" z="-899.1344252506365" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-131" status="reviewed">
+            <clashpoint>
+              <pos3f x="5502.793374418956" y="-8093.110997699634" z="4422.040680954171" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-134" status="active">
+            <clashpoint>
+              <pos3f x="2072.994184856927" y="-6777.226075741351" z="3561.265322330651" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-135" status="resolved">
+            <clashpoint>
+              <pos3f x="2354.7376678398155" y="-9102.699826225251" z="29.561678202579913" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-138" status="resolved">
+            <clashpoint>
+              <pos3f x="5522.789931794749" y="-7824.923180941694" z="-506.3827188088549" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-140" status="active">
+            <clashpoint>
+              <pos3f x="4025.811839305236" y="-8230.727886504596" z="3226.6018121420157" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-141" status="resolved">
+            <clashpoint>
+              <pos3f x="2298.869539826075" y="-8459.484257028824" z="-525.3345050576145" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-142" status="active">
+            <clashpoint>
+              <pos3f x="4450.994335199264" y="-6274.01282514978" z="2649.4958502842765" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-143" status="reviewed">
+            <clashpoint>
+              <pos3f x="7609.803848418053" y="-6923.175885129723" z="1169.487528614978" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-152" status="resolved">
+            <clashpoint>
+              <pos3f x="4467.514776070729" y="-4104.347354404052" z="3065.822102074264" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-154" status="resolved">
+            <clashpoint>
+              <pos3f x="7182.472689643066" y="-9864.882055885366" z="3015.1201261527485" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-155" status="resolved">
+            <clashpoint>
+              <pos3f x="5476.456283079862" y="-7466.283614027703" z="-215.1629500452981" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-158" status="reviewed">
+            <clashpoint>
+              <pos3f x="4972.328418373884" y="-9760.645227236491" z="3154.0036358792504" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-159" status="resolved">
+            <clashpoint>
+              <pos3f x="3719.5838581064813" y="-9545.886465348342" z="3872.8212206744365" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-162" status="active">
+            <clashpoint>
+              <pos3f x="6917.841067554544" y="-7551.369208574732" z="3974.7735218954513" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-163" status="resolved">
+            <clashpoint>
+              <pos3f x="4742.060903566542" y="-9781.916174964063" z="2556.4418294869693" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-165" status="active">
+            <clashpoint>
+              <pos3f x="4566.714391693025" y="-7591.611117412363" z="3679.255188846984" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-168" status="resolved">
+            <clashpoint>
+              <pos3f x="6215.604715006813" y="-5412.520854035516" z="3154.756857595139" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-170" status="resolved">
+            <clashpoint>
+              <pos3f x="4042.2622383886187" y="-6885.717254007655" z="3529.508836294369" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-171" status="resolved">
+            <clashpoint>
+              <pos3f x="6220.125411027252" y="-9796.883139950667" z="2912.1019206340966" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-172" status="reviewed">
+            <clashpoint>
+              <pos3f x="6218.1822365475855" y="-5823.968114998511" z="2557.441819148321" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-173" status="resolved">
+            <clashpoint>
+              <pos3f x="1769.2137082442232" y="-5569.6625432967985" z="656.919521652198" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R4-174" status="resolved">
+            <clashpoint>
+              <pos3f x="3706.9406510561193" y="-8749.886769909343" z="2094.65254514045" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-000" status="new">
+            <clashpoint>
+              <pos3f x="3664.4173108278897" y="-11075.426794233535" z="2946.4277829383645" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-001" status="new">
+            <clashpoint>
+              <pos3f x="4657.6867428937585" y="-10526.261411396003" z="-572.0671591002007" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-003" status="new">
+            <clashpoint>
+              <pos3f x="5358.119878242216" y="-8138.492701970021" z="670.077881223068" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-006" status="new">
+            <clashpoint>
+              <pos3f x="5272.09117670459" y="-8398.207155370435" z="-392.63098765131565" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-007" status="new">
+            <clashpoint>
+              <pos3f x="2329.286496203872" y="-6402.775477303119" z="-468.55812451939875" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-011" status="new">
+            <clashpoint>
+              <pos3f x="2441.9508198235485" y="-12300.561276363074" z="2816.251523026292" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-014" status="new">
+            <clashpoint>
+              <pos3f x="3616.5421988388116" y="-7597.0527308114315" z="-601.5260740483741" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-015" status="new">
+            <clashpoint>
+              <pos3f x="3104.290388542835" y="-5997.211713543711" z="3573.3478943136756" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-016" status="new">
+            <clashpoint>
+              <pos3f x="1128.720357653372" y="-13310.374787453626" z="2195.103115922323" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-017" status="new">
+            <clashpoint>
+              <pos3f x="2618.964979123107" y="-10166.782899274089" z="-279.1050206145279" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-018" status="new">
+            <clashpoint>
+              <pos3f x="6894.7166111942715" y="-11049.179158611894" z="-1019.5101626112066" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-025" status="new">
+            <clashpoint>
+              <pos3f x="3746.5778481616026" y="-9481.261419103012" z="2611.4352958372224" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-030" status="new">
+            <clashpoint>
+              <pos3f x="5751.454487996562" y="-10249.537894032557" z="2669.1631303175627" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-032" status="new">
+            <clashpoint>
+              <pos3f x="2104.581281218193" y="-8123.587908224893" z="2825.4766461967747" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-033" status="new">
+            <clashpoint>
+              <pos3f x="6896.739225961804" y="-12460.12318281384" z="-687.2640218091358" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-035" status="new">
+            <clashpoint>
+              <pos3f x="2764.0108025175377" y="-10904.004906146642" z="2917.7731775818243" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-037" status="new">
+            <clashpoint>
+              <pos3f x="3944.757865355393" y="-6118.757267732646" z="4362.182686564845" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-040" status="new">
+            <clashpoint>
+              <pos3f x="6026.52216018158" y="-7376.789845765823" z="2645.157388898401" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-041" status="new">
+            <clashpoint>
+              <pos3f x="5759.84621721192" y="-13477.961437437574" z="834.7270612194483" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-044" status="new">
+            <clashpoint>
+              <pos3f x="5761.2876723538575" y="-8219.962181107163" z="-167.87645577948905" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-047" status="new">
+            <clashpoint>
+              <pos3f x="5676.627372031047" y="-10120.110068280872" z="632.590392506021" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-048" status="new">
+            <clashpoint>
+              <pos3f x="5076.945121958664" y="-8314.50210476216" z="1048.61909831821" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-049" status="new">
+            <clashpoint>
+              <pos3f x="1845.5753945124304" y="-10191.58817443159" z="-663.0392776234889" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-052" status="new">
+            <clashpoint>
+              <pos3f x="3696.40003695672" y="-8817.773099994673" z="3943.69194346392" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-053" status="new">
+            <clashpoint>
+              <pos3f x="3727.317715792994" y="-5378.641465703233" z="-393.97880754953974" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-054" status="new">
+            <clashpoint>
+              <pos3f x="2605.7410320472372" y="-8785.882964894783" z="3286.583098759616" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-055" status="new">
+            <clashpoint>
+              <pos3f x="1991.6678345812252" y="-8351.349805137761" z="965.7715707885935" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-056" status="new">
+            <clashpoint>
+              <pos3f x="6241.689063705977" y="-9045.535958769135" z="2541.04634953772" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-057" status="new">
+            <clashpoint>
+              <pos3f x="6744.261863161573" y="-11676.086697860428" z="3016.3537354006394" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-059" status="new">
+            <clashpoint>
+              <pos3f x="3569.030731722412" y="-5943.3536946555005" z="-740.0635669857022" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-060" status="new">
+            <clashpoint>
+              <pos3f x="5880.749173536098" y="-13455.189414844044" z="2692.272721094832" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-061" status="new">
+            <clashpoint>
+              <pos3f x="7247.2376255358395" y="-7687.525867648888" z="-985.0719066147578" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-062" status="new">
+            <clashpoint>
+              <pos3f x="4711.21638947642" y="-11339.093706118789" z="2368.6814122077376" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-063" status="new">
+            <clashpoint>
+              <pos3f x="6061.272193322204" y="-6763.086175792557" z="-396.873575207522" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-064" status="new">
+            <clashpoint>
+              <pos3f x="5465.145269606681" y="-6241.781190551421" z="2623.403577011557" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-065" status="new">
+            <clashpoint>
+              <pos3f x="7217.806313381905" y="-11252.700610605589" z="3526.968203152215" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-067" status="new">
+            <clashpoint>
+              <pos3f x="6760.438914945938" y="-10815.150770335076" z="-926.5956258244555" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-071" status="new">
+            <clashpoint>
+              <pos3f x="4995.773511124596" y="-10189.22708718037" z="988.5719891800672" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-073" status="new">
+            <clashpoint>
+              <pos3f x="3569.4405289263123" y="-7732.680571860298" z="3834.1700256818476" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-074" status="new">
+            <clashpoint>
+              <pos3f x="2878.8611815575296" y="-10376.549721490663" z="825.3313179417992" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-075" status="new">
+            <clashpoint>
+              <pos3f x="5168.5214703700785" y="-7057.4557677839" z="3097.892920074113" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-078" status="new">
+            <clashpoint>
+              <pos3f x="4122.866586653868" y="-6580.55300269251" z="3094.7075306414627" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-079" status="new">
+            <clashpoint>
+              <pos3f x="2157.78959775807" y="-6162.354627582666" z="2710.097882937848" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-082" status="new">
+            <clashpoint>
+              <pos3f x="2157.3413616659195" y="-10679.928034659722" z="-560.8518808986339" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-084" status="new">
+            <clashpoint>
+              <pos3f x="1831.1438499704668" y="-7879.552395707087" z="3338.227748037992" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-085" status="new">
+            <clashpoint>
+              <pos3f x="4093.4638688242494" y="-9485.4631434425" z="-805.3136985868341" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R5-086" status="new">
+            <clashpoint>
+              <pos3f x="5544.044160284621" y="-9556.177673253651" z="613.4754029971848" />
+            </clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+      <clashtest name="Electrical-Plumbing">
+        <clashresults>
+          <clashresult name="Clash-e21399099825" status="resolved">
+            <clashpoint>
+              <pos3f x="3699.8" y="-10559.5" z="3716.0" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-950e7fef417c" status="reviewed">
+            <clashpoint>
+              <pos3f x="3396.8" y="-10855.1" z="3456.5" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-3c00244e368d" status="reviewed">
+            <clashpoint>
+              <pos3f x="2788.9" y="-10897.6" z="3410.5" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="Clash-a0c3b7dbb4f1" status="active">
+            <clashpoint>
+              <pos3f x="4870.0" y="-8855.7" z="1764.5" />
+            </clashpoint>
+          </clashresult>
+          <clashresult name="New-R3-223" status="active">
+            <clashpoint>
+              <pos3f x="3419.512335700467" y="-6297.689201845514" z="3586.798282452421" />
+            </clashpoint>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+    </clashtests>
+  </batchtest>
+</exchange>

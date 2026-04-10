@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coordination Health Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0;padding:1.5rem}
+.dash{max-width:1200px;margin:0 auto}
+.header{text-align:center;margin-bottom:1.5rem}
+.header h1{font-size:1.6rem;margin-bottom:0.3rem;color:#cbd5e1}
+.score{font-size:4.5rem;font-weight:800;color:#22c55e;margin:0.5rem 0}
+.badge{display:inline-block;padding:0.3rem 1rem;border-radius:2rem;background:#22c55e22;color:#22c55e;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;font-size:0.85rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.card{background:#1e293b;border-radius:0.75rem;padding:1rem;min-height:60px}
+.card-label{font-size:0.7rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.4rem}
+.chart-container{width:100%;height:380px}
+.chart-wide{width:100%;height:420px}
+.section{margin-top:2rem}
+.section h2{font-size:1.1rem;font-weight:600;color:#cbd5e1;border-bottom:1px solid #334155;padding-bottom:0.4rem;margin-bottom:1rem}
+.insight-card{border-left:3px solid #3b82f6}
+.insight-text{font-size:0.85rem;line-height:1.5}
+.tag{display:inline-block;font-size:0.6rem;padding:0.1rem 0.5rem;border-radius:1rem;font-weight:600;margin-left:0.4rem;vertical-align:middle}
+.tag-action{background:#22c55e22;color:#22c55e}
+.footer{text-align:center;margin-top:2rem;color:#475569;font-size:0.8rem}
+@media(max-width:768px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="dash">
+  <div class="header">
+    <h1>Coordination Health Dashboard</h1>
+    <p style="color:#64748b;font-size:0.85rem">Generated 2026-04-10</p>
+    <div class="score">78.5</div>
+    <span class="badge">healthy</span>
+  </div>
+
+  <!-- Row 1: Radar + Trajectory -->
+  <div class="grid2">
+    <div class="card"><div class="card-label">Health Radar</div><div id="radar" class="chart-container"></div></div>
+    <div class="card"><div class="card-label">Clash Trajectory</div><div id="trajectory" class="chart-container"></div></div>
+  </div>
+
+  <!-- Row 2: Meeting Decisions + Approval Rates -->
+  <div class="grid2">
+    <div class="card"><div class="card-label">Meeting Decisions &amp; Attendance</div><div id="meetings" class="chart-container"></div></div>
+    <div class="card"><div class="card-label">Approval Rates &amp; RFI Response</div><div id="approval" class="chart-container"></div></div>
+  </div>
+
+  <!-- Row 3: Recurring Clashes (single) -->
+  <div class="grid2">
+    <div class="card"><div class="card-label">Recurring Clash Rate</div><div id="recurrence" class="chart-container"></div></div>
+    <div class="card"><div class="card-label">RFI Response by Discipline</div><div id="rfi" class="chart-container"></div></div>
+  </div>
+
+  <!-- Benchmarks -->
+  <div class="section"><h2>Industry Benchmarks</h2><div class="grid3">
+            <div class="card" style="text-align:center">
+                <div class="card-label">recurring_clash_rate</div>
+                <div style="font-size:2rem;font-weight:700;color:#f97316">24<span style="font-size:1rem">th</span></div>
+                <div style="font-size:0.75rem;color:#94a3b8;margin-top:0.5rem">Your Recurring clash rate (%) of 15.7 is at the 24th percentile.</div>
+            </div>
+            <div class="card" style="text-align:center">
+                <div class="card-label">rfi_response_p90_days</div>
+                <div style="font-size:2rem;font-weight:700;color:#22c55e">75<span style="font-size:1rem">th</span></div>
+                <div style="font-size:0.75rem;color:#94a3b8;margin-top:0.5rem">Your RFI 90th percentile response time (business days) of 8.0 is better than 75% of projects.</div>
+            </div>
+            <div class="card" style="text-align:center">
+                <div class="card-label">meeting_decision_rate</div>
+                <div style="font-size:2rem;font-weight:700;color:#f59e0b">64<span style="font-size:1rem">th</span></div>
+                <div style="font-size:0.75rem;color:#94a3b8;margin-top:0.5rem">Your Meeting decision resolution rate (%) of 58.6 is at the 64th percentile.</div>
+            </div></div></div>
+
+  <!-- Cross-Metric Insights -->
+  <div class="section"><h2>Cross-Metric Insights</h2><div style="display:flex;flex-direction:column;gap:0.75rem">
+            <div class="card insight-card">
+                <div class="card-label">rfi_bottleneck_discipline &harr; lowest_approval_discipline</div>
+                <div class="insight-text">RFI bottleneck is Mechanical (P90=12d) while lowest approval is Electrical (40%). Different root causes — investigate independently.</div>
+            </div>
+            <div class="card insight-card">
+                <div class="card-label">meeting_decision_rate &harr; clash_trajectory_health</div>
+                <div class="insight-text">Meeting decision rate is below target (59%). Clash trajectory health: stalled. Deferred decisions become unresolved clashes. <span class="tag tag-action">ACTIONABLE</span></div>
+            </div>
+            <div class="card insight-card">
+                <div class="card-label">critical_absence_discipline &harr; recurring_clash_rate</div>
+                <div class="insight-text">When Electrical is absent from coordination meetings, decisions about their scope are deferred. This likely contributes to the 15.7% recurring clash rate. <span class="tag tag-action">ACTIONABLE</span></div>
+            </div>
+            <div class="card insight-card">
+                <div class="card-label">rfi_no_response_rate &harr; coordination_health</div>
+                <div class="insight-text">12% of RFIs (41/337) have no response. Unanswered RFIs create assumptions on site that become rework. <span class="tag tag-action">ACTIONABLE</span></div>
+            </div></div></div>
+
+  <div class="footer">coordination-metrics v0.1.1 | Metrics that predict design coordination failure</div>
+</div>
+
+<script>
+var D = {"radar": {"indicators": [{"name": "Clash Trajectory", "max": 100}, {"name": "Recurring Clashes", "max": 100}, {"name": "Approval Rate", "max": 100}, {"name": "RFI Response", "max": 100}, {"name": "Meeting Decisions", "max": 100}], "values": [100.0, 84.3, 66.0, 73.3, 58.6]}, "trajectory": {"labels": ["2025-06-01", "2025-06-15", "2025-06-29", "2025-07-13", "2025-07-27", "2025-08-10"], "totals": [6001, 6481, 3480, 2465, 1853, 1277], "new": [6001, 480, 893, 680, 419, 228], "resolved": [0, 3997, 1729, 1044, 822, 593]}, "meetings": {"dates": ["2025-06-01", "2025-06-08", "2025-06-15", "2025-06-22", "2025-06-29", "2025-07-06", "2025-07-13", "2025-07-20", "2025-07-27", "2025-08-03", "2025-08-10", "2025-08-17"], "decision": [34.3, 48.2, 48.2, 50.0, 68.1, 66.7, 61.3, 66.4, 60.0, 72.8, 69.5, 58.0], "attendance": [75.0, 80.0, 100.0, 100.0, 80.0, 66.7, 100.0, 100.0, 100.0, 100.0, 100.0, 66.7]}, "approval": {"disciplines": ["Electrical", "Mechanical", "Plumbing"], "pcts": [40.0, 70.0, 75.0]}, "rfi": {"disciplines": ["Mechanical", "Plumbing", "Electrical", "Structural", "Architectural"], "medians": [5.0, 4.0, 4.0, 3.0, 3.5], "p90s": [12.0, 8.4, 6.5, 6.4, 6.0]}, "recurrence": {"recurring": 129, "held": 693, "rate": 15.7}};
+var BG = '#1e293b';
+var TXT = '#e2e8f0';
+var GRID = '#334155';
+var GREEN = '#22c55e';
+var AMBER = '#f59e0b';
+var RED = '#ef4444';
+var BLUE = '#3b82f6';
+var PURPLE = '#a855f7';
+
+function init(id) {
+  var el = document.getElementById(id);
+  if (!el) return null;
+  return echarts.init(el, null, {renderer:'canvas'});
+}
+
+// 1. Radar
+var r = init('radar');
+if (r) r.setOption({
+  backgroundColor: BG,
+  radar: {
+    center: ['50%','55%'], radius: '65%',
+    indicator: D.radar.indicators,
+    axisName: {color: TXT, fontSize: 11},
+    splitLine: {lineStyle: {color: GRID}},
+    splitArea: {areaStyle: {color: ['transparent','transparent']}},
+    axisLine: {lineStyle: {color: GRID}}
+  },
+  series: [{
+    type: 'radar',
+    data: [{
+      value: D.radar.values,
+      areaStyle: {color: 'rgba(59,130,246,0.15)'},
+      lineStyle: {color: BLUE, width: 2},
+      itemStyle: {color: BLUE},
+      symbol: 'circle', symbolSize: 6
+    }]
+  }]
+});
+
+// 2. Trajectory
+var t = init('trajectory');
+if (t && D.trajectory.labels.length > 0) t.setOption({
+  backgroundColor: BG,
+  tooltip: {trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{color:TXT}},
+  legend: {data:['Total','New','Resolved'], textStyle:{color:TXT}, top:0},
+  grid: {top:40, bottom:80, left:65, right:20, containLabel:true},
+  xAxis: {type:'category', data:D.trajectory.labels, axisLabel:{color:TXT,rotate:20,fontSize:10}, axisLine:{lineStyle:{color:GRID}}},
+  yAxis: {type:'value', name:'Clashes', nameTextStyle:{color:TXT}, axisLabel:{color:TXT}, splitLine:{lineStyle:{color:GRID,type:'dashed'}}},
+  series: [
+    {name:'Total', type:'bar', data:D.trajectory.totals, itemStyle:{color:'rgba(59,130,246,0.4)'}, barWidth:'40%'},
+    {name:'New', type:'line', data:D.trajectory.new, itemStyle:{color:RED}, lineStyle:{width:2}, symbol:'circle', symbolSize:6},
+    {name:'Resolved', type:'line', data:D.trajectory.resolved, itemStyle:{color:GREEN}, lineStyle:{width:2}, symbol:'rect', symbolSize:6}
+  ]
+});
+
+// 3. Meeting Decisions
+var m = init('meetings');
+if (m && D.meetings.dates.length > 0) m.setOption({
+  backgroundColor: BG,
+  tooltip: {trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{color:TXT}},
+  legend: {data:['Decision Rate','Attendance'], textStyle:{color:TXT}, top:0},
+  grid: {top:40, bottom:80, left:60, right:60, containLabel:true},
+  xAxis: {type:'category', data:D.meetings.dates, axisLabel:{color:TXT,rotate:20,fontSize:10}, axisLine:{lineStyle:{color:GRID}}},
+  yAxis: [
+    {type:'value', name:'Decision %', min:0, max:100, nameTextStyle:{color:TXT}, axisLabel:{color:TXT}, splitLine:{lineStyle:{color:GRID,type:'dashed'}}},
+    {type:'value', name:'Attendance %', min:0, max:100, nameTextStyle:{color:TXT}, axisLabel:{color:TXT}, splitLine:{show:false}}
+  ],
+  series: [
+    {name:'Decision Rate', type:'bar', data:D.meetings.decision, itemStyle:{color:'rgba(59,130,246,0.7)'}, barWidth:'35%'},
+    {name:'Attendance', type:'line', yAxisIndex:1, data:D.meetings.attendance, itemStyle:{color:PURPLE}, lineStyle:{width:2}, symbol:'diamond', symbolSize:7}
+  ]
+});
+
+// 4. Approval + RFI combo
+var a = init('approval');
+if (a && D.approval.disciplines.length > 0) a.setOption({
+  backgroundColor: BG,
+  tooltip: {trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{color:TXT}},
+  legend: {data:['Approval %'], textStyle:{color:TXT}, top:0},
+  grid: {top:40, bottom:15, left:10, right:40, containLabel:true},
+  xAxis: {type:'value', min:0, max:100, axisLabel:{color:TXT}, splitLine:{lineStyle:{color:GRID,type:'dashed'}}},
+  yAxis: {type:'category', data:D.approval.disciplines, axisLabel:{color:TXT}},
+  series: [{
+    name:'Approval %', type:'bar', data:D.approval.pcts.map(function(v){
+      return {value:v, itemStyle:{color: v>=70?GREEN:v>=50?AMBER:RED}};
+    }),
+    label: {show:true, position:'right', color:TXT, formatter:'{c}%'}
+  }],
+  visualMap: {show:false}
+});
+
+// 5. Recurrence donut
+var rc = init('recurrence');
+if (rc && (D.recurrence.recurring + D.recurrence.held) > 0) rc.setOption({
+  backgroundColor: BG,
+  tooltip: {trigger:'item', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{color:TXT}},
+  title: {text: D.recurrence.rate.toFixed(1)+'%', subtext:'recurrence', left:'center', top:'center',
+    textStyle:{color:D.recurrence.rate>25?RED:D.recurrence.rate>10?AMBER:GREEN, fontSize:28, fontWeight:700},
+    subtextStyle:{color:TXT, fontSize:12}},
+  series: [{
+    type:'pie', radius:['55%','80%'],
+    data:[
+      {value:D.recurrence.recurring, name:'Recurring', itemStyle:{color:RED}},
+      {value:D.recurrence.held, name:'Held', itemStyle:{color:GREEN}}
+    ],
+    label:{show:true, color:TXT, formatter:'{b}: {c}'},
+    emphasis:{itemStyle:{shadowBlur:10, shadowColor:'rgba(0,0,0,0.5)'}}
+  }]
+});
+
+// 6. RFI by discipline
+var rf = init('rfi');
+if (rf && D.rfi.disciplines.length > 0) rf.setOption({
+  backgroundColor: BG,
+  tooltip: {trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{color:TXT}},
+  legend: {data:['Median','P90'], textStyle:{color:TXT}, top:0},
+  grid: {top:40, bottom:15, left:10, right:40, containLabel:true},
+  xAxis: {type:'value', name:'Days', nameTextStyle:{color:TXT}, axisLabel:{color:TXT}, splitLine:{lineStyle:{color:GRID,type:'dashed'}}},
+  yAxis: {type:'category', data:D.rfi.disciplines, axisLabel:{color:TXT}},
+  series: [
+    {name:'Median', type:'bar', data:D.rfi.medians, itemStyle:{color:BLUE}, barWidth:'30%'},
+    {name:'P90', type:'bar', data:D.rfi.p90s, itemStyle:{color:AMBER}, barWidth:'30%'}
+  ]
+});
+
+// Responsive resize
+window.addEventListener('resize', function(){
+  [r,t,m,a,rc,rf].forEach(function(c){ if(c) c.resize(); });
+});
+</script>
+</body>
+</html>

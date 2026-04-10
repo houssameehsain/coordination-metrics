@@ -1,0 +1,1876 @@
+{
+  "project": "wbdg_clinic",
+  "analysis_date": "2026-04-10",
+  "health_summary": {
+    "overall_health": 78.5,
+    "health_level": "healthy",
+    "metrics": {
+      "clash_trajectory": 100.0,
+      "recurring_clashes": 84.3,
+      "approval_rate": 66.0,
+      "rfi_response": 73.3,
+      "meeting_decisions": 58.6
+    },
+    "details": {
+      "clash_trajectory": {
+        "slope": -78.61020408163262,
+        "intercept": 6344.190476190473,
+        "r_squared": 0.89,
+        "decay_rate": 0.0242,
+        "decay_n0": 7081.4,
+        "decay_r_squared": 0.9555,
+        "decay_health": "stalled",
+        "changepoints": [],
+        "health_level": "healthy",
+        "rounds": 6,
+        "interpretation": "Clashes decreasing at 78.6/day -- coordination is effective.",
+        "zero_clash_projection": {
+          "projected_date": "2026-03-28",
+          "days_from_last_round": 230,
+          "model_used": "exponential_decay",
+          "decay_rate": 0.0242,
+          "n0": 7081.4,
+          "r_squared": 0.9555,
+          "warning": null
+        },
+        "_round_data": [
+          {
+            "round_label": "clash_round_01 -- 2025-06-01",
+            "round_date": "2025-06-01",
+            "total": 6001,
+            "new": 6001,
+            "active": 0,
+            "reviewed": 0,
+            "resolved": 0
+          },
+          {
+            "round_label": "clash_round_02 -- 2025-06-15",
+            "round_date": "2025-06-15",
+            "total": 6481,
+            "new": 480,
+            "active": 1518,
+            "reviewed": 486,
+            "resolved": 3997
+          },
+          {
+            "round_label": "clash_round_03 -- 2025-06-29",
+            "round_date": "2025-06-29",
+            "total": 3480,
+            "new": 893,
+            "active": 696,
+            "reviewed": 162,
+            "resolved": 1729
+          },
+          {
+            "round_label": "clash_round_04 -- 2025-07-13",
+            "round_date": "2025-07-13",
+            "total": 2465,
+            "new": 680,
+            "active": 603,
+            "reviewed": 138,
+            "resolved": 1044
+          },
+          {
+            "round_label": "clash_round_05 -- 2025-07-27",
+            "round_date": "2025-07-27",
+            "total": 1853,
+            "new": 419,
+            "active": 514,
+            "reviewed": 98,
+            "resolved": 822
+          },
+          {
+            "round_label": "clash_round_06 -- 2025-08-10",
+            "round_date": "2025-08-10",
+            "total": 1277,
+            "new": 228,
+            "active": 384,
+            "reviewed": 72,
+            "resolved": 593
+          }
+        ]
+      },
+      "recurring_clashes": {
+        "recurrence_rate_pct": 15.7,
+        "recurring_count": 129,
+        "resolved_count": 822,
+        "recurring_pairs": [
+          [
+            "New-R3-203",
+            "New-R5-044",
+            343.7
+          ],
+          [
+            "New-R3-385",
+            "New-R1-081",
+            493.6
+          ],
+          [
+            "Clash-7b725147ef0d-R2",
+            "New-R4-230",
+            311.4
+          ],
+          [
+            "Clash-36441357cfbe",
+            "Clash-f33bfc871c37",
+            0.0
+          ],
+          [
+            "Clash-b40dd4ff0b48-R2",
+            "New-R3-140",
+            196.5
+          ],
+          [
+            "Clash-99f2e0fdc7e5-R3",
+            "New-R5-139",
+            407.7
+          ],
+          [
+            "Clash-b703db2d0c18-R3-R4",
+            "New-R5-161",
+            81.7
+          ],
+          [
+            "Clash-dbcd1e7c135a-R4",
+            "New-R5-141",
+            199.7
+          ],
+          [
+            "Clash-9290d31f3558-R3",
+            "Clash-843b24a654ff-R4",
+            268.2
+          ],
+          [
+            "Clash-d3f379de36ab-R2",
+            "New-R3-462-R5",
+            309.4
+          ],
+          [
+            "Clash-e424100633ae-R2",
+            "New-R3-270",
+            276.0
+          ],
+          [
+            "Clash-58bd15bad4e5-R3",
+            "New-R5-086",
+            394.7
+          ],
+          [
+            "Clash-2884ad5bf88d-R3",
+            "New-R5-071",
+            239.8
+          ],
+          [
+            "Clash-82dd7750fc94-R2",
+            "New-R3-384",
+            268.6
+          ],
+          [
+            "Clash-e1a93381b7ce-R4",
+            "New-R5-160",
+            361.2
+          ],
+          [
+            "Clash-43285d089089-R2",
+            "New-R5-157",
+            426.4
+          ],
+          [
+            "New-R1-025",
+            "New-R5-060",
+            285.9
+          ],
+          [
+            "New-R1-049",
+            "New-R4-178",
+            122.1
+          ],
+          [
+            "New-R1-381",
+            "New-R3-296",
+            191.2
+          ],
+          [
+            "New-R2-030",
+            "New-R5-048",
+            261.2
+          ],
+          [
+            "New-R2-034",
+            "New-R4-023",
+            341.4
+          ],
+          [
+            "New-R2-049",
+            "New-R5-158",
+            241.8
+          ],
+          [
+            "New-R2-056",
+            "New-R2-573-R5",
+            77.3
+          ],
+          [
+            "New-R2-057",
+            "New-R4-285",
+            390.0
+          ],
+          [
+            "New-R2-081",
+            "New-R3-045-R5",
+            370.5
+          ],
+          [
+            "New-R2-145",
+            "New-R3-530",
+            392.1
+          ],
+          [
+            "New-R2-166",
+            "New-R3-438",
+            413.3
+          ],
+          [
+            "New-R2-236",
+            "New-R5-134",
+            161.5
+          ],
+          [
+            "New-R2-239",
+            "New-R5-165",
+            116.8
+          ],
+          [
+            "New-R2-243",
+            "New-R5-127",
+            165.5
+          ],
+          [
+            "New-R2-255",
+            "New-R4-134",
+            278.8
+          ],
+          [
+            "New-R2-265",
+            "New-R5-108",
+            161.5
+          ],
+          [
+            "New-R2-296",
+            "New-R4-358",
+            162.2
+          ],
+          [
+            "New-R2-345",
+            "New-R5-012",
+            226.5
+          ],
+          [
+            "New-R2-365",
+            "New-R5-099",
+            105.1
+          ],
+          [
+            "New-R2-401",
+            "New-R5-107",
+            360.1
+          ],
+          [
+            "New-R2-450",
+            "New-R5-004",
+            437.0
+          ],
+          [
+            "New-R2-477",
+            "New-R4-284",
+            451.4
+          ],
+          [
+            "New-R2-485",
+            "New-R5-146",
+            361.6
+          ],
+          [
+            "New-R2-497",
+            "New-R3-466",
+            275.4
+          ],
+          [
+            "New-R2-513",
+            "New-R5-121",
+            260.4
+          ],
+          [
+            "New-R2-529",
+            "Clash-5d96400713c1-R4",
+            416.9
+          ],
+          [
+            "New-R2-537",
+            "New-R3-567",
+            401.7
+          ],
+          [
+            "New-R2-572",
+            "New-R5-014",
+            362.5
+          ],
+          [
+            "New-R2-631",
+            "New-R5-104",
+            175.4
+          ],
+          [
+            "New-R2-650",
+            "New-R4-218",
+            266.7
+          ],
+          [
+            "New-R2-655",
+            "New-R4-063",
+            152.4
+          ],
+          [
+            "New-R2-700",
+            "New-R5-113",
+            368.0
+          ],
+          [
+            "New-R3-010",
+            "New-R3-062-R5",
+            269.9
+          ],
+          [
+            "New-R3-025",
+            "New-R5-167",
+            316.4
+          ],
+          [
+            "New-R3-043",
+            "New-R4-166",
+            228.2
+          ],
+          [
+            "New-R3-044",
+            "New-R5-008",
+            393.0
+          ],
+          [
+            "New-R3-046",
+            "New-R4-215",
+            394.2
+          ],
+          [
+            "New-R3-047",
+            "New-R4-244",
+            199.9
+          ],
+          [
+            "New-R3-057",
+            "New-R5-015",
+            216.5
+          ],
+          [
+            "New-R3-078",
+            "New-R5-013",
+            207.4
+          ],
+          [
+            "New-R3-081",
+            "New-R5-067",
+            413.5
+          ],
+          [
+            "New-R3-087",
+            "New-R5-135",
+            345.7
+          ],
+          [
+            "New-R3-089",
+            "New-R5-058",
+            103.9
+          ],
+          [
+            "New-R3-103",
+            "New-R5-106",
+            360.9
+          ],
+          [
+            "New-R3-110",
+            "New-R5-168",
+            121.5
+          ],
+          [
+            "New-R3-112",
+            "New-R5-145",
+            200.0
+          ],
+          [
+            "New-R3-119",
+            "Clash-b703db2d0c18-R3-R4-R5",
+            164.3
+          ],
+          [
+            "New-R3-120",
+            "New-R3-182",
+            316.5
+          ],
+          [
+            "New-R3-122",
+            "New-R5-144",
+            81.7
+          ],
+          [
+            "New-R3-125",
+            "New-R5-024",
+            130.7
+          ],
+          [
+            "New-R3-142",
+            "New-R5-085",
+            387.1
+          ],
+          [
+            "New-R3-156",
+            "New-R5-006",
+            340.1
+          ],
+          [
+            "New-R3-167",
+            "New-R5-007",
+            227.8
+          ],
+          [
+            "New-R3-171",
+            "New-R4-159",
+            282.1
+          ],
+          [
+            "New-R3-186",
+            "New-R5-083",
+            361.8
+          ],
+          [
+            "New-R3-192",
+            "New-R5-102",
+            370.6
+          ],
+          [
+            "New-R3-198",
+            "New-R5-092",
+            259.9
+          ],
+          [
+            "New-R3-217",
+            "New-R2-473-R4",
+            130.5
+          ],
+          [
+            "New-R3-236",
+            "New-R4-107",
+            292.9
+          ],
+          [
+            "New-R3-244",
+            "New-R4-307",
+            265.2
+          ],
+          [
+            "New-R3-249",
+            "New-R5-147",
+            271.6
+          ],
+          [
+            "New-R3-257",
+            "New-R4-005",
+            74.9
+          ],
+          [
+            "New-R3-264",
+            "New-R5-112",
+            317.2
+          ],
+          [
+            "New-R3-268",
+            "New-R5-114",
+            348.8
+          ],
+          [
+            "New-R3-269",
+            "New-R4-260",
+            288.6
+          ],
+          [
+            "New-R3-271",
+            "New-R4-165",
+            209.2
+          ],
+          [
+            "New-R3-293",
+            "New-R2-348",
+            285.8
+          ],
+          [
+            "New-R3-294",
+            "New-R5-132",
+            191.9
+          ],
+          [
+            "New-R3-307",
+            "New-R5-061",
+            285.0
+          ],
+          [
+            "New-R3-317",
+            "New-R3-060",
+            335.1
+          ],
+          [
+            "New-R3-319",
+            "New-R5-046",
+            226.4
+          ],
+          [
+            "New-R3-325",
+            "New-R2-296-R5",
+            472.4
+          ],
+          [
+            "New-R3-340",
+            "New-R5-148",
+            259.3
+          ],
+          [
+            "New-R3-374",
+            "New-R3-346",
+            58.6
+          ],
+          [
+            "New-R3-375",
+            "New-R4-350",
+            327.2
+          ],
+          [
+            "New-R3-377",
+            "New-R5-166",
+            321.2
+          ],
+          [
+            "New-R3-392",
+            "New-R3-345",
+            92.0
+          ],
+          [
+            "New-R3-398",
+            "New-R5-040",
+            330.1
+          ],
+          [
+            "New-R3-405",
+            "New-R4-040",
+            198.7
+          ],
+          [
+            "New-R3-407",
+            "New-R5-027",
+            203.6
+          ],
+          [
+            "New-R3-425",
+            "Clash-d678f6f8b568-R2",
+            244.0
+          ],
+          [
+            "New-R3-426",
+            "New-R5-137",
+            348.4
+          ],
+          [
+            "New-R3-429",
+            "New-R3-091",
+            211.3
+          ],
+          [
+            "New-R3-432",
+            "New-R5-087",
+            225.2
+          ],
+          [
+            "New-R3-442",
+            "New-R3-365",
+            349.2
+          ],
+          [
+            "New-R3-452",
+            "New-R5-002",
+            187.6
+          ],
+          [
+            "New-R3-467",
+            "New-R5-052",
+            289.3
+          ],
+          [
+            "New-R3-470",
+            "New-R5-073",
+            432.9
+          ],
+          [
+            "New-R3-471",
+            "New-R4-238",
+            229.3
+          ],
+          [
+            "New-R3-495",
+            "New-R5-101",
+            174.1
+          ],
+          [
+            "New-R3-500",
+            "New-R5-055",
+            193.7
+          ],
+          [
+            "New-R3-502",
+            "New-R3-063",
+            68.2
+          ],
+          [
+            "New-R3-518",
+            "New-R5-110",
+            341.4
+          ],
+          [
+            "New-R3-519",
+            "New-R5-176",
+            427.4
+          ],
+          [
+            "New-R3-543",
+            "New-R5-098",
+            193.8
+          ],
+          [
+            "New-R3-546",
+            "New-R3-505-R5",
+            185.3
+          ],
+          [
+            "New-R3-550",
+            "New-R2-592",
+            104.6
+          ],
+          [
+            "New-R3-558",
+            "New-R5-123",
+            434.5
+          ],
+          [
+            "New-R3-568",
+            "New-R5-045",
+            228.0
+          ],
+          [
+            "New-R3-575",
+            "New-R2-120",
+            230.1
+          ],
+          [
+            "New-R3-578",
+            "New-R5-003",
+            229.3
+          ],
+          [
+            "New-R3-579",
+            "New-R3-155",
+            349.6
+          ],
+          [
+            "New-R3-585",
+            "New-R4-098",
+            271.2
+          ],
+          [
+            "New-R2-420",
+            "New-R5-089",
+            456.0
+          ],
+          [
+            "New-R3-205",
+            "New-R1-245",
+            489.4
+          ],
+          [
+            "Clash-f6b635d439e3",
+            "Clash-92336510c4c7",
+            69.9
+          ],
+          [
+            "Clash-00f5b9e80cfc",
+            "Clash-25ca5aa9dd48",
+            24.9
+          ],
+          [
+            "Clash-6d751417a53d",
+            "Clash-e59112dd350b",
+            70.9
+          ],
+          [
+            "Clash-e1d8713c778a",
+            "New-R5-009",
+            377.4
+          ],
+          [
+            "Clash-dd356c408098",
+            "Clash-44988ff323fa",
+            300.0
+          ],
+          [
+            "Clash-b97b72a4fb5c",
+            "Clash-5ba550848c86",
+            27.1
+          ],
+          [
+            "Clash-d2dcfdd4e50b",
+            "Clash-3d2f6b81173c",
+            300.0
+          ],
+          [
+            "New-R1-063-R3",
+            "New-R5-039",
+            417.5
+          ]
+        ],
+        "matching_method": "hungarian",
+        "shift_detected": false,
+        "shift_magnitude_mm": 32.4,
+        "shift_warning": null,
+        "health_level": "at_risk",
+        "interpretation": "16% recurrence rate -- some disciplines may not be actioning resolutions."
+      },
+      "approval_rates": [
+        {
+          "discipline": "Electrical",
+          "total_submittals": 17,
+          "first_submissions": 10,
+          "first_submission_approved": 4,
+          "first_submission_approval_pct": 40.0,
+          "health_level": "critical"
+        },
+        {
+          "discipline": "Mechanical",
+          "total_submittals": 63,
+          "first_submissions": 20,
+          "first_submission_approved": 14,
+          "first_submission_approval_pct": 70.0,
+          "health_level": "at_risk"
+        },
+        {
+          "discipline": "Plumbing",
+          "total_submittals": 69,
+          "first_submissions": 20,
+          "first_submission_approved": 15,
+          "first_submission_approval_pct": 75.0,
+          "health_level": "healthy"
+        }
+      ],
+      "rfi_distribution": {
+        "overall": {
+          "discipline": "Overall",
+          "total_rfis": 337,
+          "open_rfis": 41,
+          "closed_rfis": 296,
+          "median_days": 4.0,
+          "mean_days": 4.7,
+          "p90_days": 8.0,
+          "km_p50": 4.0,
+          "km_p90": null,
+          "is_bottleneck": false,
+          "health_level": "at_risk",
+          "interpretation": "Overall: median 4d, P90 8d, 12% still open."
+        },
+        "by_discipline": [
+          {
+            "discipline": "Mechanical",
+            "total_rfis": 92,
+            "open_rfis": 10,
+            "closed_rfis": 82,
+            "median_days": 5.0,
+            "mean_days": 6.4,
+            "p90_days": 12.0,
+            "km_p50": 5.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "at_risk",
+            "interpretation": "Mechanical: median 5d, P90 12d, 11% still open."
+          },
+          {
+            "discipline": "Plumbing",
+            "total_rfis": 63,
+            "open_rfis": 6,
+            "closed_rfis": 57,
+            "median_days": 4.0,
+            "mean_days": 5.0,
+            "p90_days": 8.4,
+            "km_p50": 4.0,
+            "km_p90": 27.0,
+            "is_bottleneck": false,
+            "health_level": "at_risk",
+            "interpretation": "Plumbing: median 4d, P90 8d, 10% still open. Censored P90 (27d) higher than closed-only P90 -- open RFIs may be skewing the distribution."
+          },
+          {
+            "discipline": "Electrical",
+            "total_rfis": 31,
+            "open_rfis": 5,
+            "closed_rfis": 26,
+            "median_days": 4.0,
+            "mean_days": 4.2,
+            "p90_days": 6.5,
+            "km_p50": 4.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "healthy",
+            "interpretation": "Electrical: median 4d, P90 6d, 16% still open."
+          },
+          {
+            "discipline": "Structural",
+            "total_rfis": 100,
+            "open_rfis": 13,
+            "closed_rfis": 87,
+            "median_days": 3.0,
+            "mean_days": 3.5,
+            "p90_days": 6.4,
+            "km_p50": 4.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "healthy",
+            "interpretation": "Structural: median 3d, P90 6d, 13% still open."
+          },
+          {
+            "discipline": "Architectural",
+            "total_rfis": 51,
+            "open_rfis": 7,
+            "closed_rfis": 44,
+            "median_days": 3.5,
+            "mean_days": 3.8,
+            "p90_days": 6.0,
+            "km_p50": 4.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "healthy",
+            "interpretation": "Architectural: median 4d, P90 6d, 14% still open."
+          }
+        ],
+        "by_category": [
+          {
+            "category": "Code Compliance",
+            "total_rfis": 21,
+            "open_rfis": 5,
+            "closed_rfis": 16,
+            "median_days": 7.0,
+            "mean_days": 7.4,
+            "p90_days": 13.0,
+            "km_p50": 7.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "at_risk",
+            "interpretation": "Code Compliance: median 7d, P90 13d, 24% still open."
+          },
+          {
+            "category": "Design Clarification",
+            "total_rfis": 26,
+            "open_rfis": 7,
+            "closed_rfis": 19,
+            "median_days": 5.0,
+            "mean_days": 5.9,
+            "p90_days": 11.0,
+            "km_p50": 7.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "at_risk",
+            "interpretation": "Design Clarification: median 5d, P90 11d, 27% still open."
+          },
+          {
+            "category": "Constructability",
+            "total_rfis": 29,
+            "open_rfis": 6,
+            "closed_rfis": 23,
+            "median_days": 4.0,
+            "mean_days": 5.7,
+            "p90_days": 9.6,
+            "km_p50": 5.0,
+            "km_p90": null,
+            "is_bottleneck": false,
+            "health_level": "at_risk",
+            "interpretation": "Constructability: median 4d, P90 10d, 21% still open."
+          },
+          {
+            "category": "Coordination Issue",
+            "total_rfis": 248,
+            "open_rfis": 22,
+            "closed_rfis": 226,
+            "median_days": 4.0,
+            "mean_days": 4.3,
+            "p90_days": 7.0,
+            "km_p50": 4.0,
+            "km_p90": 19.0,
+            "is_bottleneck": false,
+            "health_level": "healthy",
+            "interpretation": "Coordination Issue: median 4d, P90 7d, 9% still open. Censored P90 (19d) higher than closed-only P90 -- open RFIs may be skewing the distribution."
+          },
+          {
+            "category": "Material Substitution",
+            "total_rfis": 13,
+            "open_rfis": 1,
+            "closed_rfis": 12,
+            "median_days": 4.0,
+            "mean_days": 4.3,
+            "p90_days": 7.0,
+            "km_p50": 4.0,
+            "km_p90": 8.0,
+            "is_bottleneck": false,
+            "health_level": "healthy",
+            "interpretation": "Material Substitution: median 4d, P90 7d, 8% still open. Censored P90 (8d) higher than closed-only P90 -- open RFIs may be skewing the distribution."
+          }
+        ]
+      },
+      "meeting_decisions": {
+        "avg_decision_rate_pct": 58.6,
+        "avg_attendance_rate_pct": 89.0,
+        "meetings_with_full_attendance": 7,
+        "decision_rate_full_attendance": 61.2,
+        "decision_rate_partial_attendance": 55.0,
+        "pearson_r": 0.2145,
+        "p_value": 0.5032,
+        "confidence_interval": [
+          -0.4099,
+          0.702
+        ],
+        "significant": false,
+        "correlation_strength": "weak",
+        "critical_absence": "Electrical",
+        "per_meeting": [
+          {
+            "meeting_date": "2025-06-01",
+            "total_items": 140,
+            "decided_items": 48,
+            "deferred_items": 92,
+            "decision_rate_pct": 34.3,
+            "attendance_rate_pct": 75.0
+          },
+          {
+            "meeting_date": "2025-06-08",
+            "total_items": 141,
+            "decided_items": 68,
+            "deferred_items": 73,
+            "decision_rate_pct": 48.2,
+            "attendance_rate_pct": 80.0
+          },
+          {
+            "meeting_date": "2025-06-15",
+            "total_items": 139,
+            "decided_items": 67,
+            "deferred_items": 72,
+            "decision_rate_pct": 48.2,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-06-22",
+            "total_items": 140,
+            "decided_items": 70,
+            "deferred_items": 70,
+            "decision_rate_pct": 50.0,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-06-29",
+            "total_items": 144,
+            "decided_items": 98,
+            "deferred_items": 46,
+            "decision_rate_pct": 68.1,
+            "attendance_rate_pct": 80.0
+          },
+          {
+            "meeting_date": "2025-07-06",
+            "total_items": 144,
+            "decided_items": 96,
+            "deferred_items": 48,
+            "decision_rate_pct": 66.7,
+            "attendance_rate_pct": 66.7
+          },
+          {
+            "meeting_date": "2025-07-13",
+            "total_items": 142,
+            "decided_items": 87,
+            "deferred_items": 55,
+            "decision_rate_pct": 61.3,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-07-20",
+            "total_items": 143,
+            "decided_items": 95,
+            "deferred_items": 48,
+            "decision_rate_pct": 66.4,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-07-27",
+            "total_items": 135,
+            "decided_items": 81,
+            "deferred_items": 54,
+            "decision_rate_pct": 60.0,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-08-03",
+            "total_items": 136,
+            "decided_items": 99,
+            "deferred_items": 37,
+            "decision_rate_pct": 72.8,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-08-10",
+            "total_items": 118,
+            "decided_items": 82,
+            "deferred_items": 36,
+            "decision_rate_pct": 69.5,
+            "attendance_rate_pct": 100.0
+          },
+          {
+            "meeting_date": "2025-08-17",
+            "total_items": 119,
+            "decided_items": 69,
+            "deferred_items": 50,
+            "decision_rate_pct": 58.0,
+            "attendance_rate_pct": 66.7
+          }
+        ],
+        "health_level": "at_risk",
+        "interpretation": "Avg decision rate 59% -- too many items deferred; check attendance and preparation. Attendance-decision correlation not statistically significant (r=0.21, p=0.503) -- insufficient evidence."
+      },
+      "ecv": {
+        "note": "ECV available \u2014 use compute_ecv() with project config."
+      },
+      "benchmarks": [
+        {
+          "metric": "recurring_clash_rate",
+          "value": 15.7,
+          "percentile_rank": 24.0,
+          "comparison": "below_average",
+          "insight": "Your Recurring clash rate (%) of 15.7 is at the 24th percentile.",
+          "benchmark_median": 8.0,
+          "benchmark_source": "Author estimates based on practitioner interviews (not from published data)",
+          "benchmark_sample_size": 20
+        },
+        {
+          "metric": "rfi_response_p90_days",
+          "value": 8.0,
+          "percentile_rank": 75.0,
+          "comparison": "above_average",
+          "insight": "Your RFI 90th percentile response time (business days) of 8.0 is better than 75% of projects.",
+          "benchmark_median": 14.0,
+          "benchmark_source": "Navigant/CMAA (2013) summary statistics; percentile distribution estimated by author",
+          "benchmark_sample_size": 1362
+        },
+        {
+          "metric": "meeting_decision_rate",
+          "value": 58.6,
+          "percentile_rank": 64.3,
+          "comparison": "average",
+          "insight": "Your Meeting decision resolution rate (%) of 58.6 is at the 64th percentile.",
+          "benchmark_median": 50.0,
+          "benchmark_source": "Author estimates based on Cavka et al. (2015); percentile distribution estimated",
+          "benchmark_sample_size": 27
+        }
+      ],
+      "cross_correlations": [
+        {
+          "metric_a": "rfi_bottleneck_discipline",
+          "metric_b": "lowest_approval_discipline",
+          "correlation": 0.0,
+          "direction": "neutral",
+          "insight": "RFI bottleneck is Mechanical (P90=12d) while lowest approval is Electrical (40%). Different root causes \u2014 investigate independently.",
+          "actionable": false
+        },
+        {
+          "metric_a": "meeting_decision_rate",
+          "metric_b": "clash_trajectory_health",
+          "correlation": -0.7,
+          "direction": "negative",
+          "insight": "Meeting decision rate is below target (59%). Clash trajectory health: stalled. Deferred decisions become unresolved clashes.",
+          "actionable": true
+        },
+        {
+          "metric_a": "critical_absence_discipline",
+          "metric_b": "recurring_clash_rate",
+          "correlation": 0.6,
+          "direction": "positive",
+          "insight": "When Electrical is absent from coordination meetings, decisions about their scope are deferred. This likely contributes to the 15.7% recurring clash rate.",
+          "actionable": true
+        },
+        {
+          "metric_a": "rfi_no_response_rate",
+          "metric_b": "coordination_health",
+          "correlation": -0.8,
+          "direction": "negative",
+          "insight": "12% of RFIs (41/337) have no response. Unanswered RFIs create assumptions on site that become rework.",
+          "actionable": true
+        }
+      ]
+    }
+  },
+  "trajectory_detail": {
+    "rounds": 6,
+    "slope": -78.61020408163262,
+    "r_squared": 0.89,
+    "health": null,
+    "round_totals": [
+      6001,
+      6481,
+      3480,
+      2465,
+      1853,
+      1277
+    ],
+    "round_new": [
+      6001,
+      480,
+      893,
+      680,
+      419,
+      228
+    ],
+    "round_resolved": [
+      0,
+      3997,
+      1729,
+      1044,
+      822,
+      593
+    ],
+    "recurrence": {
+      "recurrence_rate_pct": 15.7,
+      "recurring_count": 129,
+      "resolved_count": 822,
+      "recurring_pairs": [
+        [
+          "New-R3-203",
+          "New-R5-044",
+          343.7
+        ],
+        [
+          "New-R3-385",
+          "New-R1-081",
+          493.6
+        ],
+        [
+          "Clash-7b725147ef0d-R2",
+          "New-R4-230",
+          311.4
+        ],
+        [
+          "Clash-36441357cfbe",
+          "Clash-f33bfc871c37",
+          0.0
+        ],
+        [
+          "Clash-b40dd4ff0b48-R2",
+          "New-R3-140",
+          196.5
+        ],
+        [
+          "Clash-99f2e0fdc7e5-R3",
+          "New-R5-139",
+          407.7
+        ],
+        [
+          "Clash-b703db2d0c18-R3-R4",
+          "New-R5-161",
+          81.7
+        ],
+        [
+          "Clash-dbcd1e7c135a-R4",
+          "New-R5-141",
+          199.7
+        ],
+        [
+          "Clash-9290d31f3558-R3",
+          "Clash-843b24a654ff-R4",
+          268.2
+        ],
+        [
+          "Clash-d3f379de36ab-R2",
+          "New-R3-462-R5",
+          309.4
+        ],
+        [
+          "Clash-e424100633ae-R2",
+          "New-R3-270",
+          276.0
+        ],
+        [
+          "Clash-58bd15bad4e5-R3",
+          "New-R5-086",
+          394.7
+        ],
+        [
+          "Clash-2884ad5bf88d-R3",
+          "New-R5-071",
+          239.8
+        ],
+        [
+          "Clash-82dd7750fc94-R2",
+          "New-R3-384",
+          268.6
+        ],
+        [
+          "Clash-e1a93381b7ce-R4",
+          "New-R5-160",
+          361.2
+        ],
+        [
+          "Clash-43285d089089-R2",
+          "New-R5-157",
+          426.4
+        ],
+        [
+          "New-R1-025",
+          "New-R5-060",
+          285.9
+        ],
+        [
+          "New-R1-049",
+          "New-R4-178",
+          122.1
+        ],
+        [
+          "New-R1-381",
+          "New-R3-296",
+          191.2
+        ],
+        [
+          "New-R2-030",
+          "New-R5-048",
+          261.2
+        ],
+        [
+          "New-R2-034",
+          "New-R4-023",
+          341.4
+        ],
+        [
+          "New-R2-049",
+          "New-R5-158",
+          241.8
+        ],
+        [
+          "New-R2-056",
+          "New-R2-573-R5",
+          77.3
+        ],
+        [
+          "New-R2-057",
+          "New-R4-285",
+          390.0
+        ],
+        [
+          "New-R2-081",
+          "New-R3-045-R5",
+          370.5
+        ],
+        [
+          "New-R2-145",
+          "New-R3-530",
+          392.1
+        ],
+        [
+          "New-R2-166",
+          "New-R3-438",
+          413.3
+        ],
+        [
+          "New-R2-236",
+          "New-R5-134",
+          161.5
+        ],
+        [
+          "New-R2-239",
+          "New-R5-165",
+          116.8
+        ],
+        [
+          "New-R2-243",
+          "New-R5-127",
+          165.5
+        ],
+        [
+          "New-R2-255",
+          "New-R4-134",
+          278.8
+        ],
+        [
+          "New-R2-265",
+          "New-R5-108",
+          161.5
+        ],
+        [
+          "New-R2-296",
+          "New-R4-358",
+          162.2
+        ],
+        [
+          "New-R2-345",
+          "New-R5-012",
+          226.5
+        ],
+        [
+          "New-R2-365",
+          "New-R5-099",
+          105.1
+        ],
+        [
+          "New-R2-401",
+          "New-R5-107",
+          360.1
+        ],
+        [
+          "New-R2-450",
+          "New-R5-004",
+          437.0
+        ],
+        [
+          "New-R2-477",
+          "New-R4-284",
+          451.4
+        ],
+        [
+          "New-R2-485",
+          "New-R5-146",
+          361.6
+        ],
+        [
+          "New-R2-497",
+          "New-R3-466",
+          275.4
+        ],
+        [
+          "New-R2-513",
+          "New-R5-121",
+          260.4
+        ],
+        [
+          "New-R2-529",
+          "Clash-5d96400713c1-R4",
+          416.9
+        ],
+        [
+          "New-R2-537",
+          "New-R3-567",
+          401.7
+        ],
+        [
+          "New-R2-572",
+          "New-R5-014",
+          362.5
+        ],
+        [
+          "New-R2-631",
+          "New-R5-104",
+          175.4
+        ],
+        [
+          "New-R2-650",
+          "New-R4-218",
+          266.7
+        ],
+        [
+          "New-R2-655",
+          "New-R4-063",
+          152.4
+        ],
+        [
+          "New-R2-700",
+          "New-R5-113",
+          368.0
+        ],
+        [
+          "New-R3-010",
+          "New-R3-062-R5",
+          269.9
+        ],
+        [
+          "New-R3-025",
+          "New-R5-167",
+          316.4
+        ],
+        [
+          "New-R3-043",
+          "New-R4-166",
+          228.2
+        ],
+        [
+          "New-R3-044",
+          "New-R5-008",
+          393.0
+        ],
+        [
+          "New-R3-046",
+          "New-R4-215",
+          394.2
+        ],
+        [
+          "New-R3-047",
+          "New-R4-244",
+          199.9
+        ],
+        [
+          "New-R3-057",
+          "New-R5-015",
+          216.5
+        ],
+        [
+          "New-R3-078",
+          "New-R5-013",
+          207.4
+        ],
+        [
+          "New-R3-081",
+          "New-R5-067",
+          413.5
+        ],
+        [
+          "New-R3-087",
+          "New-R5-135",
+          345.7
+        ],
+        [
+          "New-R3-089",
+          "New-R5-058",
+          103.9
+        ],
+        [
+          "New-R3-103",
+          "New-R5-106",
+          360.9
+        ],
+        [
+          "New-R3-110",
+          "New-R5-168",
+          121.5
+        ],
+        [
+          "New-R3-112",
+          "New-R5-145",
+          200.0
+        ],
+        [
+          "New-R3-119",
+          "Clash-b703db2d0c18-R3-R4-R5",
+          164.3
+        ],
+        [
+          "New-R3-120",
+          "New-R3-182",
+          316.5
+        ],
+        [
+          "New-R3-122",
+          "New-R5-144",
+          81.7
+        ],
+        [
+          "New-R3-125",
+          "New-R5-024",
+          130.7
+        ],
+        [
+          "New-R3-142",
+          "New-R5-085",
+          387.1
+        ],
+        [
+          "New-R3-156",
+          "New-R5-006",
+          340.1
+        ],
+        [
+          "New-R3-167",
+          "New-R5-007",
+          227.8
+        ],
+        [
+          "New-R3-171",
+          "New-R4-159",
+          282.1
+        ],
+        [
+          "New-R3-186",
+          "New-R5-083",
+          361.8
+        ],
+        [
+          "New-R3-192",
+          "New-R5-102",
+          370.6
+        ],
+        [
+          "New-R3-198",
+          "New-R5-092",
+          259.9
+        ],
+        [
+          "New-R3-217",
+          "New-R2-473-R4",
+          130.5
+        ],
+        [
+          "New-R3-236",
+          "New-R4-107",
+          292.9
+        ],
+        [
+          "New-R3-244",
+          "New-R4-307",
+          265.2
+        ],
+        [
+          "New-R3-249",
+          "New-R5-147",
+          271.6
+        ],
+        [
+          "New-R3-257",
+          "New-R4-005",
+          74.9
+        ],
+        [
+          "New-R3-264",
+          "New-R5-112",
+          317.2
+        ],
+        [
+          "New-R3-268",
+          "New-R5-114",
+          348.8
+        ],
+        [
+          "New-R3-269",
+          "New-R4-260",
+          288.6
+        ],
+        [
+          "New-R3-271",
+          "New-R4-165",
+          209.2
+        ],
+        [
+          "New-R3-293",
+          "New-R2-348",
+          285.8
+        ],
+        [
+          "New-R3-294",
+          "New-R5-132",
+          191.9
+        ],
+        [
+          "New-R3-307",
+          "New-R5-061",
+          285.0
+        ],
+        [
+          "New-R3-317",
+          "New-R3-060",
+          335.1
+        ],
+        [
+          "New-R3-319",
+          "New-R5-046",
+          226.4
+        ],
+        [
+          "New-R3-325",
+          "New-R2-296-R5",
+          472.4
+        ],
+        [
+          "New-R3-340",
+          "New-R5-148",
+          259.3
+        ],
+        [
+          "New-R3-374",
+          "New-R3-346",
+          58.6
+        ],
+        [
+          "New-R3-375",
+          "New-R4-350",
+          327.2
+        ],
+        [
+          "New-R3-377",
+          "New-R5-166",
+          321.2
+        ],
+        [
+          "New-R3-392",
+          "New-R3-345",
+          92.0
+        ],
+        [
+          "New-R3-398",
+          "New-R5-040",
+          330.1
+        ],
+        [
+          "New-R3-405",
+          "New-R4-040",
+          198.7
+        ],
+        [
+          "New-R3-407",
+          "New-R5-027",
+          203.6
+        ],
+        [
+          "New-R3-425",
+          "Clash-d678f6f8b568-R2",
+          244.0
+        ],
+        [
+          "New-R3-426",
+          "New-R5-137",
+          348.4
+        ],
+        [
+          "New-R3-429",
+          "New-R3-091",
+          211.3
+        ],
+        [
+          "New-R3-432",
+          "New-R5-087",
+          225.2
+        ],
+        [
+          "New-R3-442",
+          "New-R3-365",
+          349.2
+        ],
+        [
+          "New-R3-452",
+          "New-R5-002",
+          187.6
+        ],
+        [
+          "New-R3-467",
+          "New-R5-052",
+          289.3
+        ],
+        [
+          "New-R3-470",
+          "New-R5-073",
+          432.9
+        ],
+        [
+          "New-R3-471",
+          "New-R4-238",
+          229.3
+        ],
+        [
+          "New-R3-495",
+          "New-R5-101",
+          174.1
+        ],
+        [
+          "New-R3-500",
+          "New-R5-055",
+          193.7
+        ],
+        [
+          "New-R3-502",
+          "New-R3-063",
+          68.2
+        ],
+        [
+          "New-R3-518",
+          "New-R5-110",
+          341.4
+        ],
+        [
+          "New-R3-519",
+          "New-R5-176",
+          427.4
+        ],
+        [
+          "New-R3-543",
+          "New-R5-098",
+          193.8
+        ],
+        [
+          "New-R3-546",
+          "New-R3-505-R5",
+          185.3
+        ],
+        [
+          "New-R3-550",
+          "New-R2-592",
+          104.6
+        ],
+        [
+          "New-R3-558",
+          "New-R5-123",
+          434.5
+        ],
+        [
+          "New-R3-568",
+          "New-R5-045",
+          228.0
+        ],
+        [
+          "New-R3-575",
+          "New-R2-120",
+          230.1
+        ],
+        [
+          "New-R3-578",
+          "New-R5-003",
+          229.3
+        ],
+        [
+          "New-R3-579",
+          "New-R3-155",
+          349.6
+        ],
+        [
+          "New-R3-585",
+          "New-R4-098",
+          271.2
+        ],
+        [
+          "New-R2-420",
+          "New-R5-089",
+          456.0
+        ],
+        [
+          "New-R3-205",
+          "New-R1-245",
+          489.4
+        ],
+        [
+          "Clash-f6b635d439e3",
+          "Clash-92336510c4c7",
+          69.9
+        ],
+        [
+          "Clash-00f5b9e80cfc",
+          "Clash-25ca5aa9dd48",
+          24.9
+        ],
+        [
+          "Clash-6d751417a53d",
+          "Clash-e59112dd350b",
+          70.9
+        ],
+        [
+          "Clash-e1d8713c778a",
+          "New-R5-009",
+          377.4
+        ],
+        [
+          "Clash-dd356c408098",
+          "Clash-44988ff323fa",
+          300.0
+        ],
+        [
+          "Clash-b97b72a4fb5c",
+          "Clash-5ba550848c86",
+          27.1
+        ],
+        [
+          "Clash-d2dcfdd4e50b",
+          "Clash-3d2f6b81173c",
+          300.0
+        ],
+        [
+          "New-R1-063-R3",
+          "New-R5-039",
+          417.5
+        ]
+      ],
+      "matching_method": "hungarian",
+      "shift_detected": false,
+      "shift_magnitude_mm": 32.4,
+      "shift_warning": null,
+      "health_level": "at_risk",
+      "interpretation": "16% recurrence rate -- some disciplines may not be actioning resolutions."
+    }
+  },
+  "ecv": {
+    "planned_value": 15.3,
+    "earned_value": 81.0,
+    "cpi": 5.31,
+    "spi": 2.47,
+    "status": "ahead",
+    "eac_date": "2025-08-26"
+  },
+  "benchmarks": [
+    {
+      "metric": "recurring_clash_rate",
+      "value": 15.7,
+      "percentile_rank": 24.0,
+      "comparison": "below_average",
+      "insight": "Your Recurring clash rate (%) of 15.7 is at the 24th percentile.",
+      "benchmark_median": 8.0,
+      "benchmark_source": "Author estimates based on practitioner interviews (not from published data)",
+      "benchmark_sample_size": 20
+    },
+    {
+      "metric": "rfi_response_p90_days",
+      "value": 8.0,
+      "percentile_rank": 75.0,
+      "comparison": "above_average",
+      "insight": "Your RFI 90th percentile response time (business days) of 8.0 is better than 75% of projects.",
+      "benchmark_median": 14.0,
+      "benchmark_source": "Navigant/CMAA (2013) summary statistics; percentile distribution estimated by author",
+      "benchmark_sample_size": 1362
+    }
+  ],
+  "cross_correlations": [
+    {
+      "metric_a": "rfi_bottleneck_discipline",
+      "metric_b": "lowest_approval_discipline",
+      "correlation": 0.0,
+      "direction": "neutral",
+      "insight": "RFI bottleneck is Mechanical (P90=12d) while lowest approval is Electrical (40%). Different root causes \u2014 investigate independently.",
+      "actionable": false
+    },
+    {
+      "metric_a": "meeting_decision_rate",
+      "metric_b": "clash_trajectory_health",
+      "correlation": -0.7,
+      "direction": "negative",
+      "insight": "Meeting decision rate is below target (59%). Clash trajectory health: stalled. Deferred decisions become unresolved clashes.",
+      "actionable": true
+    },
+    {
+      "metric_a": "critical_absence_discipline",
+      "metric_b": "recurring_clash_rate",
+      "correlation": 0.6,
+      "direction": "positive",
+      "insight": "When Electrical is absent from coordination meetings, decisions about their scope are deferred. This likely contributes to the 15.7% recurring clash rate.",
+      "actionable": true
+    },
+    {
+      "metric_a": "rfi_no_response_rate",
+      "metric_b": "coordination_health",
+      "correlation": -0.8,
+      "direction": "negative",
+      "insight": "12% of RFIs (41/337) have no response. Unanswered RFIs create assumptions on site that become rework.",
+      "actionable": true
+    }
+  ]
+}

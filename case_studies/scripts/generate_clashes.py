@@ -7,7 +7,7 @@ XML format that coordination-metrics can parse directly.
 
 Usage:
     python generate_clashes.py --project wbdg_duplex
-    python generate_clashes.py --project schependomlaan --tolerance 25
+    python generate_clashes.py --project wbdg_clinic --rounds 6
     python generate_clashes.py --project wbdg_duplex --rounds 5
 """
 from __future__ import annotations
@@ -41,7 +41,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = {
     "wbdg_duplex": PROJECT_ROOT / "wbdg_duplex",
     "wbdg_clinic": PROJECT_ROOT / "wbdg_clinic",
-    "schependomlaan": PROJECT_ROOT / "schependomlaan",
 }
 
 # Discipline detection from IFC filename or schema

@@ -1,0 +1,73 @@
+submittal_id,discipline,revision,status,date_submitted,description,source_clash,source_round
+SUB-001,Mechanical,1,Approved,2025-06-28,"Mechanical submittal for MEP-Architecture resolution near (2506, -8234, 3259mm). Ref: Clash-e5bb4b44752b",Clash-e5bb4b44752b,2
+SUB-002,Mechanical,2,Approved as Noted,2025-06-27,"Mechanical submittal for MEP-Architecture resolution near (5479, -7643, 3003mm). Ref: Clash-63d71a55afbf",Clash-63d71a55afbf,2
+SUB-003,Mechanical,1,Approved,2025-06-24,"Mechanical submittal for MEP-Architecture resolution near (4649, -8597, 911mm). Ref: Clash-e16fa118d69a",Clash-e16fa118d69a,2
+SUB-004,Mechanical,0,Rejected,2025-06-17,"Mechanical submittal for MEP-Architecture resolution near (4077, -7335, 3003mm). Ref: Clash-180e9b78a97b",Clash-180e9b78a97b,2
+SUB-005,Mechanical,2,Approved,2025-06-15,"Mechanical submittal for MEP-Architecture resolution near (5088, -7194, 5728mm). Ref: Clash-2d62f46d4030",Clash-2d62f46d4030,2
+SUB-006,Mechanical,2,Revise & Resubmit,2025-06-25,"Mechanical submittal for MEP-Architecture resolution near (3997, -8185, 2650mm). Ref: Clash-78254ad1b1c7",Clash-78254ad1b1c7,2
+SUB-007,Mechanical,0,Approved,2025-06-16,"Mechanical submittal for MEP-Architecture resolution near (3309, -9760, 2659mm). Ref: Clash-52f0f61b3873",Clash-52f0f61b3873,2
+SUB-008,Mechanical,0,Approved,2025-06-28,"Mechanical submittal for MEP-Architecture resolution near (4646, -9277, 800mm). Ref: Clash-6fd8f2a52797",Clash-6fd8f2a52797,2
+SUB-009,Mechanical,3,Approved as Noted,2025-06-15,"Mechanical submittal for MEP-Architecture resolution near (4090, -10294, 2736mm). Ref: Clash-0df78af0ca00",Clash-0df78af0ca00,2
+SUB-010,Mechanical,0,Approved,2025-06-17,"Mechanical submittal for MEP-Architecture resolution near (1538, -9758, -64mm). Ref: Clash-966eab3e56d3",Clash-966eab3e56d3,2
+SUB-011,Mechanical,1,Approved,2025-06-24,"Mechanical submittal for MEP-Architecture resolution near (379, -11307, 3138mm). Ref: Clash-6497d7872ec5",Clash-6497d7872ec5,2
+SUB-012,Mechanical,1,Approved,2025-06-27,"Mechanical submittal for MEP-Architecture resolution near (4084, -9203, 914mm). Ref: Clash-bea3cf5bd340",Clash-bea3cf5bd340,2
+SUB-013,Mechanical,1,Approved as Noted,2025-06-23,"Mechanical submittal for MEP-Architecture resolution near (3598, -9318, -0mm). Ref: Clash-b15922276c43",Clash-b15922276c43,2
+SUB-014,Mechanical,0,Approved as Noted,2025-06-28,"Mechanical submittal for MEP-Architecture resolution near (2567, -8782, 95mm). Ref: Clash-f1e0e71598ce",Clash-f1e0e71598ce,2
+SUB-015,Mechanical,1,Approved as Noted,2025-06-27,"Mechanical submittal for MEP-Architecture resolution near (4647, -10688, 3227mm). Ref: Clash-845282b3454f",Clash-845282b3454f,2
+SUB-016,Mechanical,1,Approved,2025-06-18,"Mechanical submittal for MEP-Architecture resolution near (208, -9246, -460mm). Ref: Clash-6f23113f1d4b",Clash-6f23113f1d4b,2
+SUB-017,Mechanical,0,Approved as Noted,2025-06-23,"Mechanical submittal for MEP-Architecture resolution near (4648, -8440, 450mm). Ref: Clash-e9ae34953fe9",Clash-e9ae34953fe9,2
+SUB-018,Mechanical,1,Approved,2025-06-18,"Mechanical submittal for MEP-Architecture resolution near (5834, -7142, 6mm). Ref: Clash-b74469ecabcd",Clash-b74469ecabcd,2
+SUB-019,Mechanical,1,Approved as Noted,2025-06-22,"Mechanical submittal for MEP-Architecture resolution near (4077, -7404, 3000mm). Ref: Clash-f77dd8a6f651",Clash-f77dd8a6f651,2
+SUB-020,Mechanical,0,Approved,2025-06-27,"Mechanical submittal for MEP-Architecture resolution near (4030, -7230, 3389mm). Ref: Clash-49e5e2721c6b",Clash-49e5e2721c6b,2
+SUB-021,Electrical,1,Approved as Noted,2025-06-20,"Electrical submittal for Electrical-Mechanical resolution near (5401, -7194, 3754mm). Ref: Clash-5f9cb74bee5e",Clash-5f9cb74bee5e,2
+SUB-022,Electrical,3,Approved as Noted,2025-06-26,"Electrical submittal for Electrical-Mechanical resolution near (907, -10372, 458mm). Ref: Clash-b09570ab4d99",Clash-b09570ab4d99,2
+SUB-023,Plumbing,1,Approved,2025-06-27,"Plumbing submittal for Plumbing-Mechanical resolution near (5483, -7603, 3261mm). Ref: Clash-2892140a989b",Clash-2892140a989b,2
+SUB-024,Plumbing,2,Approved,2025-06-27,"Plumbing submittal for Plumbing-Mechanical resolution near (4808, -8871, 3935mm). Ref: Clash-581131d67bd6",Clash-581131d67bd6,2
+SUB-025,Plumbing,2,Approved,2025-06-25,"Plumbing submittal for Plumbing-Mechanical resolution near (4152, -8004, -429mm). Ref: Clash-b16652b357f0",Clash-b16652b357f0,2
+SUB-026,Plumbing,0,Revise & Resubmit,2025-06-17,"Plumbing submittal for Plumbing-Mechanical resolution near (4648, -9796, -429mm). Ref: Clash-2bc2869128b8",Clash-2bc2869128b8,2
+SUB-027,Plumbing,2,Approved,2025-06-26,"Plumbing submittal for Plumbing-Mechanical resolution near (4118, -9696, 3000mm). Ref: Clash-dddc1cefe473",Clash-dddc1cefe473,2
+SUB-028,Plumbing,1,Revise & Resubmit,2025-06-26,"Plumbing submittal for Plumbing-Mechanical resolution near (1600, -10920, 2659mm). Ref: Clash-97c007b01978",Clash-97c007b01978,2
+SUB-029,Plumbing,1,Approved,2025-06-28,"Plumbing submittal for Plumbing-Mechanical resolution near (5834, -7164, -376mm). Ref: Clash-6547406f9827",Clash-6547406f9827,2
+SUB-030,Plumbing,3,Approved as Noted,2025-06-16,"Plumbing submittal for Plumbing-Mechanical resolution near (3876, -9645, 2760mm). Ref: Clash-3faa64bbd23d",Clash-3faa64bbd23d,2
+SUB-031,Plumbing,3,Approved,2025-06-25,"Plumbing submittal for Plumbing-Mechanical resolution near (4948, -8170, 3284mm). Ref: Clash-7374f0e05bb7",Clash-7374f0e05bb7,2
+SUB-032,Plumbing,2,Approved,2025-06-20,"Plumbing submittal for Plumbing-Mechanical resolution near (4152, -7493, -210mm). Ref: Clash-8faa0ab01008",Clash-8faa0ab01008,2
+SUB-033,Plumbing,2,Approved,2025-06-28,"Plumbing submittal for Plumbing-Mechanical resolution near (4648, -9894, -433mm). Ref: Clash-ffe63fef84d1",Clash-ffe63fef84d1,2
+SUB-034,Plumbing,2,Approved,2025-06-23,"Plumbing submittal for Plumbing-Mechanical resolution near (4707, -9346, 2972mm). Ref: Clash-676eb76c93ac",Clash-676eb76c93ac,2
+SUB-035,Plumbing,0,Approved as Noted,2025-06-16,"Plumbing submittal for Plumbing-Mechanical resolution near (4107, -10333, 3100mm). Ref: Clash-421ef218ad4f",Clash-421ef218ad4f,2
+SUB-036,Plumbing,1,Approved,2025-06-27,"Plumbing submittal for Plumbing-Mechanical resolution near (3317, -10168, 3231mm). Ref: Clash-df674683c120",Clash-df674683c120,2
+SUB-037,Plumbing,1,Approved,2025-06-22,"Plumbing submittal for Plumbing-Mechanical resolution near (5428, -6804, 3636mm). Ref: Clash-4071e0d5ffdf",Clash-4071e0d5ffdf,2
+SUB-038,Plumbing,1,Approved,2025-06-27,"Plumbing submittal for Plumbing-Mechanical resolution near (2864, -10484, 794mm). Ref: Clash-a90f9bd64a49",Clash-a90f9bd64a49,2
+SUB-039,Mechanical,3,Approved,2025-07-09,"Mechanical submittal for MEP-Architecture resolution near (6015, -5662, 2990mm). Ref: Clash-de6aea115ba2-R2",Clash-de6aea115ba2-R2,3
+SUB-040,Mechanical,1,Approved as Noted,2025-06-29,"Mechanical submittal for MEP-Architecture resolution near (4121, -9696, 3000mm). Ref: Clash-74df997dbcde",Clash-74df997dbcde,3
+SUB-041,Mechanical,1,Approved,2025-07-07,"Mechanical submittal for MEP-Architecture resolution near (8392, -17415, 2749mm). Ref: Clash-f06c1a5c3236",Clash-f06c1a5c3236,3
+SUB-042,Mechanical,3,Approved as Noted,2025-06-30,"Mechanical submittal for MEP-Architecture resolution near (408, -11618, 2659mm). Ref: Clash-e0206257719d",Clash-e0206257719d,3
+SUB-043,Mechanical,1,Approved as Noted,2025-07-11,"Mechanical submittal for MEP-Architecture resolution near (3997, -8751, 2650mm). Ref: Clash-5a9670eba9e7",Clash-5a9670eba9e7,3
+SUB-044,Mechanical,0,Approved,2025-07-05,"Mechanical submittal for MEP-Architecture resolution near (4707, -9914, 2722mm). Ref: Clash-49a3e979f6d3",Clash-49a3e979f6d3,3
+SUB-045,Mechanical,2,Approved,2025-07-06,"Mechanical submittal for MEP-Architecture resolution near (4707, -7510, 3106mm). Ref: Clash-70934447939e",Clash-70934447939e,3
+SUB-046,Plumbing,1,Approved as Noted,2025-07-06,"Plumbing submittal for Plumbing-Mechanical resolution near (3317, -10606, 3126mm). Ref: Clash-fd5a0099d736",Clash-fd5a0099d736,3
+SUB-047,Plumbing,2,Approved as Noted,2025-07-10,"Plumbing submittal for Plumbing-Mechanical resolution near (3688, -8004, -578mm). Ref: Clash-a90665227d58",Clash-a90665227d58,3
+SUB-048,Plumbing,0,Approved as Noted,2025-07-04,"Plumbing submittal for Plumbing-Mechanical resolution near (4038, -8642, -581mm). Ref: Clash-b5476fecbd1d",Clash-b5476fecbd1d,3
+SUB-049,Plumbing,0,Approved,2025-07-10,"Plumbing submittal for Plumbing-Mechanical resolution near (4152, -8349, -460mm). Ref: Clash-4877cd69a5d5",Clash-4877cd69a5d5,3
+SUB-050,Plumbing,1,Approved,2025-07-06,"Plumbing submittal for Plumbing-Mechanical resolution near (4742, -8221, 3100mm). Ref: Clash-11ba8e061cd6",Clash-11ba8e061cd6,3
+SUB-051,Plumbing,1,Revise & Resubmit,2025-06-30,"Plumbing submittal for Plumbing-Mechanical resolution near (5732, -7316, 747mm). Ref: Clash-d88dbf2fdd7b",Clash-d88dbf2fdd7b,3
+SUB-052,Mechanical,2,Approved,2025-07-18,"Mechanical submittal for MEP-Architecture resolution near (3244, -15082, 2600mm). Ref: Clash-a0b72cceecd5",Clash-a0b72cceecd5,4
+SUB-053,Mechanical,0,Approved,2025-07-22,"Mechanical submittal for MEP-Architecture resolution near (1824, -10732, 1071mm). Ref: New-R1-085",New-R1-085,4
+SUB-054,Mechanical,0,Approved,2025-07-17,"Mechanical submittal for MEP-Architecture resolution near (4893, -17239, 2489mm). Ref: New-R1-152",New-R1-152,4
+SUB-055,Mechanical,2,Approved as Noted,2025-07-14,"Mechanical submittal for MEP-Architecture resolution near (4836, -10477, 442mm). Ref: New-R1-188",New-R1-188,4
+SUB-056,Mechanical,2,Approved,2025-07-21,"Mechanical submittal for MEP-Architecture resolution near (1756, -294, 2941mm). Ref: New-R2-096",New-R2-096,4
+SUB-057,Mechanical,1,Approved as Noted,2025-07-24,"Mechanical submittal for MEP-Architecture resolution near (5328, -6659, 176mm). Ref: New-R2-107",New-R2-107,4
+SUB-058,Mechanical,1,Approved,2025-07-16,"Mechanical submittal for MEP-Architecture resolution near (4398, -11417, 3505mm). Ref: New-R2-172",New-R2-172,4
+SUB-059,Mechanical,1,Approved as Noted,2025-07-22,"Mechanical submittal for MEP-Architecture resolution near (2431, -6499, 3177mm). Ref: New-R2-262",New-R2-262,4
+SUB-060,Electrical,0,Revise & Resubmit,2025-07-25,"Electrical submittal for Electrical-Mechanical resolution near (2659, -10898, 3195mm). Ref: Clash-0e25357a66e6",Clash-0e25357a66e6,4
+SUB-061,Plumbing,0,Rejected,2025-07-17,"Plumbing submittal for Plumbing-Mechanical resolution near (4153, -8441, 650mm). Ref: Clash-60d96193036d",Clash-60d96193036d,4
+SUB-062,Plumbing,1,Revise & Resubmit,2025-07-25,"Plumbing submittal for Plumbing-Mechanical resolution near (4707, -8768, 2729mm). Ref: Clash-59a2b7dede11",Clash-59a2b7dede11,4
+SUB-063,Plumbing,0,Approved,2025-07-22,"Plumbing submittal for Plumbing-Mechanical resolution near (2821, -6584, -714mm). Ref: New-R1-048",New-R1-048,4
+SUB-064,Plumbing,2,Approved as Noted,2025-07-20,"Plumbing submittal for Plumbing-Mechanical resolution near (6499, -8764, 269mm). Ref: New-R2-080",New-R2-080,4
+SUB-065,Mechanical,1,Approved,2025-08-07,"Mechanical submittal for MEP-Architecture resolution near (3580, -7571, 2206mm). Ref: New-R1-180-R3",New-R1-180-R3,5
+SUB-066,Mechanical,1,Approved as Noted,2025-08-04,"Mechanical submittal for MEP-Architecture resolution near (4969, -13583, 5705mm). Ref: New-R1-211",New-R1-211,5
+SUB-067,Mechanical,1,Revise & Resubmit,2025-07-28,"Mechanical submittal for MEP-Architecture resolution near (2869, -10216, 316mm). Ref: New-R3-216",New-R3-216,5
+SUB-068,Plumbing,2,Approved as Noted,2025-08-04,"Plumbing submittal for Plumbing-Mechanical resolution near (5740, -8029, -220mm). Ref: New-R2-070",New-R2-070,5
+SUB-069,Plumbing,0,Revise & Resubmit,2025-08-05,"Plumbing submittal for Plumbing-Mechanical resolution near (3062, -7440, -873mm). Ref: New-R2-177",New-R2-177,5
+SUB-070,Plumbing,0,Approved as Noted,2025-08-04,"Plumbing submittal for Plumbing-Mechanical resolution near (5704, -8427, 3069mm). Ref: New-R2-297",New-R2-297,5
+SUB-071,Plumbing,0,Revise & Resubmit,2025-08-05,"Plumbing submittal for Plumbing-Mechanical resolution near (4822, -8368, -873mm). Ref: New-R3-273",New-R3-273,5
+SUB-072,Mechanical,0,Revise & Resubmit,2025-08-13,"Mechanical submittal for MEP-Architecture resolution near (3108, -5640, 3491mm). Ref: New-R3-094",New-R3-094,6

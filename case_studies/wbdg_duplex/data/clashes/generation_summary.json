@@ -1,0 +1,20 @@
+{
+  "project": "wbdg_duplex",
+  "ifc_files": [
+    "Duplex_A_20110907_optimized.ifc",
+    "Duplex_Electrical_20121207.ifc",
+    "Duplex_MEP_20110907_optimized.ifc",
+    "Duplex_Plumbing_20121113.ifc"
+  ],
+  "disciplines": [
+    "ARC",
+    "ELE",
+    "MEP",
+    "PLB"
+  ],
+  "tolerance_mm": 10.0,
+  "initial_clashes": 2917,
+  "rounds": 6,
+  "resolution_rate": 0.35,
+  "seed": 42
+}
