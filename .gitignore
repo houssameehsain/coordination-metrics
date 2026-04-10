@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+*.egg
+
+# IFC model files (large binaries — download per README instructions)
+case_studies/*/data/ifc/*.ifc
+case_studies/*/data/ifc/*.IFC
+case_studies/*/data/ifc/*.zip
+
+# Generated data (reproducible via pipeline scripts)
+case_studies/*/data/clashes/*
+!case_studies/*/data/clashes/.gitkeep
+case_studies/*/data/*.csv
+case_studies/*/output/*
+!case_studies/*/output/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

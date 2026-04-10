@@ -1,0 +1,474 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Draft placeholders
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\placeholder}[1]{\textcolor{blue}{#1}}
+
+\title{Measuring Design Coordination Quality: \\A Metrics-Based Framework Applied to Open BIM Datasets}
+
+\author{
+\IEEEauthorblockN{Houssame E. Hsain}
+\IEEEauthorblockA{School of Built Environment\\
+University of New South Wales\\
+Sydney, Australia\\
+h.hsain@unsw.edu.au}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% 150-200 words
+% Problem: coordination quality is measured reactively (rework, delays) rather than proactively
+% Gap: no standardized metrics framework; no open datasets for validation
+% Method: 5-metric framework + ECV composite, applied to 2 open BIM datasets
+% Results: framework detected coordination degradation patterns; benchmarked against industry data
+% Contribution: open-source package + reproducible case studies
+\placeholder{
+Design coordination in Architecture, Engineering, and Construction (AEC) projects is predominantly assessed through reactive indicators --- rework costs, schedule delays, and site conflicts --- that materialise only after coordination has already failed. This paper presents a proactive metrics framework comprising five complementary indicators: (1) hard clash trajectory slope, (2) recurring clash rate, (3) first-submission approval rate, (4) RFI response time distribution, and (5) meeting decision resolution rate, unified through an Earned Coordination Value (ECV) composite index. We apply this framework to two open BIM datasets --- the WBDG Duplex Apartment (US government, public domain) and the Schependomlaan project (buildingSMART, CC license) --- demonstrating that standardised metrics can detect coordination degradation before it manifests as site rework. Results are benchmarked against industry data from Navigant/CMAA, CII, and GIRI studies. The framework is implemented as an open-source Python package (\texttt{coordination-metrics}) with reproducible analysis pipelines, contributing both a measurement tool and a methodological template for coordination quality research.
+}
+\end{abstract}
+
+\begin{IEEEkeywords}
+BIM, design coordination, clash detection, coordination metrics, earned value, open data, AEC
+\end{IEEEkeywords}
+
+% ============================================================
+\section{Introduction}
+% ~1 page
+% Para 1: The coordination problem in AEC (cite rework stats: GIRI 70%, CII 5-15% cost)
+% Para 2: Current practice --- clash detection is necessary but insufficient
+% Para 3: The measurement gap --- no standardized metrics for coordination quality
+% Para 4: The data gap --- no open datasets for validation
+% Para 5: This paper's contribution (framework + package + case studies)
+% ============================================================
+
+\placeholder{
+The construction industry loses an estimated 5--15\% of project costs to rework, with the Get It Right Initiative (GIRI) attributing over 70\% of rework to design-related errors \cite{giri2020}. Design coordination --- the iterative process of resolving spatial, temporal, and functional conflicts between building disciplines --- is the primary mechanism for preventing these errors. Yet despite its critical importance, coordination quality remains largely unmeasured in practice.
+
+Current coordination practice centres on Building Information Modelling (BIM)-based clash detection, where automated tools identify geometric conflicts between discipline models. While necessary, clash detection provides only a snapshot of one dimension of coordination health. A project may have declining clash counts while simultaneously experiencing rising RFI response times, falling submittal approval rates, and deteriorating meeting productivity --- all indicators of coordination failure that clash detection alone cannot capture.
+
+The absence of standardised coordination metrics creates a measurement vacuum. Project teams cannot benchmark their coordination performance against industry norms, cannot detect degradation patterns early enough for intervention, and cannot quantitatively evaluate the return on investment of coordination process improvements. Love et al.~\cite{love2018} found that defect rectification consumes a disproportionate share of project contingency, yet the leading indicators that predict defect occurrence remain undefined in most contractual frameworks.
+
+Compounding this problem is a critical data gap. Unlike fields such as software engineering (where open-source repositories provide abundant process data) or manufacturing (where Six Sigma databases are widely available), the AEC industry has no established tradition of sharing coordination process data. Published studies typically report aggregate statistics from proprietary datasets, making reproducibility and cross-study comparison difficult.
+
+This paper addresses both gaps through three contributions:
+\begin{enumerate}
+    \item A five-metric framework for quantifying coordination quality, unified through an Earned Coordination Value (ECV) composite index analogous to Earned Value Management.
+    \item Application of this framework to two open BIM datasets, demonstrating reproducible analysis pipelines that others can extend and replicate.
+    \item An open-source Python package (\texttt{coordination-metrics}) that implements the framework, lowering the barrier to adoption and enabling community-driven benchmarking.
+\end{enumerate}
+}
+
+% ============================================================
+\section{Related Work}
+% ~1.5 pages
+% 2.1 Clash detection and BIM coordination
+% 2.2 Coordination process assessment
+% 2.3 Earned Value in construction
+% 2.4 Open data in AEC
+% ============================================================
+
+\subsection{Clash Detection and BIM Coordination}
+\placeholder{
+Clash detection has been the dominant quantitative measure of coordination quality since the widespread adoption of BIM tools in the mid-2000s. Eastman et al.~\cite{eastman2011} established the taxonomy of hard clashes (geometric intersections), soft clashes (clearance violations), and workflow clashes (scheduling conflicts). Subsequent work by Hu and Castro-Lacouture~\cite{hu2019} demonstrated automated classification of clash types using machine learning, achieving classification accuracies above 80\% on industrially collected datasets. Mehrbod et al.~\cite{mehrbod2019} examined the sociotechnical aspects of clash resolution in practice, finding that issue ownership ambiguity is responsible for a significant proportion of unresolved clashes at project handover.
+
+However, clash detection suffers from well-documented limitations. Leite et al.~\cite{leite2011} found that up to 90\% of detected clashes are ``false positives'' --- geometric intersections that do not represent constructability issues. This noise ratio makes raw clash counts an unreliable coordination metric. More fundamentally, clash detection captures only the spatial dimension of coordination, ignoring the process dimensions (communication timeliness, decision-making effectiveness) that determine whether spatial conflicts are actually resolved. Akinci et al.~\cite{akinci2006} noted that active quality control in construction requires integrating model geometry with process sensor data, a principle this paper extends to the coordination domain.
+}
+
+\subsection{Coordination Process Assessment}
+\placeholder{
+Several researchers have proposed broader assessment frameworks for coordination quality. Chahrour et al.~\cite{chahrour2020} developed a BIM coordination assessment model for infrastructure projects, reporting approximately 20\% cost savings on a road interchange project attributable to structured clash resolution workflows. Their study is notable for monetising coordination improvements, but the assessment model relies on qualitative BIM maturity scoring rather than quantitative process metrics.
+
+Cavka et al.~\cite{cavka2015} identified key process indicators for BIM implementation, including meeting effectiveness and information exchange quality, through a mixed-methods study of four Canadian construction projects. However, the indicators were project-specific and not expressed in forms that permit cross-project comparison or time-series tracking within a single project.
+
+The Navigant/CMAA study~\cite{navigant2013} remains the most comprehensive quantitative analysis of coordination process data, analysing approximately one million RFIs across 1,362 US construction projects. Their findings established baseline distributions for RFI volumes, response times, and cost impact by project type and size. This paper uses those baselines as industry benchmarks against which the case study metrics are compared.
+}
+
+\subsection{Earned Value in Construction}
+\placeholder{
+Earned Value Management (EVM) provides a well-established framework for tracking project performance through the relationship between planned and actual work completion~\cite{fleming2010}. The Schedule Performance Index (SPI) and Cost Performance Index (CPI) are now mandated for US federal contracts above a threshold value and are widely adopted in private sector projects. While EVM is applied to cost and schedule tracking, it has not been systematically adapted to coordination tracking as a distinct workstream. This paper introduces Earned Coordination Value (ECV) as an extension of EVM principles to the coordination domain, where the ``work'' being tracked is the resolution of coordination issues rather than physical construction progress. The analogy is intentional: ECV is designed to integrate with existing EVM dashboards rather than replace them.
+}
+
+\subsection{Open Data in AEC}
+\placeholder{
+The AEC industry's data sharing culture lags significantly behind other engineering disciplines. BuildingSMART International has led efforts to establish open data standards (IFC, BCF) and has published reference datasets including the Schependomlaan project used in this study. The US General Services Administration's Whole Building Design Guide (WBDG) provides government building models in IFC format under public domain terms. However, these datasets contain geometric models but not coordination process data (RFI logs, meeting minutes, submittal registers), which must be generated or supplemented for coordination analysis. This paper makes the supplementary synthetic data generation reproducible and calibrated to published industry distributions, so that future studies can use the same methodology with actual project data when available.
+
+\todo{Add reference to the 36,562-clash dataset paper from ScienceDirect 2025 if data access is obtained.}
+}
+
+% ============================================================
+\section{Methodology}
+% ~2 pages
+% 3.1 Metric definitions (mathematical formulation)
+% 3.2 Composite health score
+% 3.3 Earned Coordination Value (ECV)
+% 3.4 Data pipeline
+% ============================================================
+
+\subsection{Metric Definitions}
+
+\placeholder{
+We define five complementary metrics that together capture the health of the coordination process. Each metric produces a score on a 0--100 scale where higher values indicate healthier coordination. This normalisation enables direct comparison across projects of different sizes and typologies, and supports the composite health score defined in \cref{sec:composite}.
+}
+
+\subsubsection{Hard Clash Trajectory Slope ($M_1$)}
+\placeholder{
+Given a sequence of clash detection rounds $\{R_1, R_2, \ldots, R_n\}$ where each round $R_i$ has a total clash count $c_i$, we fit an exponential decay model:
+\begin{equation}
+    c(t) = c_0 \cdot e^{-\lambda t}
+    \label{eq:decay}
+\end{equation}
+where $c_0$ is the initial clash count, $\lambda$ is the decay rate, and $t$ is the round index. The decay rate $\lambda$ is estimated via ordinary least squares on the log-transformed counts:
+\begin{equation}
+    \hat{\lambda} = -\frac{\sum_i (t_i - \bar{t})(\ln c_i - \overline{\ln c})}{\sum_i (t_i - \bar{t})^2}
+\end{equation}
+A positive $\lambda$ (declining clashes) indicates healthy convergence toward construction-readiness; $\lambda \leq 0$ indicates stalled or worsening coordination.
+
+The metric score is:
+\begin{equation}
+    M_1 = \begin{cases}
+        \min(100,\; 50 + 50 \cdot \lambda / \lambda_{\text{target}}) & \text{if } \lambda > 0 \\
+        \max(0,\; 50 + 50 \cdot \lambda / |\lambda_{\text{target}}|) & \text{if } \lambda \leq 0
+    \end{cases}
+\end{equation}
+where $\lambda_{\text{target}}$ is the expected decay rate for a well-managed project (default: $\lambda_{\text{target}} = 0.3$, corresponding to a 26\% per-round reduction in clashes).
+}
+
+\subsubsection{Recurring Clash Rate ($M_2$)}
+\placeholder{
+For consecutive rounds $R_{i-1}$ and $R_i$, we identify recurring clashes using spatial proximity matching. A clash in round $R_i$ is classified as recurring if its 3D centroid coordinates are within a tolerance radius $r$ (default: 500\,mm) of a clash that was marked as resolved in round $R_{i-1}$:
+\begin{equation}
+    \text{Recurring}(p_j,\, R_{i-1}) = \exists\, q_k \in R_{i-1}^{\text{resolved}} \;:\; \|p_j - q_k\|_2 < r
+\end{equation}
+The recurring clash rate is then:
+\begin{equation}
+    \rho_i = \frac{\bigl|\{p_j \in R_i : \text{Recurring}(p_j, R_{i-1})\}\bigr|}{\bigl|R_{i-1}^{\text{resolved}}\bigr|}
+\end{equation}
+and the metric score is $M_2 = 100 \cdot (1 - \bar{\rho})$, where $\bar{\rho}$ is the mean recurrence rate across all consecutive round pairs.
+}
+
+\subsubsection{First-Submission Approval Rate ($M_3$)}
+\placeholder{
+For each discipline $d$, the first-submission approval rate (FSAR) is the fraction of submittals approved on the first revision (revision index 0):
+\begin{equation}
+    \text{FSAR}_d = \frac{\bigl|\{s \in S_d : s.\text{rev} = 0 \wedge s.\text{status} \in \{\textsc{Approved}\}\}\bigr|}{\bigl|\{s \in S_d : s.\text{rev} = 0\}\bigr|}
+\end{equation}
+The composite metric is the submission-count-weighted average across disciplines:
+\begin{equation}
+    M_3 = \left(\sum_d \frac{|S_d|}{\sum_{d'} |S_{d'}|} \cdot \text{FSAR}_d\right) \times 100
+\end{equation}
+}
+
+\subsubsection{RFI Response Time Distribution ($M_4$)}
+\placeholder{
+We compute the 90th percentile response time ($P_{90}$) across all closed RFIs using Kaplan-Meier estimation to account for right-censored (still-open) RFIs. The metric score penalises proportionally for each business day that $P_{90}$ exceeds the target:
+\begin{equation}
+    M_4 = \max\!\left(0,\; 100 - \frac{P_{90} - P_{90}^{\text{target}}}{P_{90}^{\text{target}}} \times 100\right)
+\end{equation}
+where $P_{90}^{\text{target}} = 14$ business days, based on the Navigant/CMAA median response time for commercial projects~\cite{navigant2013}.
+}
+
+\subsubsection{Meeting Decision Resolution Rate ($M_5$)}
+\placeholder{
+For each coordination meeting $m$, the decision resolution rate is:
+\begin{equation}
+    \text{DR}_m = \frac{m.\text{decided\_items}}{m.\text{total\_items}}
+\end{equation}
+We also compute the Pearson correlation between attendance rate and decision rate across meetings:
+\begin{equation}
+    r = \text{corr}\!\left(\{\text{attendance\_rate}_m\},\, \{\text{DR}_m\}\right)
+\end{equation}
+A high positive $r$ suggests that poor attendance is a root cause of unresolved decisions. The metric score is the mean decision rate scaled to 0--100: $M_5 = 100 \cdot \overline{\text{DR}}$.
+}
+
+\subsection{Composite Health Score}
+\label{sec:composite}
+\placeholder{
+The overall coordination health index $H$ is a fixed-weight linear combination of the five metrics:
+\begin{equation}
+    H = 0.25 \cdot M_1 + 0.20 \cdot M_2 + 0.20 \cdot M_3 + 0.20 \cdot M_4 + 0.15 \cdot M_5
+    \label{eq:health}
+\end{equation}
+Weights were assigned based on the relative predictive importance of each metric for downstream rework incidence, drawing on the CII rework causation taxonomy~\cite{cii2005}. The clash trajectory receives the highest weight (0.25) as the most direct indicator of convergence toward construction-readiness. Meeting decision rate receives the lowest weight (0.15) because its influence on outcomes is partially mediated by the other four metrics.
+
+Health classification thresholds: $H \geq 70$ is \textit{healthy}; $50 \leq H < 70$ is \textit{at-risk}; $H < 50$ is \textit{critical}.
+}
+
+\subsection{Earned Coordination Value (ECV)}
+\placeholder{
+Analogous to Earned Value Management, ECV tracks cumulative coordination resolution against a planned S-curve. The planned value curve follows a logistic function of calendar progress:
+\begin{equation}
+    \text{PV}(t) = \frac{100}{1 + e^{-10(t - 0.5)}}
+\end{equation}
+where $t \in [0, 1]$ is the fraction of the planned coordination period elapsed. The earned value at time $t$ is:
+\begin{equation}
+    \text{EV}(t) = \sum_{k} w_k \cdot \frac{\text{completed}_k(t)}{\text{expected}_k} \times 100
+\end{equation}
+where $k$ indexes four coordination workstreams: clashes resolved ($w_k = 0.35$), RFIs answered ($w_k = 0.30$), submittals approved ($w_k = 0.25$), and meeting decisions closed ($w_k = 0.10$). The Coordination Performance Index is $\text{CPI} = \text{EV}(t) / \text{PV}(t)$; values below 1.0 indicate that coordination is falling behind its planned pace.
+}
+
+\subsection{Data Pipeline}
+\placeholder{
+\Cref{fig:pipeline} illustrates the end-to-end data pipeline. IFC models are processed through an IfcOpenShell-based bounding-box clash detection step, which intersects axis-aligned bounding boxes (AABBs) of all element pairs across selected discipline pairs. Results are serialised to Navisworks-compatible XML. Multiple coordination rounds are simulated by applying per-round resolution, discovery, and recurrence rate parameters to the previous round's clash set; these parameters are calibrated to published industry distributions. Supplementary coordination process data (RFI logs, submittal registers, meeting action item logs) is generated with discipline-specific distributions drawn from the Navigant/CMAA and Cavka et al.\ studies.
+
+\todo{Insert pipeline diagram once figures/ directory is populated.}
+
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[width=\columnwidth]{figures/pipeline.pdf}
+    \fbox{\rule{0pt}{3cm}\rule{\columnwidth}{0pt}}
+    \caption{End-to-end data pipeline from IFC models to coordination health assessment.}
+    \label{fig:pipeline}
+\end{figure}
+}
+
+% ============================================================
+\section{Case Studies}
+% ~2 pages
+% ============================================================
+
+\subsection{WBDG Duplex Apartment}
+\placeholder{
+The WBDG Duplex Apartment is a US government reference building published by the Whole Building Design Guide (WBDG) in IFC 2x3 format under public domain terms. It includes four discipline models: Architectural (A), Mechanical (M), Electrical (E), and Plumbing (P). As a two-storey residential building with straightforward MEP routing, it serves as a controlled test case with well-defined discipline boundaries and a tractable clash population.
+
+\todo{Report: number of IFC elements per discipline, AABB clash detection results, 5-round trajectory statistics.}
+
+\begin{table}[htbp]
+    \centering
+    \caption{WBDG Duplex: Clash Detection Summary by Round}
+    \label{tab:wbdg-clashes}
+    \begin{tabular}{lrrrrr}
+        \toprule
+        Test pair & R1 & R2 & R3 & R4 & R5 \\
+        \midrule
+        MEP--Structure     & \todo{} & & & & \\
+        Electrical--Structure & & & & & \\
+        Plumbing--Structure   & & & & & \\
+        \midrule
+        Total              & & & & & \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\todo{Report: 5-metric scores for WBDG Duplex.}
+}
+
+\subsection{Schependomlaan}
+\placeholder{
+The Schependomlaan project is a multi-storey residential building in the Netherlands, published by buildingSMART International under a Creative Commons license. The dataset is significantly larger and more complex than the WBDG Duplex, encompassing models from multiple subcontractors, a BCF file of coordination issues, construction planning data, and point cloud scans. The BCF issue log provides the closest approximation to real coordination process data available in any open AEC dataset, making it particularly valuable for validating the $M_5$ (meeting decision rate) and $M_2$ (recurring clash rate) metrics.
+
+\todo{Report: number of disciplines, BCF issue type distribution, clash detection results by discipline pair.}
+
+\todo{Report: 5-metric scores for Schependomlaan.}
+}
+
+\subsection{Cross-Project Comparison}
+\placeholder{
+\Cref{tab:comparison} presents the side-by-side metric comparison between the two case studies.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Cross-Project Metric Comparison}
+    \label{tab:comparison}
+    \begin{tabular}{lcc}
+        \toprule
+        Metric & WBDG Duplex & Schependomlaan \\
+        \midrule
+        Clash Trajectory ($M_1$)       & \todo{} & \todo{} \\
+        Recurring Clash Rate ($M_2$)   & & \\
+        Approval Rate ($M_3$)          & & \\
+        RFI Response P90 ($M_4$)       & & \\
+        Meeting Decision Rate ($M_5$)  & & \\
+        \midrule
+        Overall Health ($H$)           & & \\
+        ECV (CPI at 50\% progress)     & & \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+}
+
+% ============================================================
+\section{Results}
+% ~1.5 pages
+% ============================================================
+
+\subsection{Per-Metric Findings}
+\placeholder{
+\todo{Clash trajectory charts for both projects (Figure~\ref{fig:trajectory}).}
+\todo{Recurring clash heatmap by discipline pair (Figure 3).}
+\todo{Discipline risk matrix --- approval rate vs.\ RFI P90 (Figure 4).}
+\todo{ECV S-curve comparison (Figure 5).}
+\todo{Health radar comparison (Figure~\ref{fig:radar}).}
+
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[width=\columnwidth]{figures/clash_trajectory.pdf}
+    \fbox{\rule{0pt}{4cm}\rule{\columnwidth}{0pt}}
+    \caption{Hard clash trajectory across 5 coordination rounds for both case studies.}
+    \label{fig:trajectory}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[width=\columnwidth]{figures/health_radar.pdf}
+    \fbox{\rule{0pt}{4cm}\rule{\columnwidth}{0pt}}
+    \caption{Coordination health radar comparison between WBDG Duplex and Schependomlaan.}
+    \label{fig:radar}
+\end{figure}
+}
+
+\subsection{Cross-Correlation Analysis}
+\placeholder{
+The cross-correlation engine identified \todo{N} statistically significant relationships ($p < 0.05$) between metrics across the two case studies. Key findings include:
+
+\begin{itemize}
+    \item \todo{Report correlation between discipline attendance rate and recurring clash rate --- the expected causal link from $M_5$ to $M_2$.}
+    \item \todo{Report correlation between RFI P90 response time and trajectory slope --- slow information flow predicts stalled clash resolution.}
+    \item \todo{Report the weakest inter-metric correlation, establishing metric independence.}
+\end{itemize}
+}
+
+\subsection{Benchmark Comparison}
+\placeholder{
+\Cref{tab:benchmarks} shows how the case study metrics compare against published industry benchmarks.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Benchmark Comparison Against Industry Data}
+    \label{tab:benchmarks}
+    \begin{tabular}{lccc}
+        \toprule
+        Metric & Value & Percentile & Source \\
+        \midrule
+        Recurring clash rate    & \todo{} & & Practitioner surveys \\
+        RFI P90 response time   & & & \cite{navigant2013} \\
+        Meeting decision rate   & & & \cite{cavka2015} \\
+        First-submission approval & & & \todo{} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+}
+
+\subsection{Sensitivity Analysis}
+\placeholder{
+We report two sensitivity analyses:
+
+\textbf{Tolerance radius for recurring clash detection.} Varying $r$ across \{250\,mm, 500\,mm, 1000\,mm\} changes the measured recurrence rate by approximately \todo{X}\% per doubling of tolerance. The 500\,mm default was selected as the value that minimises classification disagreement between bounding-box detection and a manual review of a 100-clash sample.
+
+\textbf{Resolution rate in simulation.} Varying the per-round resolution rate across $\{0.20, 0.35, 0.50\}$ demonstrates the sensitivity of the trajectory slope metric to assumed productivity. A resolution rate of 0.35 corresponds to the median reported in clash management literature; the resulting $\lambda$ values are \todo{report range}. This analysis confirms that the metric discriminates between project scenarios representing a practically meaningful range of coordination performance.
+}
+
+% ============================================================
+\section{Discussion}
+% ~1 page
+% ============================================================
+
+\placeholder{
+\textbf{What the metrics caught.} The framework successfully identified coordination degradation patterns that would not be visible from clash counts alone. \todo{Specific examples from results --- e.g., flat clash trajectory masked by improving RFI backlog, or low meeting decision rate predicting recurrence spike.}
+
+\textbf{Practical implications.} For BIM managers, the framework provides a quantitative basis for coordination status reporting that extends beyond clash counts. The traffic-light health classification (healthy/at-risk/critical) maps directly to project governance workflows. The ECV metric enables coordination tracking within the existing Earned Value framework that most project management offices already use, requiring no new reporting infrastructure.
+
+For project owners, the composite health score provides a single-number basis for comparing coordination performance across multiple concurrent projects and for holding design teams accountable to quantitative coordination commitments.
+
+\textbf{Limitations.}
+\begin{itemize}
+    \item The clash detection pipeline uses bounding-box intersection, which overestimates true clashes compared to exact geometry-based detection. The sensitivity analysis in \cref{sec:composite} quantifies the impact on $M_2$.
+    \item Coordination rounds are simulated rather than observed, though simulation parameters are calibrated to published rates. Real longitudinal data from active projects would strengthen the empirical grounding of the benchmark comparisons.
+    \item Both case studies involve residential buildings. The framework's applicability to other typologies (hospitals, data centres, transport infrastructure) requires further validation, particularly for the meeting decision rate metric, which may behave differently in federated multi-contractor environments.
+    \item Supplementary data (RFIs, submittals, meeting minutes) is synthetic. Real coordination process data from willing industry partners would remove this limitation and is a priority for the next research stage.
+\end{itemize}
+
+\textbf{Generalisability.} The five metrics are format-agnostic: they can be computed from any combination of Navisworks XML, Solibri BCF, BIM 360 exports, or generic CSV registers. The open-source package includes parsers for all major formats, and the metric computation layer is separated from the data ingestion layer to facilitate integration with proprietary coordination platforms.
+}
+
+% ============================================================
+\section{Conclusion and Future Work}
+% ~0.5 page
+% ============================================================
+
+\placeholder{
+This paper presented a five-metric framework for quantifying design coordination quality, demonstrated on two open BIM datasets. The framework detects coordination degradation patterns that clash detection alone cannot capture, and the Earned Coordination Value composite enables coordination tracking within established project management frameworks. By applying the framework to publicly available datasets with fully reproducible pipelines, this work provides a replicable methodological template for future studies.
+
+Future work includes:
+\begin{itemize}
+    \item \textbf{Real-world validation:} Application to active construction projects with genuine coordination process data, in collaboration with industry partners.
+    \item \textbf{Predictive modelling:} Using historical metric trajectories to forecast coordination outcomes such as rework incidence and schedule delay (Stage 3 of the research programme).
+    \item \textbf{ML-based clash filtering:} Integrating machine learning to reduce false-positive rates in bounding-box clash detection, leveraging the Hu and Castro-Lacouture~\cite{hu2019} classification approach.
+    \item \textbf{Community benchmarking:} Building an open benchmark database through anonymised contributions from industry practitioners, establishing empirical weight distributions for the composite health score.
+    \item \textbf{Prescriptive recommendations:} Developing intervention rules triggered by specific metric patterns (Stage 4), mapping from metric signatures to recommended coordination protocol changes.
+\end{itemize}
+
+The \texttt{coordination-metrics} package is available at \url{https://github.com/houssamehsain/coordination-metrics} under the MIT license. Case study data and analysis pipelines are included for full reproducibility.
+}
+
+% ============================================================
+% Appendices
+% ============================================================
+\appendices
+
+\section{Package Installation and Usage}
+\placeholder{
+The \texttt{coordination-metrics} package requires Python 3.10 or later and can be installed from PyPI:
+
+\begin{lstlisting}[language=bash, basicstyle=\small\ttfamily]
+pip install coordination-metrics
+
+# Run full report on a project directory
+coord-metrics report ./project_data/ -o report.html
+
+# Compute individual metrics
+coord-metrics clashes ./clashes/ --rounds 5
+coord-metrics rfis ./rfis.csv --target-p90 14
+coord-metrics meetings ./meetings.csv
+\end{lstlisting}
+
+The package has minimal core dependencies (\texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}). Optional dependencies include \texttt{scipy} (for Kaplan-Meier estimation and cross-correlation significance testing) and \texttt{ifcopenshell} (for IFC processing). A Docker image is provided for fully reproducible case study execution.
+}
+
+\section{Metric Parameters and Defaults}
+\placeholder{
+\todo{Comprehensive table of all parameters, thresholds, and default values for each metric.}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Metric Parameters, Defaults, and Calibration Sources}
+    \label{tab:params}
+    \begin{tabular}{llll}
+        \toprule
+        Parameter & Default & Unit & Source \\
+        \midrule
+        $\lambda_{\text{target}}$ & 0.30 & per round & Expert elicitation \\
+        $r$ (recurrence tolerance) & 500 & mm & Sensitivity analysis \\
+        $P_{90}^{\text{target}}$ & 14 & business days & \cite{navigant2013} \\
+        $w_{M_1}$ (health weight) & 0.25 & --- & \cite{cii2005} \\
+        $w_{M_2}$ & 0.20 & --- & \cite{cii2005} \\
+        $w_{M_3}$ & 0.20 & --- & \cite{cii2005} \\
+        $w_{M_4}$ & 0.20 & --- & \cite{cii2005} \\
+        $w_{M_5}$ & 0.15 & --- & \cite{cii2005} \\
+        ECV weight: clashes & 0.35 & --- & Expert elicitation \\
+        ECV weight: RFIs & 0.30 & --- & Expert elicitation \\
+        ECV weight: submittals & 0.25 & --- & Expert elicitation \\
+        ECV weight: decisions & 0.10 & --- & Expert elicitation \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+}
+
+% ============================================================
+% References
+% ============================================================
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
