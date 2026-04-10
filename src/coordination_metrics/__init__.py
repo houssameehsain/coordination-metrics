@@ -12,7 +12,7 @@ Core metrics:
     - Earned Coordination Value (ECV) — is coordination on schedule?
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from coordination_metrics.core import (
     ClashPoint,

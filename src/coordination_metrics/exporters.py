@@ -34,7 +34,7 @@ def export_to_json(
     """
     data = health.summary()
     data["generated_date"] = date.today().isoformat()
-    data["version"] = "0.1.0"
+    data["version"] = "0.2.0"
 
     # Make sure all values are JSON-serialisable
     json_str = json.dumps(data, indent=indent, default=str)

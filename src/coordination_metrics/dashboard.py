@@ -511,7 +511,7 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   <!-- Cross-Metric Insights -->
   {"" if not insight_cards_html else f'''<div class="section"><h2>Cross-Metric Insights</h2><div style="display:flex;flex-direction:column;gap:0.75rem">{insight_cards_html}</div></div>'''}
 
-  <div class="footer">coordination-metrics v0.1.1 | Metrics that predict design coordination failure</div>
+  <div class="footer">coordination-metrics v0.2.0 | Metrics that predict design coordination failure</div>
 </div>
 
 <script>
