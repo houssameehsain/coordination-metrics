@@ -36,10 +36,64 @@ from coordination_metrics.core import HealthLevel, MeetingSummary
 from coordination_metrics.parsers.csv_register import read_register
 
 
+def _parse_aggregated_meeting_csv(df: "pd.DataFrame") -> list[MeetingSummary]:
+    """Parse a meeting CSV with pre-aggregated rows (one row per meeting).
+
+    Expected columns: meeting_date, total_items, decided_items,
+    deferred_items (optional), disciplines_required, disciplines_present.
+    Discipline lists may be semicolon- or comma-separated.
+    """
+    summaries: list[MeetingSummary] = []
+
+    for _, row in df.iterrows():
+        meeting_date_str = str(row.get("meeting_date", "")).strip()
+        try:
+            meeting_date = datetime.strptime(meeting_date_str, "%Y-%m-%d").date()
+        except ValueError:
+            try:
+                meeting_date = datetime.strptime(meeting_date_str, "%d/%m/%Y").date()
+            except ValueError:
+                continue
+
+        total_items = int(row.get("total_items", 0))
+        decided = int(row.get("decided_items", 0))
+        deferred = int(row.get("deferred_items", total_items - decided))
+
+        required: set[str] = set()
+        present: set[str] = set()
+        for col, target in [("disciplines_required", required), ("disciplines_present", present)]:
+            val = str(row.get(col, ""))
+            for sep in (";", ","):
+                if sep in val:
+                    target.update(d.strip() for d in val.split(sep) if d.strip())
+                    break
+            else:
+                if val.strip():
+                    target.add(val.strip())
+
+        summaries.append(MeetingSummary(
+            meeting_date=meeting_date,
+            total_items=total_items,
+            decided_items=decided,
+            deferred_items=deferred,
+            disciplines_required=required,
+            disciplines_present=present,
+        ))
+
+    summaries.sort(key=lambda s: s.meeting_date)
+    return summaries
+
+
 def parse_meeting_csv(path: Union[str, Path]) -> list[MeetingSummary]:
     """Parse a meeting-minutes CSV into MeetingSummary objects.
 
-    Expected columns:
+    Supports two formats:
+    1. **Aggregated** (one row per meeting): columns ``total_items``,
+       ``decided_items``, ``deferred_items`` — auto-detected.
+    2. **Per-item** (one row per agenda item): column ``status``
+       with values DECIDED/DEFERRED/etc.
+
+    Expected columns (per-item format):
         meeting_date, item_number, item_description, status,
         disciplines_required, disciplines_present
 
@@ -56,6 +110,14 @@ def parse_meeting_csv(path: Union[str, Path]) -> list[MeetingSummary]:
     """
     df = read_register(path)
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
+
+    # Auto-detect format: aggregated (one row per meeting with totals)
+    # vs per-item (one row per agenda item with status column)
+    has_aggregated = {"total_items", "decided_items"}.issubset(set(df.columns))
+    has_status = "status" in df.columns
+
+    if has_aggregated and not has_status:
+        return _parse_aggregated_meeting_csv(df)
 
     required = {"meeting_date", "status"}
     missing = required - set(df.columns)
@@ -392,6 +454,14 @@ def compute_attendance_decision_correlation(
         for m in summaries
     ]
 
+    # Compute critical absence: which discipline is most often absent?
+    from collections import Counter
+    absence_counter: Counter[str] = Counter()
+    for m in summaries:
+        absent = m.disciplines_required - m.disciplines_present
+        absence_counter.update(absent)
+    critical_absence = absence_counter.most_common(1)[0][0] if absence_counter else None
+
     return {
         "avg_decision_rate_pct": round(avg_decision, 1),
         "avg_attendance_rate_pct": round(avg_attendance, 1),
@@ -403,6 +473,7 @@ def compute_attendance_decision_correlation(
         "confidence_interval": (round(ci[0], 4), round(ci[1], 4)),
         "significant": significant,
         "correlation_strength": correlation,
+        "critical_absence": critical_absence,
         "per_meeting": per_meeting,
         "health_level": health.value,
         "interpretation": interpretation,

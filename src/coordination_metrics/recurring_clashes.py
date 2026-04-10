@@ -101,6 +101,11 @@ def _euclidean_distance(a: ClashPoint, b: ClashPoint) -> float:
 # Coordinate shift detection
 # ---------------------------------------------------------------------------
 
+def _points_to_array(points: Sequence[ClashPoint]) -> np.ndarray:
+    """Convert clash points to (N, 3) numpy array."""
+    return np.array([[p.x, p.y, p.z] for p in points], dtype=np.float64)
+
+
 def _compute_median_shift(
     resolved: Sequence[ClashPoint],
     new_or_active: Sequence[ClashPoint],
@@ -108,12 +113,8 @@ def _compute_median_shift(
 ) -> tuple[np.ndarray, float]:
     """Compute the median shift vector from nearest-neighbour pairs.
 
-    For each resolved point, find the nearest current point. If the pair
-    distance is within ``10 * threshold_mm`` (i.e. plausibly the same
-    clash, just shifted), include the displacement vector. The median
-    of these displacement vectors is the estimated shift.
-
-    This approach is robust to outliers and unmatched points.
+    Uses vectorized numpy distance computation for O(n*m) with fast
+    C-level operations instead of Python loops.
 
     Returns:
         (shift_vector [3], shift_magnitude_mm)
@@ -121,25 +122,33 @@ def _compute_median_shift(
     if not resolved or not new_or_active:
         return np.zeros(3), 0.0
 
-    max_pair_dist = threshold_mm * 10  # generous pairing distance
-    shifts: list[np.ndarray] = []
+    max_pair_dist = threshold_mm * 10
+    res_pts = _points_to_array(resolved)    # (n, 3)
+    new_pts = _points_to_array(new_or_active)  # (m, 3)
 
-    for rp in resolved:
-        best_dist = float("inf")
-        best_delta = np.zeros(3)
-        for cp in new_or_active:
-            d = _euclidean_distance(rp, cp)
-            if d < best_dist:
-                best_dist = d
-                best_delta = np.array([cp.x - rp.x, cp.y - rp.y, cp.z - rp.z])
-        if best_dist <= max_pair_dist:
-            shifts.append(best_delta)
+    # Vectorized nearest-neighbour: try scipy KDTree first, fallback to numpy
+    try:
+        from scipy.spatial import cKDTree
+        tree = cKDTree(new_pts)
+        dists, indices = tree.query(res_pts)  # O(n log m)
+    except ImportError:
+        # Numpy fallback: compute pairwise distances in chunks
+        dists = np.empty(len(res_pts))
+        indices = np.empty(len(res_pts), dtype=int)
+        CHUNK = 1000
+        for i0 in range(0, len(res_pts), CHUNK):
+            i1 = min(i0 + CHUNK, len(res_pts))
+            diff = res_pts[i0:i1, None, :] - new_pts[None, :, :]  # (chunk, m, 3)
+            d = np.sqrt((diff ** 2).sum(axis=2))  # (chunk, m)
+            indices[i0:i1] = d.argmin(axis=1)
+            dists[i0:i1] = d.min(axis=1)
 
-    if not shifts:
+    mask = dists <= max_pair_dist
+    if not mask.any():
         return np.zeros(3), 0.0
 
-    shift_array = np.array(shifts)
-    median_shift = np.median(shift_array, axis=0)
+    deltas = new_pts[indices[mask]] - res_pts[mask]  # (k, 3)
+    median_shift = np.median(deltas, axis=0)
     magnitude = float(np.linalg.norm(median_shift))
     return median_shift, magnitude
 
@@ -207,14 +216,28 @@ def _build_distance_matrix(
     resolved: list[ClashPoint],
     new_or_active: list[ClashPoint],
 ) -> np.ndarray:
-    """Build the full distance matrix between resolved and current points."""
-    n_res = len(resolved)
-    n_cur = len(new_or_active)
-    dist = np.full((n_res, n_cur), np.inf)
-    for i, rp in enumerate(resolved):
-        for j, cp in enumerate(new_or_active):
-            dist[i, j] = _euclidean_distance(rp, cp)
-    return dist
+    """Build the full distance matrix between resolved and current points.
+
+    Uses vectorized numpy computation. Falls back to scipy.spatial.distance.cdist
+    when available for optimal performance on large sets.
+    """
+    res_pts = _points_to_array(resolved)    # (n, 3)
+    new_pts = _points_to_array(new_or_active)  # (m, 3)
+
+    try:
+        from scipy.spatial.distance import cdist
+        return cdist(res_pts, new_pts)  # (n, m), Euclidean
+    except ImportError:
+        # Numpy fallback: chunked to control memory
+        n_res = len(resolved)
+        n_cur = len(new_or_active)
+        dist = np.empty((n_res, n_cur), dtype=np.float64)
+        CHUNK = 500
+        for i0 in range(0, n_res, CHUNK):
+            i1 = min(i0 + CHUNK, n_res)
+            diff = res_pts[i0:i1, None, :] - new_pts[None, :, :]
+            dist[i0:i1] = np.sqrt((diff ** 2).sum(axis=2))
+        return dist
 
 
 def _hungarian_matching(

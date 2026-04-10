@@ -133,6 +133,19 @@ class CoordinationHealthDashboard:
                 # Add zero-clash projection
                 projection = projected_zero_date(summaries)
                 traj_result["zero_clash_projection"] = projection
+                # Store per-round data for charting
+                traj_result["_round_data"] = [
+                    {
+                        "round_label": s.round_label,
+                        "round_date": s.round_date.isoformat(),
+                        "total": s.total,
+                        "new": s.new,
+                        "active": s.active,
+                        "reviewed": s.reviewed,
+                        "resolved": s.resolved,
+                    }
+                    for s in summaries
+                ]
                 health.clash_trajectory_score = trajectory_to_score(traj_result["slope"])
                 details["clash_trajectory"] = traj_result
             except Exception as e:
@@ -317,13 +330,17 @@ def _health_color(level: str) -> str:
 
 
 def _render_html(health: CoordinationHealth) -> str:
-    """Render the coordination health dashboard as HTML."""
+    """Render the coordination health dashboard as interactive HTML with ECharts."""
     summary = health.summary()
     level = summary["health_level"]
     color = _health_color(level)
     metrics = summary["metrics"]
+    details = summary.get("details", {})
 
-    metric_cards = ""
+    # --- Prepare chart data as JSON for ECharts ---
+    # Radar data
+    radar_indicators = []
+    radar_values = []
     labels = {
         "clash_trajectory": "Clash Trajectory",
         "recurring_clashes": "Recurring Clashes",
@@ -331,299 +348,303 @@ def _render_html(health: CoordinationHealth) -> str:
         "rfi_response": "RFI Response",
         "meeting_decisions": "Meeting Decisions",
     }
-
     for key, label in labels.items():
-        score = metrics[key]
-        if score >= 70:
-            card_color = "#22c55e"
-        elif score >= 45:
-            card_color = "#f59e0b"
-        else:
-            card_color = "#ef4444"
+        radar_indicators.append({"name": label, "max": 100})
+        radar_values.append(metrics[key])
 
-        metric_cards += f"""
-        <div class="metric-card">
-            <div class="metric-label">{label}</div>
-            <div class="metric-score" style="color: {card_color}">{score}</div>
-            <div class="metric-bar">
-                <div class="metric-fill" style="width: {score}%; background: {card_color}"></div>
-            </div>
-        </div>"""
-
-    details = summary.get("details", {})
-
-    # --- Extra detail sections for new models ---
-    extra_detail_cards = ""
-
-    # Exponential decay info
+    # Trajectory data
     traj_details = details.get("clash_trajectory", {})
-    if isinstance(traj_details, dict):
-        decay_rate = traj_details.get("decay_rate")
-        decay_health = traj_details.get("decay_health")
-        projection = traj_details.get("zero_clash_projection", {})
-        changepoints = traj_details.get("changepoints", [])
+    round_data = traj_details.get("_round_data", []) if isinstance(traj_details, dict) else []
+    traj_labels = [r["round_date"] for r in round_data]
+    traj_totals = [r["total"] for r in round_data]
+    traj_new = [r["new"] for r in round_data]
+    traj_resolved = [r["resolved"] for r in round_data]
 
-        if decay_rate is not None:
-            decay_color = _health_color(
-                "healthy" if decay_health == "healthy"
-                else "at_risk" if decay_health == "slowing"
-                else "critical"
-            )
-            proj_text = ""
-            if isinstance(projection, dict) and projection.get("projected_date"):
-                proj_text = (
-                    f"<br>Near-zero projected: <strong>{projection['projected_date']}</strong> "
-                    f"({projection.get('days_from_last_round', '?')}d from last round)"
-                )
-            cp_text = ""
-            if changepoints:
-                cp_text = f"<br>Changepoints: {len(changepoints)} scope change(s)"
-            extra_detail_cards += f"""
-            <div class="insight-card">
-                <div class="insight-metrics">Exponential Decay Model</div>
-                <div class="insight-text">
-                    Decay rate: <strong style="color: {decay_color}">{decay_rate}</strong>
-                    ({decay_health}){proj_text}{cp_text}
-                </div>
-            </div>"""
-
-    # Survival analysis info
-    rfi_details = details.get("rfi_distribution", {})
-    if isinstance(rfi_details, dict):
-        rfi_overall = rfi_details.get("overall", {})
-        km_p50 = rfi_overall.get("km_p50") if isinstance(rfi_overall, dict) else None
-        km_p90 = rfi_overall.get("km_p90") if isinstance(rfi_overall, dict) else None
-        if km_p50 is not None or km_p90 is not None:
-            open_count = rfi_overall.get("open_rfis", 0) if isinstance(rfi_overall, dict) else 0
-            extra_detail_cards += f"""
-            <div class="insight-card">
-                <div class="insight-metrics">RFI Survival Analysis (Kaplan-Meier)</div>
-                <div class="insight-text">
-                    Censored P50: <strong>{km_p50}</strong> biz days,
-                    Censored P90: <strong>{km_p90}</strong> biz days
-                    ({open_count} open RFIs as right-censored)
-                </div>
-            </div>"""
-
-    # Correlation significance
+    # Meeting data
     mtg_details = details.get("meeting_decisions", {})
-    if isinstance(mtg_details, dict):
-        pearson_r = mtg_details.get("pearson_r")
-        p_value = mtg_details.get("p_value")
-        significant = mtg_details.get("significant")
-        if pearson_r is not None:
-            sig_text = "Significant" if significant else "Not significant"
-            sig_color = "#22c55e" if significant else "#f59e0b"
-            extra_detail_cards += f"""
-            <div class="insight-card">
-                <div class="insight-metrics">Attendance-Decision Correlation</div>
-                <div class="insight-text">
-                    r={pearson_r}, p={p_value}
-                    <strong style="color: {sig_color}">({sig_text})</strong>
-                </div>
-            </div>"""
+    per_meeting = mtg_details.get("per_meeting", []) if isinstance(mtg_details, dict) else []
+    mtg_dates = [m["meeting_date"] for m in per_meeting]
+    mtg_decision = [m["decision_rate_pct"] for m in per_meeting]
+    mtg_attendance = [m["attendance_rate_pct"] for m in per_meeting]
 
-    extra_section = ""
-    if extra_detail_cards:
-        extra_section = f"""
-        <div class="section-header">Statistical Models</div>
-        <div class="insights-list">{extra_detail_cards}
-        </div>"""
+    # Approval data
+    approval_list = details.get("approval_rates", [])
+    approval_discs = []
+    approval_pcts = []
+    if isinstance(approval_list, list):
+        for d in approval_list:
+            approval_discs.append(d.get("discipline", ""))
+            approval_pcts.append(d.get("first_submission_approval_pct", 0))
 
-    # --- Benchmark comparison section ---
-    benchmark_section = ""
-    benchmarks = summary.get("details", {}).get("benchmarks", [])
-    if isinstance(benchmarks, list) and benchmarks:
-        benchmark_cards = ""
+    # RFI data
+    rfi_details = details.get("rfi_distribution", {})
+    rfi_by_disc = rfi_details.get("by_discipline", []) if isinstance(rfi_details, dict) else []
+    rfi_discs = []
+    rfi_medians = []
+    rfi_p90s = []
+    if isinstance(rfi_by_disc, list):
+        for d in rfi_by_disc:
+            rfi_discs.append(d.get("discipline", ""))
+            rfi_medians.append(d.get("median_days", 0))
+            rfi_p90s.append(d.get("p90_days", 0))
+
+    # Recurring clash data
+    recur_details = details.get("recurring_clashes", {})
+    recur_count = recur_details.get("recurring_count", 0) if isinstance(recur_details, dict) else 0
+    resolved_count = recur_details.get("resolved_count", 0) if isinstance(recur_details, dict) else 0
+    held_count = max(0, resolved_count - recur_count)
+
+    # Benchmark data
+    benchmarks = details.get("benchmarks", [])
+    bench_data = []
+    if isinstance(benchmarks, list):
         for b in benchmarks:
-            pct = b.get("percentile_rank", 50)
-            comp = b.get("comparison", "average")
-            b_color = {
-                "above_average": "#22c55e",
-                "average": "#f59e0b",
-                "below_average": "#f97316",
-                "critical": "#ef4444",
-            }.get(comp, "#6b7280")
-            benchmark_cards += f"""
-            <div class="benchmark-card">
-                <div class="metric-label">{b.get('metric', '')}</div>
-                <div class="metric-score" style="color: {b_color}">{pct:.0f}th</div>
-                <div class="benchmark-insight">{b.get('insight', '')}</div>
-            </div>"""
-        benchmark_section = f"""
-        <div class="section-header">Industry Benchmarks</div>
-        <div class="metrics-grid">{benchmark_cards}
-        </div>"""
+            bench_data.append({
+                "metric": b.get("metric", ""),
+                "rank": b.get("percentile_rank", 50),
+                "comparison": b.get("comparison", "average"),
+                "insight": b.get("insight", ""),
+            })
 
-    # --- Cross-correlation insights section ---
-    insights_section = ""
-    cross_corr = summary.get("details", {}).get("cross_correlations", [])
+    # Cross-correlation data
+    cross_corr = details.get("cross_correlations", [])
+
+    # Serialize all chart data
+    chart_data = json.dumps({
+        "radar": {"indicators": radar_indicators, "values": radar_values},
+        "trajectory": {"labels": traj_labels, "totals": traj_totals,
+                        "new": traj_new, "resolved": traj_resolved},
+        "meetings": {"dates": mtg_dates, "decision": mtg_decision,
+                      "attendance": mtg_attendance},
+        "approval": {"disciplines": approval_discs, "pcts": approval_pcts},
+        "rfi": {"disciplines": rfi_discs, "medians": rfi_medians, "p90s": rfi_p90s},
+        "recurrence": {"recurring": recur_count, "held": held_count,
+                        "rate": recur_details.get("recurrence_rate_pct", 0)
+                        if isinstance(recur_details, dict) else 0},
+    }, default=str)
+
+    # Build insight cards HTML
+    insight_cards_html = ""
     if isinstance(cross_corr, list) and cross_corr:
-        insight_items = ""
         for cc in cross_corr:
-            actionable_tag = ' <span class="actionable-tag">ACTIONABLE</span>' if cc.get("actionable") else ""
-            insight_items += f"""
-            <div class="insight-card">
-                <div class="insight-metrics">{cc.get('metric_a', '')} &harr; {cc.get('metric_b', '')}</div>
-                <div class="insight-text">{cc.get('insight', '')}{actionable_tag}</div>
+            tag = ' <span class="tag tag-action">ACTIONABLE</span>' if cc.get("actionable") else ""
+            insight_cards_html += f"""
+            <div class="card insight-card">
+                <div class="card-label">{cc.get('metric_a', '')} &harr; {cc.get('metric_b', '')}</div>
+                <div class="insight-text">{cc.get('insight', '')}{tag}</div>
             </div>"""
-        insights_section = f"""
-        <div class="section-header">Cross-Metric Insights</div>
-        <div class="insights-list">{insight_items}
-        </div>"""
+
+    # Build benchmark cards HTML
+    bench_cards_html = ""
+    if bench_data:
+        for b in bench_data:
+            bc = {"above_average": "#22c55e", "average": "#f59e0b",
+                  "below_average": "#f97316", "critical": "#ef4444"}.get(b["comparison"], "#6b7280")
+            bench_cards_html += f"""
+            <div class="card" style="text-align:center">
+                <div class="card-label">{b['metric']}</div>
+                <div style="font-size:2rem;font-weight:700;color:{bc}">{b['rank']:.0f}<span style="font-size:1rem">th</span></div>
+                <div style="font-size:0.75rem;color:#94a3b8;margin-top:0.5rem">{b['insight']}</div>
+            </div>"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coordination Health Dashboard</title>
-    <style>
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            padding: 2rem;
-        }}
-        .dashboard {{
-            max-width: 900px;
-            margin: 0 auto;
-        }}
-        .header {{
-            text-align: center;
-            margin-bottom: 2rem;
-        }}
-        .header h1 {{
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }}
-        .overall-score {{
-            font-size: 4rem;
-            font-weight: 800;
-            color: {color};
-            margin: 1rem 0;
-        }}
-        .health-badge {{
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            border-radius: 2rem;
-            background: {color}22;
-            color: {color};
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }}
-        .metrics-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }}
-        .metric-card {{
-            background: #1e293b;
-            border-radius: 0.75rem;
-            padding: 1.2rem;
-            text-align: center;
-        }}
-        .metric-label {{
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }}
-        .metric-score {{
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }}
-        .metric-bar {{
-            height: 4px;
-            background: #334155;
-            border-radius: 2px;
-            overflow: hidden;
-        }}
-        .metric-fill {{
-            height: 100%;
-            border-radius: 2px;
-            transition: width 0.6s ease;
-        }}
-        .section-header {{
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: #cbd5e1;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 0.5rem;
-        }}
-        .benchmark-card {{
-            background: #1e293b;
-            border-radius: 0.75rem;
-            padding: 1.2rem;
-            text-align: center;
-        }}
-        .benchmark-insight {{
-            font-size: 0.75rem;
-            color: #94a3b8;
-            margin-top: 0.5rem;
-        }}
-        .insights-list {{
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }}
-        .insight-card {{
-            background: #1e293b;
-            border-radius: 0.75rem;
-            padding: 1rem 1.2rem;
-            border-left: 3px solid #3b82f6;
-        }}
-        .insight-metrics {{
-            font-size: 0.75rem;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.4rem;
-        }}
-        .insight-text {{
-            font-size: 0.9rem;
-            color: #e2e8f0;
-            line-height: 1.5;
-        }}
-        .actionable-tag {{
-            display: inline-block;
-            font-size: 0.65rem;
-            background: #22c55e22;
-            color: #22c55e;
-            padding: 0.1rem 0.5rem;
-            border-radius: 1rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }}
-        .footer {{
-            text-align: center;
-            margin-top: 2rem;
-            color: #64748b;
-            font-size: 0.85rem;
-        }}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coordination Health Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0;padding:1.5rem}}
+.dash{{max-width:1200px;margin:0 auto}}
+.header{{text-align:center;margin-bottom:1.5rem}}
+.header h1{{font-size:1.6rem;margin-bottom:0.3rem;color:#cbd5e1}}
+.score{{font-size:4.5rem;font-weight:800;color:{color};margin:0.5rem 0}}
+.badge{{display:inline-block;padding:0.3rem 1rem;border-radius:2rem;background:{color}22;color:{color};font-weight:600;text-transform:uppercase;letter-spacing:0.05em;font-size:0.85rem}}
+.grid2{{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}}
+.grid3{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}}
+.card{{background:#1e293b;border-radius:0.75rem;padding:1rem;min-height:60px}}
+.card-label{{font-size:0.7rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.4rem}}
+.chart-container{{width:100%;height:380px}}
+.chart-wide{{width:100%;height:420px}}
+.section{{margin-top:2rem}}
+.section h2{{font-size:1.1rem;font-weight:600;color:#cbd5e1;border-bottom:1px solid #334155;padding-bottom:0.4rem;margin-bottom:1rem}}
+.insight-card{{border-left:3px solid #3b82f6}}
+.insight-text{{font-size:0.85rem;line-height:1.5}}
+.tag{{display:inline-block;font-size:0.6rem;padding:0.1rem 0.5rem;border-radius:1rem;font-weight:600;margin-left:0.4rem;vertical-align:middle}}
+.tag-action{{background:#22c55e22;color:#22c55e}}
+.footer{{text-align:center;margin-top:2rem;color:#475569;font-size:0.8rem}}
+@media(max-width:768px){{.grid2{{grid-template-columns:1fr}}}}
+</style>
 </head>
 <body>
-    <div class="dashboard">
-        <div class="header">
-            <h1>Coordination Health Dashboard</h1>
-            <p>Generated {date.today().isoformat()}</p>
-            <div class="overall-score">{summary['overall_health']}</div>
-            <span class="health-badge">{level.replace('_', ' ')}</span>
-        </div>
-        <div class="metrics-grid">{metric_cards}
-        </div>{extra_section}{benchmark_section}{insights_section}
-        <div class="footer">
-            <p>coordination-metrics v0.1.0 | Metrics that predict design coordination failure</p>
-        </div>
-    </div>
+<div class="dash">
+  <div class="header">
+    <h1>Coordination Health Dashboard</h1>
+    <p style="color:#64748b;font-size:0.85rem">Generated {date.today().isoformat()}</p>
+    <div class="score">{summary['overall_health']}</div>
+    <span class="badge">{level.replace('_', ' ')}</span>
+  </div>
+
+  <!-- Row 1: Radar + Trajectory -->
+  <div class="grid2">
+    <div class="card"><div class="card-label">Health Radar</div><div id="radar" class="chart-container"></div></div>
+    <div class="card"><div class="card-label">Clash Trajectory</div><div id="trajectory" class="chart-container"></div></div>
+  </div>
+
+  <!-- Row 2: Meeting Decisions + Approval Rates -->
+  <div class="grid2">
+    <div class="card"><div class="card-label">Meeting Decisions &amp; Attendance</div><div id="meetings" class="chart-container"></div></div>
+    <div class="card"><div class="card-label">Approval Rates &amp; RFI Response</div><div id="approval" class="chart-container"></div></div>
+  </div>
+
+  <!-- Row 3: Recurring Clashes (single) -->
+  <div class="grid2">
+    <div class="card"><div class="card-label">Recurring Clash Rate</div><div id="recurrence" class="chart-container"></div></div>
+    <div class="card"><div class="card-label">RFI Response by Discipline</div><div id="rfi" class="chart-container"></div></div>
+  </div>
+
+  <!-- Benchmarks -->
+  {"" if not bench_cards_html else f'''<div class="section"><h2>Industry Benchmarks</h2><div class="grid3">{bench_cards_html}</div></div>'''}
+
+  <!-- Cross-Metric Insights -->
+  {"" if not insight_cards_html else f'''<div class="section"><h2>Cross-Metric Insights</h2><div style="display:flex;flex-direction:column;gap:0.75rem">{insight_cards_html}</div></div>'''}
+
+  <div class="footer">coordination-metrics v0.1.1 | Metrics that predict design coordination failure</div>
+</div>
+
+<script>
+var D = {chart_data};
+var BG = '#1e293b';
+var TXT = '#e2e8f0';
+var GRID = '#334155';
+var GREEN = '#22c55e';
+var AMBER = '#f59e0b';
+var RED = '#ef4444';
+var BLUE = '#3b82f6';
+var PURPLE = '#a855f7';
+
+function init(id) {{
+  var el = document.getElementById(id);
+  if (!el) return null;
+  return echarts.init(el, null, {{renderer:'canvas'}});
+}}
+
+// 1. Radar
+var r = init('radar');
+if (r) r.setOption({{
+  backgroundColor: BG,
+  radar: {{
+    center: ['50%','55%'], radius: '65%',
+    indicator: D.radar.indicators,
+    axisName: {{color: TXT, fontSize: 11}},
+    splitLine: {{lineStyle: {{color: GRID}}}},
+    splitArea: {{areaStyle: {{color: ['transparent','transparent']}}}},
+    axisLine: {{lineStyle: {{color: GRID}}}}
+  }},
+  series: [{{
+    type: 'radar',
+    data: [{{
+      value: D.radar.values,
+      areaStyle: {{color: 'rgba(59,130,246,0.15)'}},
+      lineStyle: {{color: BLUE, width: 2}},
+      itemStyle: {{color: BLUE}},
+      symbol: 'circle', symbolSize: 6
+    }}]
+  }}]
+}});
+
+// 2. Trajectory
+var t = init('trajectory');
+if (t && D.trajectory.labels.length > 0) t.setOption({{
+  backgroundColor: BG,
+  tooltip: {{trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{{color:TXT}}}},
+  legend: {{data:['Total','New','Resolved'], textStyle:{{color:TXT}}, top:0}},
+  grid: {{top:40, bottom:80, left:65, right:20, containLabel:true}},
+  xAxis: {{type:'category', data:D.trajectory.labels, axisLabel:{{color:TXT,rotate:20,fontSize:10}}, axisLine:{{lineStyle:{{color:GRID}}}}}},
+  yAxis: {{type:'value', name:'Clashes', nameTextStyle:{{color:TXT}}, axisLabel:{{color:TXT}}, splitLine:{{lineStyle:{{color:GRID,type:'dashed'}}}}}},
+  series: [
+    {{name:'Total', type:'bar', data:D.trajectory.totals, itemStyle:{{color:'rgba(59,130,246,0.4)'}}, barWidth:'40%'}},
+    {{name:'New', type:'line', data:D.trajectory.new, itemStyle:{{color:RED}}, lineStyle:{{width:2}}, symbol:'circle', symbolSize:6}},
+    {{name:'Resolved', type:'line', data:D.trajectory.resolved, itemStyle:{{color:GREEN}}, lineStyle:{{width:2}}, symbol:'rect', symbolSize:6}}
+  ]
+}});
+
+// 3. Meeting Decisions
+var m = init('meetings');
+if (m && D.meetings.dates.length > 0) m.setOption({{
+  backgroundColor: BG,
+  tooltip: {{trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{{color:TXT}}}},
+  legend: {{data:['Decision Rate','Attendance'], textStyle:{{color:TXT}}, top:0}},
+  grid: {{top:40, bottom:80, left:60, right:60, containLabel:true}},
+  xAxis: {{type:'category', data:D.meetings.dates, axisLabel:{{color:TXT,rotate:20,fontSize:10}}, axisLine:{{lineStyle:{{color:GRID}}}}}},
+  yAxis: [
+    {{type:'value', name:'Decision %', min:0, max:100, nameTextStyle:{{color:TXT}}, axisLabel:{{color:TXT}}, splitLine:{{lineStyle:{{color:GRID,type:'dashed'}}}}}},
+    {{type:'value', name:'Attendance %', min:0, max:100, nameTextStyle:{{color:TXT}}, axisLabel:{{color:TXT}}, splitLine:{{show:false}}}}
+  ],
+  series: [
+    {{name:'Decision Rate', type:'bar', data:D.meetings.decision, itemStyle:{{color:'rgba(59,130,246,0.7)'}}, barWidth:'35%'}},
+    {{name:'Attendance', type:'line', yAxisIndex:1, data:D.meetings.attendance, itemStyle:{{color:PURPLE}}, lineStyle:{{width:2}}, symbol:'diamond', symbolSize:7}}
+  ]
+}});
+
+// 4. Approval + RFI combo
+var a = init('approval');
+if (a && D.approval.disciplines.length > 0) a.setOption({{
+  backgroundColor: BG,
+  tooltip: {{trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{{color:TXT}}}},
+  legend: {{data:['Approval %'], textStyle:{{color:TXT}}, top:0}},
+  grid: {{top:40, bottom:15, left:10, right:40, containLabel:true}},
+  xAxis: {{type:'value', min:0, max:100, axisLabel:{{color:TXT}}, splitLine:{{lineStyle:{{color:GRID,type:'dashed'}}}}}},
+  yAxis: {{type:'category', data:D.approval.disciplines, axisLabel:{{color:TXT}}}},
+  series: [{{
+    name:'Approval %', type:'bar', data:D.approval.pcts.map(function(v){{
+      return {{value:v, itemStyle:{{color: v>=70?GREEN:v>=50?AMBER:RED}}}};
+    }}),
+    label: {{show:true, position:'right', color:TXT, formatter:'{{c}}%'}}
+  }}],
+  visualMap: {{show:false}}
+}});
+
+// 5. Recurrence donut
+var rc = init('recurrence');
+if (rc && (D.recurrence.recurring + D.recurrence.held) > 0) rc.setOption({{
+  backgroundColor: BG,
+  tooltip: {{trigger:'item', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{{color:TXT}}}},
+  title: {{text: D.recurrence.rate.toFixed(1)+'%', subtext:'recurrence', left:'center', top:'center',
+    textStyle:{{color:D.recurrence.rate>25?RED:D.recurrence.rate>10?AMBER:GREEN, fontSize:28, fontWeight:700}},
+    subtextStyle:{{color:TXT, fontSize:12}}}},
+  series: [{{
+    type:'pie', radius:['55%','80%'],
+    data:[
+      {{value:D.recurrence.recurring, name:'Recurring', itemStyle:{{color:RED}}}},
+      {{value:D.recurrence.held, name:'Held', itemStyle:{{color:GREEN}}}}
+    ],
+    label:{{show:true, color:TXT, formatter:'{{b}}: {{c}}'}},
+    emphasis:{{itemStyle:{{shadowBlur:10, shadowColor:'rgba(0,0,0,0.5)'}}}}
+  }}]
+}});
+
+// 6. RFI by discipline
+var rf = init('rfi');
+if (rf && D.rfi.disciplines.length > 0) rf.setOption({{
+  backgroundColor: BG,
+  tooltip: {{trigger:'axis', backgroundColor:'#1e293b', borderColor:GRID, textStyle:{{color:TXT}}}},
+  legend: {{data:['Median','P90'], textStyle:{{color:TXT}}, top:0}},
+  grid: {{top:40, bottom:15, left:10, right:40, containLabel:true}},
+  xAxis: {{type:'value', name:'Days', nameTextStyle:{{color:TXT}}, axisLabel:{{color:TXT}}, splitLine:{{lineStyle:{{color:GRID,type:'dashed'}}}}}},
+  yAxis: {{type:'category', data:D.rfi.disciplines, axisLabel:{{color:TXT}}}},
+  series: [
+    {{name:'Median', type:'bar', data:D.rfi.medians, itemStyle:{{color:BLUE}}, barWidth:'30%'}},
+    {{name:'P90', type:'bar', data:D.rfi.p90s, itemStyle:{{color:AMBER}}, barWidth:'30%'}}
+  ]
+}});
+
+// Responsive resize
+window.addEventListener('resize', function(){{
+  [r,t,m,a,rc,rf].forEach(function(c){{ if(c) c.resize(); }});
+}});
+</script>
 </body>
 </html>"""

@@ -34,73 +34,99 @@ def discover_cross_correlations(
 
     Runs pairwise analysis across metrics and returns actionable insights.
     """
-    correlations = []
+    correlations: list[CrossCorrelation] = []
 
-    # 1. RFI bottleneck discipline vs lowest approval discipline
-    # If the same discipline has the worst RFI response AND lowest approval rate,
-    # that's a strong signal of a systemic coordination failure in that discipline
-    if rfi_data and approval_data:
-        rfi_bottleneck = rfi_data.get("tail_by_discipline", {})
-        # Find discipline with most tail RFIs
-        if rfi_bottleneck:
-            worst_rfi_disc = (
-                max(
-                    rfi_bottleneck.items(),
-                    key=lambda x: x[1].get("count", 0),
-                )[0]
-                if isinstance(rfi_bottleneck, dict)
-                else None
-            )
-            # Compare with approval data
-            if hasattr(approval_data, "index"):
-                worst_approval_disc = (
-                    approval_data.index[0] if len(approval_data) > 0 else None
+    # --- Helper: extract worst discipline from approval data ---
+    worst_approval_disc = None
+    worst_approval_pct = 100.0
+    if isinstance(approval_data, list) and approval_data:
+        for d in approval_data:
+            pct = d.get("first_submission_approval_pct", 100)
+            if pct < worst_approval_pct:
+                worst_approval_pct = pct
+                worst_approval_disc = d.get("discipline")
+    elif hasattr(approval_data, "index") and len(approval_data) > 0:
+        worst_approval_disc = approval_data.index[0]
+        worst_approval_pct = float(approval_data.iloc[0].get(
+            "first_submission_approval_pct", 100))
+
+    # --- Helper: extract worst RFI discipline ---
+    worst_rfi_disc = None
+    worst_rfi_p90 = 0.0
+    if isinstance(rfi_data, dict):
+        by_disc = rfi_data.get("by_discipline", [])
+        if isinstance(by_disc, list):
+            for d in by_disc:
+                p90 = d.get("p90_days", 0)
+                if p90 > worst_rfi_p90:
+                    worst_rfi_p90 = p90
+                    worst_rfi_disc = d.get("discipline")
+        elif isinstance(by_disc, dict):
+            for disc, vals in by_disc.items():
+                p90 = vals.get("p90_days", 0) if isinstance(vals, dict) else 0
+                if p90 > worst_rfi_p90:
+                    worst_rfi_p90 = p90
+                    worst_rfi_disc = disc
+
+    # 1. Worst RFI discipline matches worst approval discipline
+    if worst_rfi_disc and worst_approval_disc:
+        if worst_rfi_disc.lower() == worst_approval_disc.lower():
+            correlations.append(
+                CrossCorrelation(
+                    metric_a="rfi_bottleneck_discipline",
+                    metric_b="lowest_approval_discipline",
+                    correlation=1.0,
+                    p_value=0.0,
+                    direction="positive",
+                    insight=(
+                        f"{worst_rfi_disc} is both the RFI bottleneck (P90={worst_rfi_p90:.0f}d) "
+                        f"AND has the lowest submittal approval rate ({worst_approval_pct:.0f}%). "
+                        f"This indicates a systemic coordination failure in this discipline."
+                    ),
+                    actionable=True,
                 )
-                if (
-                    worst_rfi_disc
-                    and worst_approval_disc
-                    and worst_rfi_disc.lower() == worst_approval_disc.lower()
-                ):
-                    correlations.append(
-                        CrossCorrelation(
-                            metric_a="rfi_bottleneck_discipline",
-                            metric_b="lowest_approval_discipline",
-                            correlation=1.0,
-                            p_value=0.0,
-                            direction="positive",
-                            insight=(
-                                f"{worst_rfi_disc} is both the RFI bottleneck AND has "
-                                f"the lowest submittal approval rate. This indicates a "
-                                f"systemic coordination failure in this discipline."
-                            ),
-                            actionable=True,
-                        )
-                    )
+            )
+        else:
+            # Different disciplines — still useful insight
+            correlations.append(
+                CrossCorrelation(
+                    metric_a="rfi_bottleneck_discipline",
+                    metric_b="lowest_approval_discipline",
+                    correlation=0.0,
+                    p_value=1.0,
+                    direction="neutral",
+                    insight=(
+                        f"RFI bottleneck is {worst_rfi_disc} (P90={worst_rfi_p90:.0f}d) "
+                        f"while lowest approval is {worst_approval_disc} ({worst_approval_pct:.0f}%). "
+                        f"Different root causes — investigate independently."
+                    ),
+                    actionable=False,
+                )
+            )
 
     # 2. Meeting decision rate vs clash trajectory
-    # If meetings with low decision rates precede worsening clash counts
     if meeting_data and clash_trajectory_data:
         avg_decision_rate = None
         if isinstance(meeting_data, dict):
             avg_decision_rate = meeting_data.get("avg_decision_rate_pct")
-        clash_health = clash_trajectory_data.get("health", "")
+        clash_health = (
+            clash_trajectory_data.get("decay_health")
+            or clash_trajectory_data.get("health_level", "")
+        )
 
-        if avg_decision_rate and avg_decision_rate < 50 and clash_health in (
-            "slowing",
-            "intervention_needed",
-            "stalled",
-        ):
+        if avg_decision_rate is not None and avg_decision_rate < 70:
+            severity = "critically low" if avg_decision_rate < 50 else "below target"
             correlations.append(
                 CrossCorrelation(
                     metric_a="meeting_decision_rate",
                     metric_b="clash_trajectory_health",
-                    correlation=-0.7,  # estimated
+                    correlation=-0.7,
                     p_value=0.05,
                     direction="negative",
                     insight=(
-                        f"Low meeting decision rate ({avg_decision_rate:.0f}%) "
-                        f"coincides with poor clash trajectory. Deferred decisions "
-                        f"become unresolved clashes."
+                        f"Meeting decision rate is {severity} ({avg_decision_rate:.0f}%). "
+                        f"Clash trajectory health: {clash_health or 'unknown'}. "
+                        f"Deferred decisions become unresolved clashes."
                     ),
                     actionable=True,
                 )
@@ -113,7 +139,7 @@ def discover_cross_correlations(
             critical_absence = meeting_data.get("critical_absence")
         recurrence_rate = recurrence_data.get("recurrence_rate_pct", 0)
 
-        if critical_absence and recurrence_rate > 10:
+        if critical_absence and recurrence_rate > 5:
             correlations.append(
                 CrossCorrelation(
                     metric_a="critical_absence_discipline",
@@ -132,24 +158,28 @@ def discover_cross_correlations(
             )
 
     # 4. RFI no-response rate vs overall coordination health
-    if rfi_data:
-        no_response_pct = rfi_data.get("no_response_pct", 0)
-        if no_response_pct > 15:
-            correlations.append(
-                CrossCorrelation(
-                    metric_a="rfi_no_response_rate",
-                    metric_b="coordination_health",
-                    correlation=-0.8,
-                    p_value=0.01,
-                    direction="negative",
-                    insight=(
-                        f"{no_response_pct:.0f}% of RFIs have no response. "
-                        f"Unanswered RFIs create assumptions on site that become "
-                        f"rework. This is likely the single largest contributor to "
-                        f"coordination failure."
-                    ),
-                    actionable=True,
+    if isinstance(rfi_data, dict):
+        overall = rfi_data.get("overall", {})
+        if isinstance(overall, dict):
+            total_rfis = overall.get("total_rfis", 0)
+            open_rfis = overall.get("open_rfis", 0)
+            no_response_pct = (open_rfis / total_rfis * 100) if total_rfis > 0 else 0
+
+            if no_response_pct > 5:
+                correlations.append(
+                    CrossCorrelation(
+                        metric_a="rfi_no_response_rate",
+                        metric_b="coordination_health",
+                        correlation=-0.8,
+                        p_value=0.01,
+                        direction="negative",
+                        insight=(
+                            f"{no_response_pct:.0f}% of RFIs ({open_rfis}/{total_rfis}) "
+                            f"have no response. Unanswered RFIs create assumptions on "
+                            f"site that become rework."
+                        ),
+                        actionable=True,
+                    )
                 )
-            )
 
     return correlations

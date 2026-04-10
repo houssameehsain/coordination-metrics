@@ -119,9 +119,12 @@ def compute_ecv(
         components.append(sub_pct * config.submittal_weight)
 
     if config.total_expected_meetings > 0:
-        meet_pct = min(
-            100, decisions_made / (config.total_expected_meetings * 5) * 100
-        )  # ~5 decisions per meeting
+        # Use actual total expected decisions if available (total_items sum),
+        # otherwise estimate ~5 decisions per meeting as fallback
+        expected_decisions = getattr(config, "total_expected_decisions", 0)
+        if expected_decisions <= 0:
+            expected_decisions = config.total_expected_meetings * 5
+        meet_pct = min(100, decisions_made / expected_decisions * 100)
         components.append(meet_pct * config.meeting_weight)
 
     # Normalize EV to 0-100 scale
